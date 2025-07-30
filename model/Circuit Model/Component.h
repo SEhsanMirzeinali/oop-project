@@ -6,7 +6,8 @@
 #define COMPONENT_H
 
 #include"Node.h"
-
+#include<vector>
+#include<string>
 class Component {
 public:
     Component(const std::string &n, Node* n1, Node* n2) : name(n), node1(n1), node2(n2) {}

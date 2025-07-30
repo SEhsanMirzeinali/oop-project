@@ -61,27 +61,6 @@ public:
 
     ////////////////////////////////// end
 
-    // Add a new component
-/*    void addComponent(ComponentType type, double value, int node1, int node2) {
-        Component* component;
-        switch (type) {
-            case RESISTOR: component = new Resistor(value); break;
-            case CAPACITOR: component = new Capacitor(value); break;
-            // ... other component types
-        }
-        circuit.addComponent(component, node1, node2);
-    }
-
-    // Remove a component by ID
-    void removeComponent(int componentId) {
-        circuit.removeComponent(componentId);
-    }
-
-    // Update component value
-    void updateComponent(int componentId, double newValue) {
-        circuit.getComponent(componentId).setValue(newValue);
-    }
-*/
 };
 
 

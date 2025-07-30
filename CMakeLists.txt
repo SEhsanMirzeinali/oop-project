@@ -64,6 +64,12 @@ add_executable(${PROJECT_NAME} ${SOURCES}
         "model/Circuit Model/CircuitModel.cpp"
         view/ui/SimulationDialog.cpp
         view/ui/SimulationDialog.cpp
+        "model/Circuit Model/components/VoltageSource.cpp"
+        "model/Circuit Model/components/CurrentSource.cpp"
+        "model/Circuit Model/components/Capacitor.cpp"
+        "model/Circuit Model/components/Inductor.cpp"
+        "model/Circuit Model/components/Resistor.cpp"
+        "model/Circuit Model/Node.cpp"
         #"controller/Supporting Controllers/IOController.cpp"
         #"model/Circuit Model/CircuitModel.cpp"
 )

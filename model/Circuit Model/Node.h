@@ -1,13 +1,9 @@
-//
-// Created by Purple-Rose on 6/2/2025.
-//
-
 #ifndef NODE_H
 #define NODE_H
 
-#pragma once
+#include <vector>
+#include <string>
 
-#include<string>
 class Node {
 private:
     int number;
@@ -17,42 +13,25 @@ private:
     bool isReference = false;
 
 public:
-       Node (const std:: string &name): name(name) {};
-
-
+    Node(const std::string& name);
+    
     // Getters
-    int getNumber() const { return number; }
-    std::string getName() const { return name; }
-    double getVoltage() const { return voltage; }
-    bool isGround() const { return isReference; }
-    std::vector<double> getTVoltage() const { return TVoltage; }
+    int getNumber() const;
+    std::string getName() const;
+    double getVoltage() const;
+    bool isGround() const;
+    std::vector<double> getTVoltage() const;
 
     // Setters
-    void setVoltage(double v) { voltage = v; }
-    void setAsReference() { isReference = true; voltage = 0.0;; };
-    void setAsNotReference() { isReference = false; }
-    void setNumber(const int num){this->number = num;}
-    void setName(const std::string name){this->name = name;}
-    void setTVoltage(std::vector<double> v){TVoltage=v;}
-
-    //موقع تحلیل مدار اینجوری بهشون شماره میدم که بذارم توی ماتریس
-//    int nodeNumber=0;
-//    for(auto & node : nodes) {
-//        if(node->getGround()) {
-//            node->setNumber(-1);
-//        }
-//        else {
-//            node->setNumber(nodeNumber);
-//            nodeNumber++;
-//        }
-//    }
+    void setVoltage(double v);
+    void setAsReference();
+    void setAsNotReference();
+    void setNumber(int num);
+    void setName(const std::string& name);
+    void setTVoltage(const std::vector<double>& v);
 
     // Helper for netlist generation
-    std::string toNetlist() const {
-        return isReference ? "0" : name;
-    }
+    std::string toNetlist() const;
 };
 
-
-
-#endif //NODE_H
+#endif // NODE_H

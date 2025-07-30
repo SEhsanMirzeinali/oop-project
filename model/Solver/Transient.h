@@ -27,7 +27,7 @@ public:
     const std::vector<std::vector<double>>& C,const std::vector<std::vector<double>>& D);
     std::vector<std::vector<double>> addTimeColumn(const std::vector<std::vector<double>>& solution, double dt);
     std::vector<std::vector<double>> solveMatrixODE(const std::vector<std::vector<double>> &G, const std::vector<std::vector<double>> &C, const std::vector<double> &F, const
-                                                    std::vector<double> &X0, double dt, double t_end) ;
+    std::vector<double> &X0, double dt, double t_end) ;
     void printvector(const std::vector<std::vector<double>>& vec);
 
  };
