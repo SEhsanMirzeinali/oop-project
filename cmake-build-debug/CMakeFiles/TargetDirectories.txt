@@ -1,0 +1,5 @@
+D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/Phase2.dir
+D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/Phase2_autogen_timestamp_deps.dir
+D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/Phase2_autogen.dir
