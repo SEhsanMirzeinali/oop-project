@@ -13,7 +13,7 @@ class SimulationResults {
     private:
 public:
     void DC_Analyse_Results(std::vector <double> results,CircuitModel& circuit);
-    void Transient_Analyse(std::vector <std::vector<double>> results,std::vector<std::string> variables,double,double dt,CircuitModel& circuit);
+    std::vector<std::vector<double>> Transient_Analyse(std::vector <std::vector<double>> results,std::vector<std::string> variables,double,double dt,CircuitModel& circuit);
     std::vector<std::vector<double>> extractTwoColumns(const std::vector<std::vector<double>>& matrix,std::vector<int>);
     std::vector<double> extractSingleColumn(const std::vector<std::vector<double>>& matrix,int columnIndex);
 };

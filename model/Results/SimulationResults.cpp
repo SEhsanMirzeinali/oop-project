@@ -26,7 +26,7 @@ void SimulationResults::DC_Analyse_Results(std::vector<double> results, CircuitM
     }
 }
 
-void SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,
+    std::vector<std::vector<double>> SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,
                                         std::vector<std::string> variables,
                                         double TStart,double dt,
                                         CircuitModel& circuit) {
@@ -136,6 +136,7 @@ void SimulationResults::Transient_Analyse(std::vector<std::vector<double>> resul
         }
         std::cout << std::endl;
     }
+    return finalRes;
 }
 
 std::vector<std::vector<double>> SimulationResults::extractTwoColumns(
