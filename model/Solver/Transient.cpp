@@ -9,6 +9,20 @@ using namespace Eigen;
 
 std::vector<std::vector<double>> Transient::solve(CircuitModel& circuit, double TStep, double TStop,
                                                 double TStart, double TMax, std::vector<std::string> variables) {
+    std::vector<std::vector<double>> resultss;
+    int loopCounter = (TStop-TStart)/TStep;
+    double currentTime;
+    for (int i = 0; i < loopCounter; i++) {
+        currentTime = TStart + i*TStep;
+
+        for (auto& comp : circuit.getComponents()) {
+            if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
+                if (vs->getNode1() && vs->getNode2()) {
+                    vs->setTime(currentTime);
+                    vs->setVoltage(5);
+                }
+            }
+        }
     std::vector<std::vector<double>> results;
     std::vector<std::vector<double>> leftSide;
     std::vector<double> rightSide;
@@ -24,10 +38,13 @@ std::vector<std::vector<double>> Transient::solve(CircuitModel& circuit, double 
     rightSide = combineRightSide(J, E);
     midSide = createMatDynamic(circuit);
     std::vector<double> X0(leftSide.size(), 0);
-    results = solveMatrixODE(leftSide, midSide, rightSide, X0, TStep, TStop);
+    results = solveMatrixODE(leftSide, midSide, rightSide, X0, TStep, TStart+((1+i)*TStep)/*TStop*/);
+//printvector(results);
+    circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
+        //std::cout<<"inja\n";
 
-    circuitResults->Transient_Analyse(results, variables, TStart, circuit);
-    return results;
+}
+    return resultss;
 }
 
 void Transient::printvector(const std::vector<std::vector<double>>& vec) {
@@ -155,7 +172,10 @@ std::vector<double> Transient::createMatE(CircuitModel& circuit) {
     for (auto& comp : circuit.getComponents()) {
         if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
             if (vs->getNode1() && vs->getNode2()) {
-                E.push_back(vs->getVoltage());
+               // static double time=0.1;
+               // E.push_back(std::sin(time));
+                //time+=0.1;
+                 E.push_back(vs->getVoltage());
             }
         }
     }

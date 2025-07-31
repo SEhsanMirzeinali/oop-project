@@ -207,21 +207,27 @@ void CommandHandler::handle_Add_CurrentSource(std::string name  , std::string no
     // File_output << name << " " << node1 << " " << node2 << " " << value_string << std::endl;
     // Files.back().write(File_output.str());
 }
-void CommandHandler::handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string Vofset , std::string Vamp , std::string Freq) {
+void CommandHandler::handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string offset , std::string ampl , std::string Freq,
+    std::string delay,std::string theta,std::string phi,std::string cycles) {
     name = 'V' + name ;
     for(auto n : names) {
         if(name == n) {
-            throw Get_Exception::Duplicate_Name_Exception(name);
+           // throw Get_Exception::Duplicate_Name_Exception(name);
         }
     }
-    double Vofset_double = Change_unitsValue(Vofset);
-    double Vamp_double = Change_unitsValue(Vamp);
+    double offset_double = Change_unitsValue(offset);
+    double ampl_double = Change_unitsValue(ampl);
     double freq_double = Change_unitsValue(Freq);
+    double delay_double = Change_unitsValue(delay);
+    double theta_double = Change_unitsValue(theta);
+    double phi_double = Change_unitsValue(phi);
+    double cycles_double = Change_unitsValue(cycles);
+
     names.push_back(name);
-    Circuitcontroller.get_SIN_voltage(name , node1 , node2 , Vofset , Vofset_double,
-        Vamp, Vamp_double,Freq, freq_double);
-    std::cout << name << " " << node1 << " " << node2 << " " << Vofset_double << " " <<
-        Vamp_double << " " << freq_double << std::endl;
+    Circuitcontroller.get_SIN_voltage(name , node1 , node2 , offset_double,
+        ampl_double, freq_double,delay_double, theta_double, phi_double, cycles_double);
+    // std::cout << name << " " << node1 << " " << node2 << " " << Vofset_double << " " <<
+    //     Vamp_double << " " << freq_double << std::endl;
 
     ///////////////////// File Handling
     // std::ostringstream File_output;

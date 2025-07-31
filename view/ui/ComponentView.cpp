@@ -18,7 +18,7 @@
 
 #include "componentpropertydialog.h"
 #include "simulationdialog.h"
-
+#include "VoltageSourceDialog.h"
 
 ComponentView::ComponentView(QGraphicsScene* scene, QWidget* parent)
     : QGraphicsView(scene, parent), currentComponent(nullptr), placing(false),
@@ -239,26 +239,42 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
             }
         }
 
-        // for (int i=0 ; i<allComponents.size() ; i++) {
-        //     std::cout<<allComponents[i]->getComponentName().toStdString()<<" ";
-        //     for(int j=0 ; j<wires.size() ; j++) {
-        //         for(int k=0 ; k<wires[j]->getConnectedComponents().size() ; k++) {
-        //             if(allComponents[i] == wires[j]->getConnectedComponents()[k]) {
-        //                 std::cout<<wires[j]->getWireName().toStdString()<<" ";
-        //             }
-        //         }
-        //     }
-        //     std::cout<<allComponents[i]->getComponentValue().toStdString()<<std::endl;
-        // }
-        // for(int i=0 ; i<wires.size() ; i++) {
-        //     std::cout<<wires[i]->getWireName().toStdString()<<": ";
-        //     for(int j=0 ; j<wires[i]->getConnectedComponents().size() ; j++) {
-        //         std::cout<<wires[i]->getConnectedComponents()[j]->getComponentName().toStdString()<<",";
-        //     }
-        //     std::cout<<std::endl;
-        // }
     }
-
+    // if(event->key() == Qt::Key_A) {
+    //     VoltageSourceDialog dialog;
+    //     if (dialog.exec() == QDialog::Accepted) {
+    //         QString selectedFunction = dialog.getSelectedFunction();
+    //         double dcValue = dialog.getDCValue();
+    //         double acAmplitude = dialog.getACAmplitude();
+    //         QMap<QString, double> params = dialog.getFunctionParameters();
+    //
+    //         if (selectedFunction == "SINE") {
+    //             // پردازش برای سیگنال سینوسی
+    //             double frequency = params["Frequency"];
+    //             double phase = params["Phi"];
+    //             double damping = params["Theta"];
+    //
+    //             qDebug() << "Creating Sine Wave with:";
+    //             qDebug() << "Amplitude:" << acAmplitude;
+    //             qDebug() << "Frequency:" << frequency;
+    //             qDebug() << "Phase:" << phase;
+    //             qDebug() << "Damping:" << damping;
+    //
+    //             // ایجاد منبع ولتاژ سینوسی با این پارامترها
+    //             // createSineWaveSource(acAmplitude, frequency, phase, damping);
+    //         }
+    //         else if (selectedFunction == "PULSE") {
+    //             // پردازش برای پالس
+    //             double v1 = params["V1"];
+    //             double v2 = params["V2"];
+    //             // ...
+    //         }
+    //         else if (selectedFunction == "None") {
+    //             // پردازش برای سیگنال DC ساده
+    //             // createDCSource(dcValue);
+    //         }
+    //     }
+    //}
     QGraphicsView::keyPressEvent(event);
 }
 
@@ -454,11 +470,55 @@ void ComponentView::mousePressEvent(QMouseEvent* event) {
         for (QGraphicsItem* item : items) {
             if (item->data(0).canConvert<GraphicComponent*>()) {
                 GraphicComponent* comp = item->data(0).value<GraphicComponent*>();
-                //if (item == comp->getGraphicItem()) {
+                VoltageComponent *voltageSource = dynamic_cast<VoltageComponent*>(comp);
+                if(!voltageSource) {
                 if(item == comp->getValueLabel() || item == comp->getNameLabel() || item == comp->getGraphicItem()) {
-                    showComponentPropertiesDialog(item);
-                    event->accept();
-                    return;
+                        showComponentPropertiesDialog(item);
+                        event->accept();
+                        return;
+                    }
+                }
+                if(voltageSource) {
+                    if( item == comp->getNameLabel() || item == comp->getGraphicItem()) {
+                        showComponentPropertiesDialog(item);
+                        event->accept();
+                        return;
+                    }
+                    if(item == comp->getValueLabel()){
+
+                        VoltageSourceDialog dialog;
+                        if (dialog.exec() == QDialog::Accepted) {
+                            QString selectedFunction = dialog.getSelectedFunction();
+                            double dcValue = dialog.getDCValue();
+                            double acAmplitude = dialog.getACAmplitude();
+                            QMap<QString, double> params = dialog.getFunctionParameters();
+
+                            if (selectedFunction == "SINE") {
+                                double offset = params["Offset"];
+                                double  ampl = params["Amplitude"];
+                                double frequency = params["Frequency"];
+                                double TDelay = params["Tdelay"];
+                                double theta = params["Theta"];
+                                double phi = params["Phi"];
+                                double NCycles = params["Ncycles"];
+                                QString value ="SINE "+QString::number(offset)+ " "
+                                +QString::number(ampl)+" "+QString::number(frequency)+" "+
+                                    QString::number(TDelay)+" "+QString::number(theta)+" "+
+                                        QString::number(phi)+" "+QString::number(NCycles);
+                                voltageSource->setComponentValue(value);
+                            }
+                            else if (selectedFunction == "PULSE") {
+                                // پردازش برای پالس
+                                double v1 = params["V1"];
+                                double v2 = params["V2"];
+                                // ...
+                            }
+                            else if (selectedFunction == "None") {
+                                // پردازش برای سیگنال DC ساده
+                                // createDCSource(dcValue);
+                            }
+                        }
+                }
                 }
             }
         }

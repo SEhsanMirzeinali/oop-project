@@ -417,6 +417,12 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/ui/VoltageSourceDialog.h",
+			"MU",
+			"U5ILFKN7IX/moc_VoltageSourceDialog.cpp",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/wire/WireComponent.h",
 			"MU",
 			"74BM62SAYS/moc_WireComponent.cpp",
@@ -648,6 +654,11 @@
 		],
 		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/ui/ToolBar.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/ui/VoltageSourceDialog.cpp",
 			"MU",
 			null
 		],

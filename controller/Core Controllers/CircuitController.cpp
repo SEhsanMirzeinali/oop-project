@@ -83,8 +83,15 @@ void CircuitController::get_Current_source(std::string name, std::string node1, 
     circuit->addComponent(current);
 }
 
-void CircuitController::get_SIN_voltage(std::string name, std::string node1, std::string node2, std::string Vofset_string,
-    double Vofset_double, std::string Vamp_string, double Vamp_double, std::string Freq_string, double Freq_double) {
+void CircuitController::get_SIN_voltage(std::string name, std::string node1, std::string node2,
+    double offset, double ampl, double freq,double TDelay,double theta, double phase,
+    double cycles) {
+    std::shared_ptr<Node> n1 = circuit->addNode(node1);
+    std::shared_ptr<Node> n2 = circuit->addNode(node2);
+
+    auto v = std::make_shared<VoltageSource>(offset,name,n1.get(),n2.get());
+    v->setSinVariables(offset,ampl,freq,TDelay,theta,phase,cycles);
+    circuit->addComponent(v);
 }
 
 void CircuitController::get_VCVS(std::string name, std::string node1, std::string node2, std::string CtrN1, std::string CtrN2

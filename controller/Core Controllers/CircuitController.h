@@ -38,8 +38,8 @@ public:
     void get_Current_source(std::string name , std::string node1 , std::string node2 , std::string string_value , double double_value);
 
 
-    void get_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string Vofset_string ,
-        double Vofset_double , std::string Vamp_string , double Vamp_double , std::string Freq_string , double Freq_double) ;
+    void get_SIN_voltage(std::string name, std::string node1, std::string node2,
+        double offset, double ampl, double freq,double TDelay,double theta, double phase ,double cycles);
     void get_VCVS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 ,std::string CtrN2
         , std::string Gain_string , double Gain_double) ;
     void get_VCCS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 ,std::string CtrN2

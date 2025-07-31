@@ -28,13 +28,14 @@ void SimulationResults::DC_Analyse_Results(std::vector<double> results, CircuitM
 
 void SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,
                                         std::vector<std::string> variables,
-                                        double TStart,
+                                        double TStart,double dt,
                                         CircuitModel& circuit) {
     std::vector<std::vector<double>> finalRes;
     std::vector<int> indexes;
 
     // Set dt
-    double dt = results[5][0] - results[4][0];
+    //double dt = results[1][0] - results[0][0];
+    //double dt=0.1;
     indexes.push_back(0);
 
     // Set nodes voltage

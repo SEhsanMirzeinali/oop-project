@@ -70,6 +70,7 @@ add_executable(${PROJECT_NAME} ${SOURCES}
         "model/Circuit Model/components/Inductor.cpp"
         "model/Circuit Model/components/Resistor.cpp"
         "model/Circuit Model/Node.cpp"
+        view/ui/VoltageSourceDialog.cpp
         #"controller/Supporting Controllers/IOController.cpp"
         #"model/Circuit Model/CircuitModel.cpp"
 )
