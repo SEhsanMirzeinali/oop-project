@@ -40,6 +40,8 @@ public:
 
     void get_SIN_voltage(std::string name, std::string node1, std::string node2,
         double offset, double ampl, double freq,double TDelay,double theta, double phase ,double cycles);
+    void get_PULSE_voltage(std::string name, std::string node1, std::string node2,
+    double init, double von, double delay,double rise,double fall, double ton,double period,double cycles);
     void get_VCVS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 ,std::string CtrN2
         , std::string Gain_string , double Gain_double) ;
     void get_VCCS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 ,std::string CtrN2

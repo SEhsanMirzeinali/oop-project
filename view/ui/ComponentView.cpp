@@ -182,6 +182,16 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
             startPlacing("voltage");
         }
     }
+    if (event->key() == Qt::Key_C) {
+        if (!placing) {
+            startPlacing("capacitor");
+        }
+    }
+    if (event->key() == Qt::Key_L) {
+        if (!placing) {
+            startPlacing("inductor");
+        }
+    }
     if (event->key() == Qt::Key_Escape && wiring) {
         finishCurrentWire(false);
         wiring = false;
@@ -238,43 +248,7 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
                 break;
             }
         }
-
     }
-    // if(event->key() == Qt::Key_A) {
-    //     VoltageSourceDialog dialog;
-    //     if (dialog.exec() == QDialog::Accepted) {
-    //         QString selectedFunction = dialog.getSelectedFunction();
-    //         double dcValue = dialog.getDCValue();
-    //         double acAmplitude = dialog.getACAmplitude();
-    //         QMap<QString, double> params = dialog.getFunctionParameters();
-    //
-    //         if (selectedFunction == "SINE") {
-    //             // پردازش برای سیگنال سینوسی
-    //             double frequency = params["Frequency"];
-    //             double phase = params["Phi"];
-    //             double damping = params["Theta"];
-    //
-    //             qDebug() << "Creating Sine Wave with:";
-    //             qDebug() << "Amplitude:" << acAmplitude;
-    //             qDebug() << "Frequency:" << frequency;
-    //             qDebug() << "Phase:" << phase;
-    //             qDebug() << "Damping:" << damping;
-    //
-    //             // ایجاد منبع ولتاژ سینوسی با این پارامترها
-    //             // createSineWaveSource(acAmplitude, frequency, phase, damping);
-    //         }
-    //         else if (selectedFunction == "PULSE") {
-    //             // پردازش برای پالس
-    //             double v1 = params["V1"];
-    //             double v2 = params["V2"];
-    //             // ...
-    //         }
-    //         else if (selectedFunction == "None") {
-    //             // پردازش برای سیگنال DC ساده
-    //             // createDCSource(dcValue);
-    //         }
-    //     }
-    //}
     QGraphicsView::keyPressEvent(event);
 }
 
@@ -509,11 +483,23 @@ void ComponentView::mousePressEvent(QMouseEvent* event) {
                             }
                             else if (selectedFunction == "PULSE") {
                                 // پردازش برای پالس
-                                double v1 = params["V1"];
-                                double v2 = params["V2"];
-                                // ...
+                                double vInitial = params["VInitial"];
+                                double vOn = params["VOn"];
+                                double tDelay = params["Tdelay"];
+                                double tRise = params["Trise"];
+                                double tFall = params["Tfall"];
+                                double tOn = params["Ton"];
+                                double period =  params["Period"];
+                                double nCycles = params["Ncycles"];
+                                QString value ="PULSE "+QString::number(vInitial)+ " "
+                                +QString::number(vOn)+" "+QString::number(tDelay)+" "+
+                                    QString::number(tRise)+" "+QString::number(tFall)+" "+
+                                        QString::number(tOn)+" "+QString::number(period)+
+                                            " "+QString::number(nCycles);
+                                voltageSource->setComponentValue(value);
                             }
                             else if (selectedFunction == "None") {
+                                voltageSource->setComponentValue(QString::number(dcValue));
                                 // پردازش برای سیگنال DC ساده
                                 // createDCSource(dcValue);
                             }

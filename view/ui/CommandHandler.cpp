@@ -234,6 +234,35 @@ void CommandHandler::handle_Add_SIN_voltage(std::string name , std::string node1
     // File_output << "SIN " << name << " " << node1 << " " << node2 << " " << "(Vofset :" << Vofset << " /Vamp : " << Vamp << " /Freq : " << Freq << ")" << std::endl;
     // Files.back().write(File_output.str());
 }
+void CommandHandler::handle_Add_PULSE_voltage(std::string name , std::string node1 , std::string node2 ,
+    std::string VInitial , std::string VOn , std::string TDelay,
+    std::string TRise,std::string TFall,std::string TOn,std::string TPeriod ,std::string cycles) {
+    name = 'V' + name ;
+    for(auto n : names) {
+        if(name == n) {
+            // throw Get_Exception::Duplicate_Name_Exception(name);
+        }
+    }
+    double initial_double = Change_unitsValue(VInitial);
+    double Von_double = Change_unitsValue(VOn);
+    double delay_double = Change_unitsValue(TDelay);
+    double rise_double = Change_unitsValue(TRise);
+    double fall_double = Change_unitsValue(TFall);
+    double TOn_double = Change_unitsValue(TOn);
+    double period_double = Change_unitsValue(TPeriod);
+    double cycles_double = Change_unitsValue(cycles);
+
+    names.push_back(name);
+    Circuitcontroller.get_PULSE_voltage(name , node1 , node2 , initial_double,
+        Von_double,delay_double, rise_double, fall_double,TOn_double,period_double, cycles_double);
+    // std::cout << name << " " << node1 << " " << node2 << " " << Vofset_double << " " <<
+    //     Vamp_double << " " << freq_double << std::endl;
+
+    ///////////////////// File Handling
+    // std::ostringstream File_output;
+    // File_output << "SIN " << name << " " << node1 << " " << node2 << " " << "(Vofset :" << Vofset << " /Vamp : " << Vamp << " /Freq : " << Freq << ")" << std::endl;
+    // Files.back().write(File_output.str());
+}
 void CommandHandler::handle_Add_VCVS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 , std::string CtrN2 , std::string Gain) {
     name = 'E' + name ;
     for(auto n : names) {

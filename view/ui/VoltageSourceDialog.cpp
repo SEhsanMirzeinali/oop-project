@@ -136,7 +136,7 @@ void VoltageSourceDialog::setupParameterPages() {
         "Period [s]", "Number of Cycles"
     };
 
-    const QStringList pulseKeys = {"V1", "V2", "Tdelay", "Trise", "Tfall", "Ton", "Period", "Ncycles"};
+    const QStringList pulseKeys = {"VInitial", "VOn", "Tdelay", "Trise", "Tfall", "Ton", "Period", "Ncycles"};
 
     for (int i = 0; i < pulseKeys.size(); ++i) {
         pulseParams[pulseKeys[i]] = createValidatedLineEdit();

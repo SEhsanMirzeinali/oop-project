@@ -19,7 +19,7 @@ std::vector<std::vector<double>> Transient::solve(CircuitModel& circuit, double 
             if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
                 if (vs->getNode1() && vs->getNode2()) {
                     vs->setTime(currentTime);
-                    vs->setVoltage(5);
+                    vs->setVoltage();
                 }
             }
         }

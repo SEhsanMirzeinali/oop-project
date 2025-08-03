@@ -16,6 +16,7 @@ void NetListHandler::handleNetList() {
     std::regex addC(R"(C(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addL(R"(L(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addSin(R"(V(\S+)\s+(\S+)\s+(\S+)\s+SINE\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
+    std::regex addPulse(R"(V(\S+)\s+(\S+)\s+(\S+)\s+PULSE\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
 
     std::smatch matches;
 for(int i=0 ; i<netList.size() ; i++) {
@@ -34,6 +35,10 @@ for(int i=0 ; i<netList.size() ; i++) {
     if(std::regex_match(netList[i],matches,addSin)) {
         commandHandler.handle_Add_SIN_voltage(matches[1],matches[2],matches[3],
             matches[4],matches[5],matches[6],matches[7],matches[8],matches[9],matches[10]);
+    }
+    if(std::regex_match(netList[i],matches,addPulse)) {
+        commandHandler.handle_Add_PULSE_voltage(matches[1],matches[2],matches[3],
+            matches[4],matches[5],matches[6],matches[7],matches[8],matches[9],matches[10],matches[11]);
     }
 }
     commandHandler.handle_Add_Ground("0");

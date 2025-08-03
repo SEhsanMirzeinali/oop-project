@@ -70,8 +70,8 @@ void CircuitController::get_Ungrounded_node(std::string node) {
 void CircuitController::get_Voltage_source(std::string name, std::string node1, std::string node2, std::string string_value, double double_value) {
     std::shared_ptr<Node> n1 = circuit->addNode(node1);
     std::shared_ptr<Node> n2 = circuit->addNode(node2);
-
-    auto v = std::make_shared<VoltageSource>(double_value,name,n1.get(),n2.get());
+    auto v = std::make_shared<VoltageSource>("DC",name,n1.get(),n2.get());
+    v->setDcVariables(double_value);
     circuit->addComponent(v);
 }
 
@@ -89,11 +89,20 @@ void CircuitController::get_SIN_voltage(std::string name, std::string node1, std
     std::shared_ptr<Node> n1 = circuit->addNode(node1);
     std::shared_ptr<Node> n2 = circuit->addNode(node2);
 
-    auto v = std::make_shared<VoltageSource>(offset,name,n1.get(),n2.get());
+    auto v = std::make_shared<VoltageSource>("SINE",name,n1.get(),n2.get());
     v->setSinVariables(offset,ampl,freq,TDelay,theta,phase,cycles);
     circuit->addComponent(v);
 }
+void CircuitController::get_PULSE_voltage(std::string name, std::string node1, std::string node2,
+    double init, double von, double delay,double rise,double fall, double ton
+    ,double period,double cycles) {
+    std::shared_ptr<Node> n1 = circuit->addNode(node1);
+    std::shared_ptr<Node> n2 = circuit->addNode(node2);
 
+    auto v = std::make_shared<VoltageSource>("PULSE",name,n1.get(),n2.get());
+    v->setPulseVariables(init,von,delay,rise,fall,ton, period,cycles);
+    circuit->addComponent(v);
+}
 void CircuitController::get_VCVS(std::string name, std::string node1, std::string node2, std::string CtrN1, std::string CtrN2
     , std::string Gain_string, double Gain_double) {
 }

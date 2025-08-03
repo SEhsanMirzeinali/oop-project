@@ -28,6 +28,8 @@ class CommandHandler {
     static std::vector<std::string> names;
     void handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string offset , std::string ampl , std::string Freq,
         std::string delay,std::string theta,std::string phi,std::string cycles) ;
+    void handle_Add_PULSE_voltage(std::string name , std::string node1 , std::string node2 , std::string VInitial , std::string VOn , std::string TDelay,
+    std::string TRise,std::string TFall,std::string TOn,std::string TPeriod ,std::string cycles) ;
     void handle_Add_VCVS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 , std::string CtrN2 , std::string Gain);
     void handle_Add_VCCS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 , std::string CtrN2 , std::string Gain);
     void handle_Add_CCVS(std::string name , std::string node1 , std::string node2 , std::string Vname , std::string Gain);
