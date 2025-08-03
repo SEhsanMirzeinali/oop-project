@@ -12,3 +12,4 @@
 #include "U5ILFKN7IX/moc_ToolBar.cpp"
 #include "U5ILFKN7IX/moc_VoltageSourceDialog.cpp"
 #include "74BM62SAYS/moc_WireComponent.cpp"
+#include "74BM62SAYS/moc_WirePropertyDialog.cpp"

@@ -427,6 +427,12 @@
 			"MU",
 			"74BM62SAYS/moc_WireComponent.cpp",
 			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/wire/WirePropertyDialog.h",
+			"MU",
+			"74BM62SAYS/moc_WirePropertyDialog.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -664,6 +670,11 @@
 		],
 		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/wire/WireComponent.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/wire/WirePropertyDialog.cpp",
 			"MU",
 			null
 		]
