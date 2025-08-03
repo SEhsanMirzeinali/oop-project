@@ -27,6 +27,9 @@ private:
 
 
     bool isComponent(QGraphicsItem* item) const;
+    bool isWire(QGraphicsItem* item) const;
+    bool isWireLabel(QGraphicsItem* item) const;
+
     void updateHoverState(QGraphicsItem* item, const QPointF& scenePos);
 
     void drawPortMarkers(GraphicComponent* comp);

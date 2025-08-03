@@ -19,6 +19,7 @@
 #include "componentpropertydialog.h"
 #include "simulationdialog.h"
 #include "VoltageSourceDialog.h"
+#include "../wire/WirePropertyDialog.h"
 
 ComponentView::ComponentView(QGraphicsScene* scene, QWidget* parent)
     : QGraphicsView(scene, parent), currentComponent(nullptr), placing(false),
@@ -41,8 +42,13 @@ bool ComponentView::eventFilter(QObject* watched, QEvent* event) {
 
         bool found = false;
         for (QGraphicsItem* item : items) {
-            if (isComponent(item)) {
+            if (isComponent(item)||isWireLabel(item)) {
                 updateHoverState(item, scenePos);
+                found = true;
+                break;
+            }
+            if(isWire(item)) {
+                viewport()->setCursor(Qt::PointingHandCursor);
                 found = true;
                 break;
             }
@@ -58,16 +64,22 @@ bool ComponentView::eventFilter(QObject* watched, QEvent* event) {
 bool ComponentView::isComponent(QGraphicsItem* item) const {
     return item && item->data(0).canConvert<GraphicComponent*>();
 }
+bool ComponentView::isWireLabel(QGraphicsItem* item) const {
+    return dynamic_cast<QGraphicsTextItem*>(item) && dynamic_cast<WireComponent*>(item->parentItem());
+}
+bool ComponentView::isWire(QGraphicsItem* item) const {
+    return dynamic_cast<WireComponent*>(item);
+}
 
 void ComponentView::updateHoverState(QGraphicsItem* item, const QPointF& scenePos) {
-    if (item != lastHoveredItem) {
+    //if (item != lastHoveredItem) {
         if (lastHoveredItem) {
             // ریست حالت قبلی
         }
 
         lastHoveredItem = item;
-        viewport()->setCursor(item ? Qt::PointingHandCursor : Qt::ArrowCursor);
-    }
+        viewport()->setCursor(item ? Qt::IBeamCursor : Qt::ArrowCursor);
+    //}
 }
 
 void ComponentView::showComponentPropertiesDialog(QGraphicsItem* item) {
@@ -102,6 +114,7 @@ void ComponentView::startWiring() {
 
     currentWire = new WireComponent(this);
     scene()->addItem(currentWire);
+    //scene()->addItem(currentWire->getNodeLabel());
     clickedPoints.clear();
 
     this->setFocus();
@@ -197,6 +210,12 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
         wiring = false;
         event->accept();
         return;
+    }
+    if(event->key() == Qt::Key_N) {
+        WirePropertyDialog dialog(this);
+        if (dialog.exec() == QDialog::Accepted) {
+            dialog.setupUI();
+        }
     }
     if(event->key() == Qt::Key_S) {
         setComponentsWires();
@@ -323,6 +342,29 @@ void ComponentView::mouseMoveEvent(QMouseEvent* event) {
             currentWire->setPath(mainPath);
         }
     }
+    // bool isOverWireLabel = false;
+    // QList<QGraphicsItem*> items = scene()->items(scenePos);
+    //
+    // for (QGraphicsItem* item : items) {
+    //     // بررسی آیا آیتم، لیبل یک وایر است
+    //     if (auto* textItem = dynamic_cast<QGraphicsTextItem*>(item)) {
+    //         if (auto* wire = dynamic_cast<WireComponent*>(textItem->parentItem())) {
+    //             isOverWireLabel = true;
+    //             break;
+    //         }
+    //     }
+    //     // بررسی مستقیم وایر (اگر قابل کلیک باشد)
+    //     else if (dynamic_cast<WireComponent*>(item)) {
+    //         isOverWireLabel = true;
+    //         break;
+    //     }
+    // }
+    //
+    // // تغییر کرسر
+    // if(isOverWireLabel) {
+    //     viewport()->setCursor(Qt::PointingHandCursor);
+    // }
+
 
     QGraphicsView::mouseMoveEvent(event);
 }
@@ -442,6 +484,23 @@ void ComponentView::mousePressEvent(QMouseEvent* event) {
         QList<QGraphicsItem*> items = scene()->items(scenePos);
 
         for (QGraphicsItem* item : items) {
+            if(dynamic_cast<WireComponent*>(item)) {
+                WireComponent* wire = dynamic_cast<WireComponent*>(item);
+                wire->updateLabelPosition(snapped);
+            }
+             if (/*dynamic_cast<WireComponent*>(item) ||*/(dynamic_cast<QGraphicsTextItem*>(item) && dynamic_cast<WireComponent*>(item->parentItem()))) {
+                WireComponent* wire =/* dynamic_cast<WireComponent*>(item) ?dynamic_cast<WireComponent*>(item) :*/
+                                      dynamic_cast<WireComponent*>(item->parentItem());
+
+                WirePropertyDialog dialog;
+                dialog.setWireName(wire->getWireName());
+
+                if (dialog.exec() == QDialog::Accepted) {
+                    wire->setWireName(dialog.getWireName());
+                }
+                event->accept();
+                return;
+              }
             if (item->data(0).canConvert<GraphicComponent*>()) {
                 GraphicComponent* comp = item->data(0).value<GraphicComponent*>();
                 VoltageComponent *voltageSource = dynamic_cast<VoltageComponent*>(comp);
@@ -452,6 +511,7 @@ void ComponentView::mousePressEvent(QMouseEvent* event) {
                         return;
                     }
                 }
+
                 if(voltageSource) {
                     if( item == comp->getNameLabel() || item == comp->getGraphicItem()) {
                         showComponentPropertiesDialog(item);
@@ -560,6 +620,8 @@ QPointF ComponentView::snapToGrid(const QPointF& point) {
 void ComponentView::endWiring() {
     wiring=false;
     currentWire->updatePath();
+    currentWire->getNodeLabel()->setPos(200,200);
+    //currentWire->updateLabelPosition();
     currentWire = nullptr;
     clickedPoints.clear();
     if (crosshairV) scene()->removeItem(crosshairV);
@@ -585,6 +647,7 @@ void ComponentView::finishCurrentWire(bool addToVector) {
     if (!currentWire) return;
 
     bool isNewWire = !wires.contains(currentWire);
+    //currentWire->updateLabelPosition();
 
     if (addToVector && !clickedPoints.isEmpty() && isNewWire) {
         wires.append(currentWire);
@@ -642,7 +705,8 @@ void ComponentView::setGndWire(QGraphicsItem* currentComp) {
         for(int i=0 ; i<wires.size() ; i++) {
             for(int j=0 ; j<wires[i]->getAllPoints().size() ; j++) {
                 if(portLoc == wires[i]->getAllPoints()[j]) {
-                    std::cout<<"set "<<wires[i]->getWireName().toStdString()<<"as gnd.\n";
+                    std::cout<<"set "<<wires[i]->getWireName().toStdString()<<" as gnd.\n";
+                    wires[i]->setWireName("GND");
                     wires[i]->setAsGnd(true);
                 }
             }
