@@ -1,0 +1,3 @@
+"D:\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Phase2.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\Phase2.dir/objects.a @CMakeFiles\Phase2.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Phase2.dir/objects.a -Wl,--no-whole-archive -o Phase2.exe -Wl,--out-implib,libPhase2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Phase2.dir\linkLibs.rsp
