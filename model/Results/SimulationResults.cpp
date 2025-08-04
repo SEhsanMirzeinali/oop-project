@@ -3,7 +3,10 @@
 //
 
 #include "SimulationResults.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> e075db8 (Initial commit to Mmfotuhi branch)
 #include <iomanip>
 
 void SimulationResults:: DC_Analyse_Results(std::vector <double> results,CircuitModel& circuit){
@@ -26,6 +29,30 @@ void SimulationResults:: DC_Analyse_Results(std::vector <double> results,Circuit
         std::cout << results[i] << std::endl;
     }
 }
+<<<<<<< HEAD
+=======
+void SimulationResults::plotResults(
+    const std::vector<std::vector<double>>& data,
+    const QString& title,
+    const QString& yAxisTitle,
+    const std::vector<std::string>& variables
+) {
+    std::vector<std::vector<std::vector<double>>> multiData;
+    std::vector<QString> legendNames;
+
+    // استخراج ستون‌های مورد نظر (ستون ۰ = زمان، ستون‌های بعدی = متغیرها)
+    for (size_t i = 1; i < data[0].size(); ++i) {
+        std::vector<std::vector<double>> singleVarData;
+        for (const auto& row : data) {
+            singleVarData.push_back({row[0], row[i]}); // زمان و مقدار متغیر
+        }
+        multiData.push_back(singleVarData);
+        legendNames.push_back(QString::fromStdString(variables[i - 1]));
+    }
+
+    plotter.plotBasicGraph(multiData, title, "زمان (ثانیه)", yAxisTitle, legendNames);
+}
+>>>>>>> e075db8 (Initial commit to Mmfotuhi branch)
 void SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results, std::vector<std::string> variables,double TStart, CircuitModel &circuit) {
 std::vector <std::vector<double>> finalRes;
 std::vector <int> indexes;
@@ -138,6 +165,15 @@ for(int i=0 ; i<circuit.getNode().size();i++) {
         }
         std::cout<<std::endl;
     }
+<<<<<<< HEAD
+=======
+
+    if (!variables.empty()) {
+        QString title = "Transient Analysis";
+        QString yAxisTitle = "مقادیر";
+        plotResults(finalRes, title, yAxisTitle, variables); // ارسال variables برای نام‌گذاری نمودارها
+    }
+>>>>>>> e075db8 (Initial commit to Mmfotuhi branch)
 }
 
 std::vector<std::vector<double>> SimulationResults:: extractTwoColumns(const std::vector<std::vector<double>>& matrix,std::vector<int> columnIndices) {

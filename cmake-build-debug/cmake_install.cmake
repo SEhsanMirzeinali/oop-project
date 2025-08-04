@@ -1,4 +1,4 @@
-# Install script for directory: D:/Ehsan/uni/term2/oop/project/phase2/oop-project
+# Install script for directory: C:/study/term 2/project/oop-project-main/oop-project-main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Qt/Tools/mingw1120_64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "D:/Qt/Tools/mingw1310_64/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/study/term 2/project/oop-project-main/oop-project-main/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

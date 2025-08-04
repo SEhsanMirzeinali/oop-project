@@ -43,7 +43,8 @@ file(GLOB_RECURSE SOURCES
 
 )
 
-find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Core Gui Widgets Charts PrintSupport REQUIRED)
+
 
 add_executable(${PROJECT_NAME} ${SOURCES}
         view/ui/MainWindow.cpp
@@ -64,6 +65,9 @@ add_executable(${PROJECT_NAME} ${SOURCES}
         "model/Circuit Model/CircuitModel.cpp"
         view/ui/SimulationDialog.cpp
         view/ui/SimulationDialog.cpp
+        model/Results/Diagrom.cpp
+        model/Results/Diagrom.h
+        model/Results/qcustomplot.cpp
         #"controller/Supporting Controllers/IOController.cpp"
         #"model/Circuit Model/CircuitModel.cpp"
 )
@@ -72,6 +76,9 @@ target_link_libraries(${PROJECT_NAME}
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        Qt6::Charts
+        Qt6::PrintSupport
+
 )
 
 # Windows DLL handling (مطابق قبل)
