@@ -15,7 +15,9 @@ Node* VoltageSource::getNode2() { return node2; }
 double VoltageSource::getVoltage() {
     return voltage;
 }
-
+std::complex<double>VoltageSource:: getComplexVoltage() {
+    return complexVoltage;
+}
 double VoltageSource::getCurrent() {
     return current;
 }
@@ -35,7 +37,7 @@ double VoltageSource::sinFunction(double time , double offset , double ampl , do
     //return sin(2.0*3.1415*freq*time);
     return (ampl * exp(-theta*(time-TDelay)) * sin(2.0*3.14*freq*(time - TDelay) + phi)) + offset;
 }
-double VoltageSource::pulseFnction(double time, double VInitial, double Von,double TDelay, double TRise,double TFall ,double TOn, double TPeriod,double NCycles) {
+double VoltageSource::pulseFunction(double time, double VInitial, double Von,double TDelay, double TRise,double TFall ,double TOn, double TPeriod,double NCycles) {
     double Ttotal = NCycles * TPeriod;
     time = fmod(time, TPeriod);
 
@@ -51,6 +53,11 @@ double VoltageSource::pulseFnction(double time, double VInitial, double Von,doub
         return VInitial;
 
 }
+void VoltageSource:: setACVariables(double ampl , double phase) {
+    this->ampl = ampl;
+    this->phase = phase;
+}
+
 void VoltageSource:: setSinVariables(double offset , double ampl , double freq , double TDelay, double theta, double phi, double NCycles) {
     this->offset = offset;
     this->ampl = ampl;
@@ -61,6 +68,13 @@ void VoltageSource:: setSinVariables(double offset , double ampl , double freq ,
     this->NCycles = NCycles;
 }
 //add type of source
+void VoltageSource:: setCCurrent(const std::complex<double> &c) {
+    complexCurrent = c;
+}
+std::complex<double> VoltageSource::getCCurrent() {
+    return complexCurrent;
+}
+
 void VoltageSource::setVoltage() {
     if (type == "DC") {
         voltage = DCVoltage;
@@ -69,7 +83,10 @@ void VoltageSource::setVoltage() {
         voltage = sinFunction(time,offset,ampl,freq,TDelay,theta,phi,NCycles);
     }
     else if(type == "PULSE") {
-        voltage = pulseFnction(time,VInitial,Von,TDelay,TRise,TFall,TOn,TPeriod,NCycles);
+        voltage = pulseFunction(time,VInitial,Von,TDelay,TRise,TFall,TOn,TPeriod,NCycles);
+    }
+    if(type=="AC") {
+        complexVoltage = std::polar(ampl, phase);
     }
 }
 void VoltageSource:: setPulseVariables(double VInitial, double Von,double TDelay, double TRise,double TFall ,double TOn, double TPeriod,double NCycles) {
@@ -82,6 +99,13 @@ void VoltageSource:: setPulseVariables(double VInitial, double Von,double TDelay
     this->TPeriod = TPeriod;
     this->NCycles = NCycles;
 }
-
+void VoltageSource::setPhase(double p){phase = p;}
+void VoltageSource::setOmega(double o){omega = o;}
 void VoltageSource::setTime(double t) {time = t;}
+double VoltageSource::getTime() {return time;}
+double VoltageSource::getOmega() {return omega;}
+double VoltageSource::getPhase() {return phase;}
+
+
+
 void VoltageSource::setDcVariables(double DCVoltage) {this->DCVoltage = DCVoltage;}

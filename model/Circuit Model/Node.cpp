@@ -23,6 +23,10 @@ std::vector<double> Node::getTVoltage() const {
     return TVoltage;
 }
 
+std::complex<double> Node::getCVoltage() {
+    return CVoltage;
+}
+
 // Setters implementation
 void Node::setVoltage(double v) {
     voltage = v;
@@ -47,6 +51,9 @@ void Node::setName(const std::string& name) {
 
 void Node::setTVoltage(const std::vector<double>& v) {
     TVoltage = v;
+}
+void Node::setCVoltage(const std::complex<double> &v) {
+    CVoltage = v;
 }
 
 // Helper method implementation

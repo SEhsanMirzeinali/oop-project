@@ -1,4 +1,8 @@
+#define _USE_MATH_DEFINES // برای M_PI (اختیاری)
+
 #include "Capacitor.h"
+
+#include <complex.h>
 
 Capacitor::Capacitor(double c, const std::string& name, Node* n1, Node* n2) 
     : Component(name, n1, n2), capacity(c) {}
@@ -19,7 +23,10 @@ double Capacitor::getCurrent() {
 double Capacitor::getCapacity() {
     return capacity;
 }
-
+std::complex<double> Capacitor::getImpedance(double omega) {
+        const std::complex<double> j(0.0, 1.0);
+        return 1.0 / (j * omega * capacity);
+    }
 void Capacitor::setTCurrent(double dt) {
     const std::vector<double>& v1 = this->getNode1()->getTVoltage();
     const std::vector<double>& v2 = this->getNode2()->getTVoltage();

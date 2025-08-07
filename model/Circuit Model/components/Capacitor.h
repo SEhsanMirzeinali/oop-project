@@ -2,7 +2,6 @@
 #define CAPACITOR_H
 
 #include "../Component.h"
-
 class Capacitor : public Component {
 private:
     double capacity;
@@ -19,6 +18,7 @@ public:
     double getCapacity();
     void setTCurrent(double dt);
     std::vector<double> getTCurrent() override;
+    std::complex<double> getImpedance(double omega);
 };
 
 #endif // CAPACITOR_H

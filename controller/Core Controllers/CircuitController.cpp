@@ -82,7 +82,15 @@ void CircuitController::get_Current_source(std::string name, std::string node1, 
     auto current = std::make_shared<CurrentSource>(double_value,name,n1.get(),n2.get());
     circuit->addComponent(current);
 }
+void CircuitController::get_AC_voltage(std::string name, std::string node1, std::string node2,
+    double ampl, double phase) {
+    std::shared_ptr<Node> n1 = circuit->addNode(node1);
+    std::shared_ptr<Node> n2 = circuit->addNode(node2);
 
+    auto v = std::make_shared<VoltageSource>("AC",name,n1.get(),n2.get());
+    v->setACVariables(ampl,phase);
+    circuit->addComponent(v);
+}
 void CircuitController::get_SIN_voltage(std::string name, std::string node1, std::string node2,
     double offset, double ampl, double freq,double TDelay,double theta, double phase,
     double cycles) {
@@ -138,10 +146,7 @@ void CircuitController::tran_solve(double dt, double TStop, double TStart, doubl
         std::cerr<<"Error: Ground node not found"<<std::endl;
         return;
     }
-    if(numOfGNd>1) {
-        std::cerr<<"Error: you have more than one ground node.\n"<<std::endl;
-        return;
-    }
+
 
     bool exist=false;
     for(const auto & j : namesAndVI) {
@@ -168,6 +173,88 @@ void CircuitController::tran_solve(double dt, double TStop, double TStart, doubl
     }
 
     transientAnalyse->solve(*circuit,dt,TStop,TStart,TMax_step,namesAndVI);
+}
+void CircuitController::ac_solve(double startFreq , double endFreq ,
+        int numOfPoints ,std::string typeOfSweep,std::vector<std::string> namesAndVI) {
+    int numOfGNd=0;
+    for (int i=0 ; i<circuit->getNode().size() ; i++) {
+        if(circuit->getNode()[i]->isGround()) {
+            numOfGNd++;
+        }
+    }
+    if(numOfGNd==0) {
+        std::cerr<<"Error: Ground node not found"<<std::endl;
+        return;
+    }
+
+
+    bool exist=false;
+    for(const auto & j : namesAndVI) {
+        for(int i=0 ; i<circuit->getNode().size() ; i++) {
+            if(circuit->getNode()[i]->getName()==j.substr(1)) {
+                exist=true;
+            }
+        }
+        for(int i=0 ; i<circuit->getComponents().size() ; i++) {
+            //std::cout<<"j.substr(1): "<<j.substr(1)<<" "<<std::endl;
+            if(circuit->getComponents()[i]->getName()==j.substr(1)) {
+                exist=true;
+            }
+        }
+        if(!exist && j.substr(1)!="") {
+            std::cerr <<j.substr(1)<<" not found in circuit"<<std::endl;
+            return;
+        }
+        exist=false;
+    }
+
+    if (circuit == nullptr || acAnalyse == nullptr) {
+        std::cerr << "Error: Null pointer in transient analysis!" << std::endl;
+        return;
+    }
+
+    acAnalyse->solve(*circuit,startFreq,endFreq,numOfPoints,typeOfSweep,namesAndVI);
+}
+void CircuitController::phase_solve(double baseFreq ,double startPhase, double endPhase ,int numOfPoints
+    ,std::vector<std::string> namesAndVI) {
+    int numOfGNd=0;
+    for (int i=0 ; i<circuit->getNode().size() ; i++) {
+        if(circuit->getNode()[i]->isGround()) {
+            numOfGNd++;
+        }
+    }
+    if(numOfGNd==0) {
+        std::cerr<<"Error: Ground node not found"<<std::endl;
+        return;
+    }
+
+
+    bool exist=false;
+    for(const auto & j : namesAndVI) {
+        for(int i=0 ; i<circuit->getNode().size() ; i++) {
+            if(circuit->getNode()[i]->getName()==j.substr(1)) {
+                exist=true;
+            }
+        }
+        for(int i=0 ; i<circuit->getComponents().size() ; i++) {
+            std::cout<<"j.substr(1): "<<j.substr(1)<<" "<<std::endl;
+            if(circuit->getComponents()[i]->getName()==j.substr(1)) {
+                exist=true;
+            }
+        }
+        if(!exist && j.substr(1)!="") {
+            std::cerr <<j.substr(1)<<" not found in circuit"<<std::endl;
+            return;
+        }
+        exist=false;
+    }
+
+    if (circuit == nullptr || acAnalyse == nullptr) {
+        std::cerr << "Error: Null pointer in transient analysis!" << std::endl;
+        return;
+    }
+
+    acAnalyse->Phasesolve(*circuit,baseFreq,startPhase,endPhase,numOfPoints,namesAndVI);
 }
 
 void CircuitController::print_All_nodes() const {

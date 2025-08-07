@@ -235,7 +235,7 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
             switch(dialog.getSimulationType()) {
                 case SimulationDialog::TRANSIENT:
                     netList->transientHandler(dialog.getMaxTimestep(),dialog.getStopTime(),dialog.getStartSaveTime()
-                        ,dialog.getVariables());
+                        ,dialog.getTranVariables());
                 //     qDebug() << "Transient :";
                 // qDebug() << "stop time:" << dialog.getStopTime();
                 // qDebug() << "time to start saving data:" << dialog.getStartSaveTime();
@@ -243,11 +243,21 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
                 break;
 
                 case SimulationDialog::AC_ANALYSIS:
-                    qDebug() << "شبیه‌سازی AC Analysis با پارامترها:";
-                qDebug() << "نوع سوئیپ:" << dialog.getACSweepType();
-                qDebug() << "تعداد نقاط:" << dialog.getACNumPoints();
-                qDebug() << "فرکانس شروع:" << dialog.getACStartFreq();
-                qDebug() << "فرکانس پایان:" << dialog.getACEndFreq();
+                //     qDebug() << "شبیه‌سازی AC Analysis با پارامترها:";
+                // qDebug() << "نوع سوئیپ:" << dialog.getACSweepType();
+                // qDebug() << "تعداد نقاط:" << dialog.getACNumPoints();
+                // qDebug() << "فرکانس شروع:" << dialog.getACStartFreq();
+                // qDebug() << "فرکانس پایان:" << dialog.getACEndFreq();
+                    netList->acSweepHandler(dialog.getACStartFreq(),dialog.getACEndFreq(),dialog.getACNumPoints(),dialog.getACSweepType(),dialog.getACVariables());
+
+                break;
+
+                case SimulationDialog::PHASE_SWEEP:
+                    netList->phaseSweepHandler(dialog.getPhaseBaseFreq(),dialog.getStartPhase(),dialog.getEndPhase(),dialog.getPhaseNumPoints(),dialog.getPhaseVariables());
+                // qDebug() << "phase:";
+                // qDebug() << "n" << dialog.getPhaseNumPoints();
+                // qDebug() << "start :" << dialog.getStartPhase();
+                // qDebug() << " end:" << dialog.getEndPhase();
                 break;
 
                 case SimulationDialog::DC_SWEEP:
@@ -525,6 +535,7 @@ void ComponentView::mousePressEvent(QMouseEvent* event) {
                             QString selectedFunction = dialog.getSelectedFunction();
                             double dcValue = dialog.getDCValue();
                             double acAmplitude = dialog.getACAmplitude();
+                            double acPhase = dialog.getACPhase();
                             QMap<QString, double> params = dialog.getFunctionParameters();
 
                             if (selectedFunction == "SINE") {
@@ -559,7 +570,13 @@ void ComponentView::mousePressEvent(QMouseEvent* event) {
                                 voltageSource->setComponentValue(value);
                             }
                             else if (selectedFunction == "None") {
-                                voltageSource->setComponentValue(QString::number(dcValue));
+                                if(dcValue!=0) {
+                                    voltageSource->setComponentValue(QString::number(dcValue));
+                                }
+                                else if(acAmplitude!= 0 || acPhase!= 0) {
+                                    QString value = "AC "+QString::number(acAmplitude)+" "+QString::number(acPhase);
+                                    voltageSource->setComponentValue(value);
+                                }
                                 // پردازش برای سیگنال DC ساده
                                 // createDCSource(dcValue);
                             }

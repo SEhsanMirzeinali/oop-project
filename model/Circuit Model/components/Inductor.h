@@ -18,6 +18,7 @@ public:
     double getCurrent() override;
     std::vector<double> getTCurrent() override;
     double getInductance();
+    std::complex<double> getImpedance(double omega);
     void setTCurrent(std::vector<double> TCurrent);
 };
 

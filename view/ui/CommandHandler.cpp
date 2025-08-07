@@ -207,6 +207,14 @@ void CommandHandler::handle_Add_CurrentSource(std::string name  , std::string no
     // File_output << name << " " << node1 << " " << node2 << " " << value_string << std::endl;
     // Files.back().write(File_output.str());
 }
+void CommandHandler:: handle_Add_AC_voltage(std::string name , std::string node1 , std::string node2 , std::string ampl , std::string phase) {
+    name = 'V' + name ;
+    double ampl_double = Change_unitsValue(ampl);
+    double phase_double = Change_unitsValue(phase);
+    Circuitcontroller.get_AC_voltage(name , node1 , node2 , ampl_double,phase_double);
+    std::cout << name << " "<< node1 << " " << node2 << " " << ampl <<"  Done" << std::endl;
+
+}
 void CommandHandler::handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string offset , std::string ampl , std::string Freq,
     std::string delay,std::string theta,std::string phi,std::string cycles) {
     name = 'V' + name ;
@@ -393,6 +401,71 @@ void CommandHandler::handle_Tran_Analysis(std::string TStep,std::string TStop,st
 
 
     Circuitcontroller.tran_solve(Tstep_double,Tstop_double,Tstart_double,Tmax_double,names);
+    ///////////////////// File Handling
+    // std::ostringstream File_output;
+    // for(int i=0 ; i<names.size() ; i++) {
+    //     File_output << "TRAN : " <<TStep << " " << TStop << " " << TStart << " " << TMax_step  << " "<<names[i][0]<<"("<<names[i].substr(1)<<")"<< std::endl;
+    // }
+    // Files.back().write(File_output.str());
+
+}
+void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables) {
+    std::cout << "\nAC Analysis..." << std::endl;
+    std::vector<std::string> names;
+    std::string n;
+    for(int i=0 ; i<variables.size() ; i++) {
+        if(variables[i] == 'V' || variables[i]=='I') {
+            n.push_back(variables[i]);
+            for(int j=i+2 ; variables[j]!=')'; j++) {
+                n.push_back(variables[j]);
+            }
+            names.push_back(n);
+            n.clear();
+        }
+    }
+
+    double num_int = Change_unitsValue(numOfPoints);
+    double Fstart_double = Change_unitsValue(FStart);
+    double Fstop_double = Change_unitsValue(FStop);
+
+    //double Tmax_double = Change_unitsValue(TMax_step);
+
+    //std::cout<<"start: "<<Fstart_double<<" stop: "<<Fstop_double<<" N: "<<num_int<<" type: "<<typeOfSweep<<" variables: "<<names[0]<<std::endl;
+
+
+    Circuitcontroller.ac_solve(Fstart_double,Fstop_double ,num_int,typeOfSweep,names);
+
+    ///////////////////// File Handling
+    // std::ostringstream File_output;
+    // for(int i=0 ; i<names.size() ; i++) {
+    //     File_output << "TRAN : " <<TStep << " " << TStop << " " << TStart << " " << TMax_step  << " "<<names[i][0]<<"("<<names[i].substr(1)<<")"<< std::endl;
+    // }
+    // Files.back().write(File_output.str());
+}
+void CommandHandler::handle_Phase_Analysis(std::string baseFreq,std::string PStart,std::string PStop,std::string numOfPoints,std::string variables) {
+    std::cout << "\nPhase Analysis..." << std::endl;
+    std::vector<std::string> names;
+    std::string n;
+    for(int i=0 ; i<variables.size() ; i++) {
+        if(variables[i] == 'V' || variables[i]=='I') {
+            n.push_back(variables[i]);
+            for(int j=i+2 ; variables[j]!=')'; j++) {
+                n.push_back(variables[j]);
+            }
+            names.push_back(n);
+            n.clear();
+        }
+    }
+    int num_int = Change_unitsValue(numOfPoints);
+    double baseFdouble = Change_unitsValue(baseFreq);
+    double Pstop_double = Change_unitsValue(PStop);
+    double Pstart_double = Change_unitsValue(PStart);
+    //double Tmax_double = Change_unitsValue(TMax_step);
+
+    //std::cout<<"start: "<<Pstart_double<<" stop: "<<Pstop_double<<" N: "<<num_int<<" baseFreq: "<<baseFdouble<<" variables: "<<names[0]<<std::endl;
+
+    Circuitcontroller.phase_solve(baseFdouble,Pstart_double,Pstop_double,num_int,names);
+
     ///////////////////// File Handling
     // std::ostringstream File_output;
     // for(int i=0 ; i<names.size() ; i++) {

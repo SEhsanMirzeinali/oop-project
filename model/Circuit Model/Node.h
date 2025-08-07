@@ -1,6 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include <complex>
 #include <vector>
 #include <string>
 
@@ -10,6 +11,7 @@ private:
     std::string name;
     double voltage = 0.0;  // Default voltage (reference node is 0)
     std::vector<double> TVoltage;
+    std::complex<double> CVoltage;
     bool isReference = false;
 
 public:
@@ -21,6 +23,7 @@ public:
     double getVoltage() const;
     bool isGround() const;
     std::vector<double> getTVoltage() const;
+    std::complex<double> getCVoltage();
 
     // Setters
     void setVoltage(double v);
@@ -29,6 +32,7 @@ public:
     void setNumber(int num);
     void setName(const std::string& name);
     void setTVoltage(const std::vector<double>& v);
+    void setCVoltage(const std::complex<double>& v);
 
     // Helper for netlist generation
     std::string toNetlist() const;

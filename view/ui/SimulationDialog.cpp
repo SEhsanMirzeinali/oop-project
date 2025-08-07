@@ -57,6 +57,7 @@ void SimulationDialog::setupUI()
     stackedWidget = new QStackedWidget;
     createTransientPage();
     createACAnalysisPage();
+    createPhaseSweepPage();
     createDCSweepPage();
     mainLayout->addWidget(stackedWidget);
 
@@ -87,7 +88,7 @@ void SimulationDialog::createSimulationTypeGroup()
 
     simTypeGroup = new QButtonGroup(this);
 
-    QStringList types = {"Transient", "AC Analysis", "DC sweep", "Noise", "DC Transfer", "DC op prt"};
+    QStringList types = {"Transient", "AC Analysis", "PhaseSweep", "DC sweep", "Noise", "DC Transfer", "DC op prt"};
     for (int i = 0; i < types.size(); ++i) {
         QRadioButton *radio = new QRadioButton(types[i]);
         simTypeGroup->addButton(radio, i);
@@ -149,7 +150,7 @@ void SimulationDialog::createTransientPage()
 
     updateLabel(); // مقداردهی اولیه
 
-    QLabel *commandLabel = new QLabel("Iran 2");
+    QLabel *commandLabel = new QLabel("tran");
     layout->addWidget(commandLabel);
 
     stackedWidget->addWidget(page);
@@ -182,6 +183,58 @@ void SimulationDialog::createACAnalysisPage()
     paramsLayout->addWidget(new QLabel("Stop frequency:"), 3, 0);
     acEndFreqEdit = new QLineEdit();
     paramsLayout->addWidget(acEndFreqEdit, 3, 1);
+
+    paramsLayout->addWidget(new QLabel("Variables:"), 4, 0);
+    acVariablesEdit = new QLineEdit();
+    paramsLayout->addWidget(acVariablesEdit, 4, 1);
+
+    paramsGroup->setLayout(paramsLayout);
+    layout->addWidget(paramsGroup);
+
+    QLabel *syntaxLabel = new QLabel("Syntax: ac <oct, dec, lin> <Npoints> <StartFreq> <EndFreq>");
+    layout->addWidget(syntaxLabel);
+
+    QLabel *commandLabel = new QLabel("ac 2");
+    layout->addWidget(commandLabel);
+
+    stackedWidget->addWidget(page);
+}
+
+
+void SimulationDialog::createPhaseSweepPage()
+{
+    QWidget *page = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout(page);
+
+    QLabel *desc = new QLabel("Compute the small signal AC behavior of the circuit linearized about its DC operating point.");
+    layout->addWidget(desc);
+
+    QGroupBox *paramsGroup = new QGroupBox("Parameters");
+    QGridLayout *paramsLayout = new QGridLayout();
+
+    // acSweepTypeCombo = new QComboBox();
+    // acSweepTypeCombo->addItems({"Linear", "Decade", "Octave"});
+    // paramsLayout->addWidget(new QLabel("Type of sweep:"), 0, 0);
+    // paramsLayout->addWidget(acSweepTypeCombo, 0, 1);
+    paramsLayout->addWidget(new QLabel("Base frequency:"), 0, 0);
+    phaseBaseFreqEdit = new QLineEdit("2");
+    paramsLayout->addWidget(phaseBaseFreqEdit, 0, 1);
+
+    paramsLayout->addWidget(new QLabel("Number of points:"), 1, 0);
+    phaseNumPointsEdit = new QLineEdit("2");
+    paramsLayout->addWidget(phaseNumPointsEdit, 1, 1);
+
+    paramsLayout->addWidget(new QLabel("Start phase:"), 2, 0);
+    acStartPhaseEdit = new QLineEdit();
+    paramsLayout->addWidget(acStartPhaseEdit, 2, 1);
+
+    paramsLayout->addWidget(new QLabel("Stop phase:"), 3, 0);
+    acEndPhaseEdit = new QLineEdit();
+    paramsLayout->addWidget(acEndPhaseEdit, 3, 1);
+
+    paramsLayout->addWidget(new QLabel("Variables:"), 4, 0);
+    phaseVariablesEdit = new QLineEdit();
+    paramsLayout->addWidget(phaseVariablesEdit, 4, 1);
 
     paramsGroup->setLayout(paramsLayout);
     layout->addWidget(paramsGroup);
@@ -268,7 +321,7 @@ SimulationDialog::SimulationType SimulationDialog::getSimulationType() const
 std::string SimulationDialog::getStopTime() const { return stopTimeEdit->text().toStdString(); }
 std::string SimulationDialog::getStartSaveTime() const { return startSaveEdit->text().toStdString(); }
 std::string SimulationDialog::getMaxTimestep() const { return maxTimestepEdit->text().toStdString(); }
-std::string SimulationDialog::getVariables() const { return variablesEdit->text().toStdString(); }
+std::string SimulationDialog::getTranVariables() const { return variablesEdit->text().toStdString(); }
 
 bool SimulationDialog::getStartAtZero() const { return startAtZeroCheck->isChecked(); }
 bool SimulationDialog::getStopSteadyState() const { return stopSteadyCheck->isChecked(); }
@@ -276,10 +329,17 @@ bool SimulationDialog::getDontResetTime() const { return dontResetCheck->isCheck
 bool SimulationDialog::getStepLoadCurrent() const { return stepLoadCheck->isChecked(); }
 bool SimulationDialog::getSkipInitialSolution() const { return skipInitialCheck->isChecked(); }
 
-QString SimulationDialog::getACSweepType() const { return acSweepTypeCombo->currentText(); }
-QString SimulationDialog::getACNumPoints() const { return acNumPointsEdit->text(); }
-QString SimulationDialog::getACStartFreq() const { return acStartFreqEdit->text(); }
-QString SimulationDialog::getACEndFreq() const { return acEndFreqEdit->text(); }
+std::string SimulationDialog::getACSweepType() const { return acSweepTypeCombo->currentText().toStdString(); }
+std::string SimulationDialog::getACNumPoints() const { return acNumPointsEdit->text().toStdString(); }
+std::string SimulationDialog::getACStartFreq() const { return acStartFreqEdit->text().toStdString(); }
+std::string SimulationDialog::getACEndFreq() const { return acEndFreqEdit->text().toStdString(); }
+std::string SimulationDialog::getACVariables() const { return acVariablesEdit->text().toStdString(); }
+
+std::string SimulationDialog::getPhaseBaseFreq() const { return phaseBaseFreqEdit->text().toStdString(); }
+std::string SimulationDialog::getPhaseNumPoints() const { return phaseNumPointsEdit->text().toStdString(); }
+std::string SimulationDialog::getStartPhase() const { return acStartPhaseEdit->text().toStdString(); }
+std::string SimulationDialog::getEndPhase() const { return acEndPhaseEdit->text().toStdString(); }
+std::string SimulationDialog::getPhaseVariables() const { return phaseVariablesEdit->text().toStdString(); }
 
 QString SimulationDialog::getDCSourceName() const { return dcSourceNameEdit->text(); }
 QString SimulationDialog::getDCSweepType() const { return dcSweepTypeCombo->currentText(); }

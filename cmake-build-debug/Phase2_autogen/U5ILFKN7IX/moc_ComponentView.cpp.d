@@ -297,6 +297,7 @@ D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/Phase2_autog
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/clocale \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/compare \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/complex \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/concepts \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdint \
@@ -435,6 +436,7 @@ D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/Phase2_autog
   D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit\ Model/components/Resistor.h \
   D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit\ Model/components/VoltageSource.h \
   D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/SimulationResults.h \
+  D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Solver/ACSweep.h \
   D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Solver/DCSolverTest.h \
   D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Solver/Transient.h \
   D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/GraphicComponent.h \

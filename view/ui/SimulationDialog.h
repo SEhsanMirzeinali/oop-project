@@ -20,14 +20,14 @@ public:
     explicit SimulationDialog(QWidget *parent = nullptr);
     ~SimulationDialog() = default;
 
-    enum SimulationType { TRANSIENT, AC_ANALYSIS, DC_SWEEP, NOISE, DC_TRANSFER, DC_OP_PRT };
+    enum SimulationType { TRANSIENT, AC_ANALYSIS,PHASE_SWEEP, DC_SWEEP, NOISE, DC_TRANSFER, DC_OP_PRT };
 
     // Common getters
     SimulationType getSimulationType() const;
     std::string getStopTime() const;
     std::string getStartSaveTime() const;
     std::string getMaxTimestep() const;
-    std::string getVariables() const;
+    std::string getTranVariables() const;
     bool getStartAtZero() const;
     bool getStopSteadyState() const;
     bool getDontResetTime() const;
@@ -35,10 +35,17 @@ public:
     bool getSkipInitialSolution() const;
 
     // AC Analysis getters
-    QString getACSweepType() const;
-    QString getACNumPoints() const;
-    QString getACStartFreq() const;
-    QString getACEndFreq() const;
+    std::string getACSweepType() const;
+    std::string getACNumPoints() const;
+    std::string getACStartFreq() const;
+    std::string getACEndFreq() const;
+    std::string getACVariables() const;
+
+    std::string getPhaseBaseFreq() const;
+    std::string getPhaseNumPoints() const;
+    std::string getStartPhase() const;
+    std::string getEndPhase() const;
+    std::string getPhaseVariables() const;
 
     // DC Sweep getters
     QString getDCSourceName() const;
@@ -52,6 +59,7 @@ private:
     void createSimulationTypeGroup();
     void createTransientPage();
     void createACAnalysisPage();
+    void createPhaseSweepPage();
     void createDCSweepPage();
     void createOptionsGroup();
 
@@ -77,10 +85,17 @@ private:
 
 
     // AC Analysis widgets
+
     QComboBox *acSweepTypeCombo;
     QLineEdit *acNumPointsEdit;
     QLineEdit *acStartFreqEdit;
     QLineEdit *acEndFreqEdit;
+    QLineEdit *phaseBaseFreqEdit;
+    QLineEdit *acStartPhaseEdit;
+    QLineEdit *acEndPhaseEdit;
+    QLineEdit *acVariablesEdit;
+    QLineEdit *phaseVariablesEdit;
+    QLineEdit *phaseNumPointsEdit;
 
     // DC Sweep widgets
     QLineEdit *dcSourceNameEdit;

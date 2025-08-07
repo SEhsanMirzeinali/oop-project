@@ -25,7 +25,93 @@ void SimulationResults::DC_Analyse_Results(std::vector<double> results, CircuitM
         std::cout << results[i] << std::endl;
     }
 }
+std::vector<double> SimulationResults::AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit) {
+std::vector<std::complex<double>> basicResults;
+//circuit.setNodesNumber();
+for(int i=0 ; i<results.size()-1 ; i++) {
+    for(int j=0 ; j<circuit.getNode().size() ; j++) {
+        //std::cout<<circuit.getNode()[j]->getName()<<" num: "<<circuit.getNode()[j]->getNumber()<<std::endl;
 
+        if (circuit.getNode()[j]->getNumber() == i) {
+            circuit.getNode()[j]->setCVoltage(results[i]);
+        }
+        if (circuit.getNode()[j]->getNumber()==-1) {
+            circuit.getNode()[j]->setCVoltage({0,0});
+        }
+    }
+}
+
+    for (const auto& comp : circuit.getComponents()) {
+        if (auto voltageSource = std::dynamic_pointer_cast<VoltageSource>(comp)) {
+            voltageSource->setCCurrent(results[results.size()-1]);
+        }
+    }
+
+    for (int i = 0; i < variables.size(); i++) {
+        //std::cout<<"name: "<<variables[i]<<std::endl;
+
+        if (variables[i][0] == 'V') {
+            for (int j = 0; j < circuit.getNode().size(); j++) {
+                if (variables[i].substr(1) == circuit.getNode()[j]->getName()) {
+                    basicResults.push_back(circuit.getNode()[j]->getCVoltage());
+                    break;
+                }
+            }
+        }
+        if (variables[i][0] == 'I') {
+            for (const auto& comp : circuit.getComponents()) {
+
+                if(variables[i].substr(1) == comp->getName()) {
+                    if (auto voltageSource = std::dynamic_pointer_cast<VoltageSource>(comp)) {
+                            basicResults.push_back(voltageSource->getCCurrent());
+                    }
+                    if(auto r = std::dynamic_pointer_cast<Resistor>(comp)) {
+                        basicResults.push_back((r->getNode1()->getCVoltage()-r->getNode2()->getCVoltage())/r->getResistance());
+                    }
+                    if(auto c = std::dynamic_pointer_cast<Capacitor>(comp)) {
+                        basicResults.push_back((c->getNode1()->getCVoltage()-c->getNode2()->getCVoltage())/c->getImpedance(omega));
+                    }
+                    if(auto l = std::dynamic_pointer_cast<Inductor>(comp)) {
+                        basicResults.push_back((l->getNode1()->getCVoltage()-l->getNode2()->getCVoltage())/l->getImpedance(omega));
+                    }
+                }
+            }
+        }
+    }
+    // for(int i=0 ; i<basicResults.size() ; i++) {
+    //     std::cout<<"basic: "<<basicResults[i]<<" ,";
+    // }
+    std::cout<<std::endl;
+    std::vector<double> finalRes;
+    if(type=="AC") {
+        finalRes.push_back(omega/6.28);
+        for (const auto& complex_num : basicResults) {
+            finalRes.push_back(20*std::log10(std::abs(complex_num)));
+        }
+    }
+    else if(type=="Phase") {
+        finalRes.push_back(phase);
+        for (const auto& complex_num : basicResults) {
+            double phase_rad = std::arg(complex_num);
+            double phase_deg = phase_rad * 180.0 / 3.14;
+            finalRes.push_back(phase_deg);
+
+        }
+    }
+
+    double freq = omega/6.28;
+    std::cout<<"freq: "<<freq<<std::endl;
+    for(int i=0 ; i<variables.size() ; i++) {
+        if(variables[i]!="V")
+        std::cout<<variables[i]<<"        ";
+    }
+    std::cout<<std::endl;
+    for(int i=0 ; i<finalRes.size() ; i++) {
+        std::cout<<finalRes[i]<<", ";
+    }
+    std::cout<<std::endl;
+    return finalRes;
+}
     std::vector<std::vector<double>> SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,
                                         std::vector<std::string> variables,
                                         double TStart,double dt,
