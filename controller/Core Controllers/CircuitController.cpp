@@ -160,7 +160,7 @@ void CircuitController::tran_solve(double dt, double TStop, double TStart, doubl
                 exist=true;
             }
         }
-        if(!exist) {
+        if(!exist && j.substr(1)!="") {
             std::cerr <<j.substr(1)<<" not found in circuit"<<std::endl;
             return;
         }

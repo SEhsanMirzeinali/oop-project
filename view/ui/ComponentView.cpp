@@ -17,6 +17,7 @@
 #include "../components/GND.h"
 
 #include "componentpropertydialog.h"
+#include "MainWindow.h"
 #include "simulationdialog.h"
 #include "VoltageSourceDialog.h"
 #include "../wire/WirePropertyDialog.h"
@@ -229,7 +230,11 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
         }
         //netList=nullptr;
         SimulationDialog dialog(this);
-
+        if(isVProbe) {
+            dialog.setTranVariables(variables);
+            dialog.setPhaseVariables(variables);
+            dialog.setACVariables(variables);
+        }
         if (dialog.exec() == QDialog::Accepted) {
             // پردازش نوع شبیه‌سازی انتخاب شده
             switch(dialog.getSimulationType()) {
@@ -278,6 +283,16 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
             }
         }
     }
+        if(event->key() == Qt:: Key_P) {
+            if(!isVProbe) {
+                isVProbe=true;
+                scene()->addItem(variablesLabel);
+            }
+            else if(isVProbe) {
+                isVProbe=false;
+                scene()->removeItem(variablesLabel);
+            }
+        }
     QGraphicsView::keyPressEvent(event);
 }
 
@@ -352,28 +367,6 @@ void ComponentView::mouseMoveEvent(QMouseEvent* event) {
             currentWire->setPath(mainPath);
         }
     }
-    // bool isOverWireLabel = false;
-    // QList<QGraphicsItem*> items = scene()->items(scenePos);
-    //
-    // for (QGraphicsItem* item : items) {
-    //     // بررسی آیا آیتم، لیبل یک وایر است
-    //     if (auto* textItem = dynamic_cast<QGraphicsTextItem*>(item)) {
-    //         if (auto* wire = dynamic_cast<WireComponent*>(textItem->parentItem())) {
-    //             isOverWireLabel = true;
-    //             break;
-    //         }
-    //     }
-    //     // بررسی مستقیم وایر (اگر قابل کلیک باشد)
-    //     else if (dynamic_cast<WireComponent*>(item)) {
-    //         isOverWireLabel = true;
-    //         break;
-    //     }
-    // }
-    //
-    // // تغییر کرسر
-    // if(isOverWireLabel) {
-    //     viewport()->setCursor(Qt::PointingHandCursor);
-    // }
 
 
     QGraphicsView::mouseMoveEvent(event);
@@ -382,6 +375,42 @@ void ComponentView::mouseMoveEvent(QMouseEvent* event) {
 void ComponentView::mousePressEvent(QMouseEvent* event) {
     QPointF scenePos = mapToScene(event->pos());
     QPointF snapped = snapToGrid(scenePos);
+
+    if(isVProbe && event->button() == Qt::LeftButton) {
+        QPointF scenePos = mapToScene(event->pos());
+        QList<QGraphicsItem*> items = scene()->items(scenePos);
+
+        static QSet<QString> addedComponents; // برای پیگیری المان‌های اضافه شده
+
+        for (QGraphicsItem* item : items) {
+            if (dynamic_cast<WireComponent*>(item)) {
+                WireComponent* wire = dynamic_cast<WireComponent*>(item);
+                QString wireVar = "V(" + wire->getWireName() + ")";
+
+                if (addedComponents.contains(wireVar)) {
+                    variables.replace(wireVar + " ", "");
+                    addedComponents.remove(wireVar);
+                } else {
+                    variables += wireVar + " ";
+                    addedComponents.insert(wireVar);
+                }
+                setupProbe();
+            }
+            else if (item->data(0).canConvert<GraphicComponent*>()) {
+                GraphicComponent* comp = item->data(0).value<GraphicComponent*>();
+                QString compVar = "I(" + comp->getComponentName() + ")";
+
+                if (addedComponents.contains(compVar)) {
+                    variables.replace(compVar + " ", "");
+                    addedComponents.remove(compVar);
+                } else {
+                    variables += compVar + " ";
+                    addedComponents.insert(compVar);
+                }
+                setupProbe();
+            }
+        }
+    }
 
     if (placing && event->button() == Qt::LeftButton && currentComponent) {
         setGndWire(currentComponent);
@@ -755,5 +784,12 @@ std::vector<std::string> ComponentView:: createNetList(QVector<GraphicComponent*
         netList.push_back(temp.toStdString());
     }
     return netList;
-
+}
+void ComponentView::setupProbe() {
+    variablesLabel->setPlainText(variables); // متن اولیه
+    variablesLabel->setDefaultTextColor(Qt::black); // رنگ متن
+    QFont font("Arial", 12); // فونت Arial با سایز 10 و حالت Bold
+    variablesLabel->setFont(font);
+    variablesLabel->setZValue(20);
+    variablesLabel->setPos(80,500);
 }

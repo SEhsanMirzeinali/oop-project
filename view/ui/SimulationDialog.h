@@ -28,6 +28,7 @@ public:
     std::string getStartSaveTime() const;
     std::string getMaxTimestep() const;
     std::string getTranVariables() const;
+    void setTranVariables(const QString& v);
     bool getStartAtZero() const;
     bool getStopSteadyState() const;
     bool getDontResetTime() const;
@@ -40,12 +41,14 @@ public:
     std::string getACStartFreq() const;
     std::string getACEndFreq() const;
     std::string getACVariables() const;
+    void setACVariables(const QString& v);
 
     std::string getPhaseBaseFreq() const;
     std::string getPhaseNumPoints() const;
     std::string getStartPhase() const;
     std::string getEndPhase() const;
     std::string getPhaseVariables() const;
+    void setPhaseVariables(const QString& v);
 
     // DC Sweep getters
     QString getDCSourceName() const;

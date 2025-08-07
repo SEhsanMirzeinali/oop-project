@@ -322,6 +322,10 @@ std::string SimulationDialog::getStopTime() const { return stopTimeEdit->text().
 std::string SimulationDialog::getStartSaveTime() const { return startSaveEdit->text().toStdString(); }
 std::string SimulationDialog::getMaxTimestep() const { return maxTimestepEdit->text().toStdString(); }
 std::string SimulationDialog::getTranVariables() const { return variablesEdit->text().toStdString(); }
+void SimulationDialog::setTranVariables(const QString& v){if (variablesEdit && stackedWidget->currentIndex() == TRANSIENT) {
+    variablesEdit->setText(v);
+    variablesEdit->setVisible(true);
+}}
 
 bool SimulationDialog::getStartAtZero() const { return startAtZeroCheck->isChecked(); }
 bool SimulationDialog::getStopSteadyState() const { return stopSteadyCheck->isChecked(); }
@@ -334,12 +338,20 @@ std::string SimulationDialog::getACNumPoints() const { return acNumPointsEdit->t
 std::string SimulationDialog::getACStartFreq() const { return acStartFreqEdit->text().toStdString(); }
 std::string SimulationDialog::getACEndFreq() const { return acEndFreqEdit->text().toStdString(); }
 std::string SimulationDialog::getACVariables() const { return acVariablesEdit->text().toStdString(); }
+void SimulationDialog::setACVariables(const QString& v){if (variablesEdit && stackedWidget->currentIndex() == TRANSIENT) {
+    variablesEdit->setText(v);
+    variablesEdit->setVisible(true);
+}}
 
 std::string SimulationDialog::getPhaseBaseFreq() const { return phaseBaseFreqEdit->text().toStdString(); }
 std::string SimulationDialog::getPhaseNumPoints() const { return phaseNumPointsEdit->text().toStdString(); }
 std::string SimulationDialog::getStartPhase() const { return acStartPhaseEdit->text().toStdString(); }
 std::string SimulationDialog::getEndPhase() const { return acEndPhaseEdit->text().toStdString(); }
 std::string SimulationDialog::getPhaseVariables() const { return phaseVariablesEdit->text().toStdString(); }
+void SimulationDialog::setPhaseVariables(const QString& v){if (variablesEdit && stackedWidget->currentIndex() == TRANSIENT) {
+    variablesEdit->setText(v);
+    variablesEdit->setVisible(true);
+}}
 
 QString SimulationDialog::getDCSourceName() const { return dcSourceNameEdit->text(); }
 QString SimulationDialog::getDCSweepType() const { return dcSweepTypeCombo->currentText(); }
