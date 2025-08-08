@@ -40,7 +40,7 @@ class CommandHandler {
     ///////////////////////////////mir
     void handle_DC_Analysis();
     void handle_Tran_Analysis(std::string dt,std::string Tstop,std::string Tstart,std::string Tmax_step,std::string variables);
-    void handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables);
+    void handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables,std::string outputType);
     void handle_Phase_Analysis(std::string baseFreq,std::string PStart,std::string PStop,std::string numOfPoints,std::string variables);
     void handle_print_all_nodes();
     void handle_print_All_elements();

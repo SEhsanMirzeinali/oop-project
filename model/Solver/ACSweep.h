@@ -15,7 +15,7 @@ class ACSweep {
 public:
     ACSweep() : circuitResults(std::make_shared<SimulationResults>()){}
     std::vector<std::vector<std::complex<double>>> solve(CircuitModel& circuit,double startFreq , double endFreq ,
-        int numOfPoints ,std::string typeOfSweep,std::vector<std::string> variables);
+        int numOfPoints ,std::string typeOfSweep,std::vector<std::string> variables,std::string outputType);
     std::vector<std::vector<std::complex<double>>> Phasesolve(CircuitModel& circuit,double baseFreq,double StartPhase ,double EndPhase , int numOfPoints ,std::vector<std::string> variables);
     std::vector<std::vector<std::complex<double>>> createMatG(CircuitModel& circuit);
     std::vector<std::vector<std::complex<double>>> createMatB( CircuitModel& circuit);

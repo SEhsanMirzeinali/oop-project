@@ -253,7 +253,9 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
                 // qDebug() << "تعداد نقاط:" << dialog.getACNumPoints();
                 // qDebug() << "فرکانس شروع:" << dialog.getACStartFreq();
                 // qDebug() << "فرکانس پایان:" << dialog.getACEndFreq();
-                    netList->acSweepHandler(dialog.getACStartFreq(),dialog.getACEndFreq(),dialog.getACNumPoints(),dialog.getACSweepType(),dialog.getACVariables());
+                    netList->acSweepHandler(dialog.getACStartFreq(),dialog.getACEndFreq(),
+                        dialog.getACNumPoints(),dialog.getACSweepType(),dialog.getACVariables(),dialog.getACOutputType());
+                qDebug() << "type:"<<dialog.getACOutputType();
 
                 break;
 

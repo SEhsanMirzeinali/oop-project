@@ -14,7 +14,7 @@ class SimulationResults {
 public:
     void DC_Analyse_Results(std::vector <double> results,CircuitModel& circuit);
     std::vector<std::vector<double>> Transient_Analyse(std::vector <std::vector<double>> results,std::vector<std::string> variables,double,double dt,CircuitModel& circuit);
-std::vector<double> AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit);
+std::vector<double> AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit,std::string outputType);
     std::vector<std::vector<double>> extractTwoColumns(const std::vector<std::vector<double>>& matrix,std::vector<int>);
     std::vector<double> extractSingleColumn(const std::vector<std::vector<double>>& matrix,int columnIndex);
 };

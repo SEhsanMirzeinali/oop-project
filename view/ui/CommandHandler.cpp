@@ -409,7 +409,7 @@ void CommandHandler::handle_Tran_Analysis(std::string TStep,std::string TStop,st
     // Files.back().write(File_output.str());
 
 }
-void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables) {
+void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables,std::string outputType) {
     std::cout << "\nAC Analysis..." << std::endl;
     std::vector<std::string> names;
     std::string n;
@@ -433,7 +433,7 @@ void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std
     //std::cout<<"start: "<<Fstart_double<<" stop: "<<Fstop_double<<" N: "<<num_int<<" type: "<<typeOfSweep<<" variables: "<<names[0]<<std::endl;
 
 
-    Circuitcontroller.ac_solve(Fstart_double,Fstop_double ,num_int,typeOfSweep,names);
+    Circuitcontroller.ac_solve(Fstart_double,Fstop_double ,num_int,typeOfSweep,names,outputType);
 
     ///////////////////// File Handling
     // std::ostringstream File_output;

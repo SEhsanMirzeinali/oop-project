@@ -175,7 +175,7 @@ void CircuitController::tran_solve(double dt, double TStop, double TStart, doubl
     transientAnalyse->solve(*circuit,dt,TStop,TStart,TMax_step,namesAndVI);
 }
 void CircuitController::ac_solve(double startFreq , double endFreq ,
-        int numOfPoints ,std::string typeOfSweep,std::vector<std::string> namesAndVI) {
+        int numOfPoints ,std::string typeOfSweep,std::vector<std::string> namesAndVI,std::string outputType) {
     int numOfGNd=0;
     for (int i=0 ; i<circuit->getNode().size() ; i++) {
         if(circuit->getNode()[i]->isGround()) {
@@ -213,7 +213,7 @@ void CircuitController::ac_solve(double startFreq , double endFreq ,
         return;
     }
 
-    acAnalyse->solve(*circuit,startFreq,endFreq,numOfPoints,typeOfSweep,namesAndVI);
+    acAnalyse->solve(*circuit,startFreq,endFreq,numOfPoints,typeOfSweep,namesAndVI,outputType);
 }
 void CircuitController::phase_solve(double baseFreq ,double startPhase, double endPhase ,int numOfPoints
     ,std::vector<std::string> namesAndVI) {

@@ -15,7 +15,7 @@
 using namespace Eigen;
 
 std::vector<std::vector<std::complex<double>>> ACSweep::solve(CircuitModel& circuit,double StartFreq ,
-    double EndFreq , int numOfPoints ,std::string typeOfSweep,std::vector<std::string> variables) {
+    double EndFreq , int numOfPoints ,std::string typeOfSweep,std::vector<std::string> variables,std::string outputType) {
     std::vector<std::vector<std::complex<double>>> resultss;
     double currentFreq;
     for (int i = 0; i < numOfPoints; i++) {
@@ -78,7 +78,7 @@ std::vector<std::vector<std::complex<double>>> ACSweep::solve(CircuitModel& circ
                 }
             }
         }
-        circuitResults->AC_Analysis("AC",results,omega,phase,variables,circuit);
+        circuitResults->AC_Analysis("AC",results,omega,phase,variables,circuit, outputType);
         //printvector(results);
         //circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
         //std::cout<<"inja\n";
@@ -149,7 +149,7 @@ std::vector<std::vector<std::complex<double>>> ACSweep::Phasesolve(CircuitModel&
                 }
             }
         }
-        circuitResults->AC_Analysis("Phase",results,omega,phase,variables,circuit);
+        circuitResults->AC_Analysis("Phase",results,omega,phase,variables,circuit," ");
         //printvector(results);
         //circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
         //std::cout<<"inja\n";

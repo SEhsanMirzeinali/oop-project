@@ -41,6 +41,7 @@ public:
     std::string getACStartFreq() const;
     std::string getACEndFreq() const;
     std::string getACVariables() const;
+    std::string getACOutputType() const;
     void setACVariables(const QString& v);
 
     std::string getPhaseBaseFreq() const;
@@ -88,7 +89,7 @@ private:
 
 
     // AC Analysis widgets
-
+    QComboBox *acOutputTypeCombo;
     QComboBox *acSweepTypeCombo;
     QLineEdit *acNumPointsEdit;
     QLineEdit *acStartFreqEdit;

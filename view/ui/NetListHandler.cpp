@@ -53,8 +53,8 @@ for(int i=0 ; i<netList.size() ; i++) {
 void NetListHandler:: transientHandler(std::string dt , std::string TStop , std::string TStart,std::string variables) {
     commandHandler.handle_Tran_Analysis(dt,TStop,TStart,"0",variables);
 }
-void NetListHandler:: acSweepHandler(std::string startFreq , std::string stopFreq , std::string n,std::string type ,std::string variables) {
-    commandHandler.handle_AC_Analysis(startFreq,stopFreq,n,type,variables);
+void NetListHandler:: acSweepHandler(std::string startFreq , std::string stopFreq , std::string n,std::string type ,std::string variables,std::string outputType) {
+    commandHandler.handle_AC_Analysis(startFreq,stopFreq,n,type,variables,outputType);
 }
 void NetListHandler:: phaseSweepHandler(std::string baseFreq , std::string startPhase , std::string stopPhase,std::string n ,std::string variables) {
     commandHandler.handle_Phase_Analysis(baseFreq,startPhase,stopPhase,n,variables);

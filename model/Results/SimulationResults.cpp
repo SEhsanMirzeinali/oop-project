@@ -25,7 +25,7 @@ void SimulationResults::DC_Analyse_Results(std::vector<double> results, CircuitM
         std::cout << results[i] << std::endl;
     }
 }
-std::vector<double> SimulationResults::AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit) {
+std::vector<double> SimulationResults::AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit,std::string outputType) {
 std::vector<std::complex<double>> basicResults;
 //circuit.setNodesNumber();
 for(int i=0 ; i<results.size()-1 ; i++) {
@@ -86,7 +86,12 @@ for(int i=0 ; i<results.size()-1 ; i++) {
     if(type=="AC") {
         finalRes.push_back(omega/6.28);
         for (const auto& complex_num : basicResults) {
-            finalRes.push_back(20*std::log10(std::abs(complex_num)));
+            if(outputType=="Decibel") {
+                finalRes.push_back(20*std::log10(std::abs(complex_num)));
+            }
+            else if(outputType=="Linear") {
+                finalRes.push_back((std::abs(complex_num)));
+            }
         }
     }
     else if(type=="Phase") {
