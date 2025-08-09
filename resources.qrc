@@ -7,6 +7,6 @@
     <file>images/Wire.png</file>
     <file>images/GND.png</file>
     <file>images/Probe.png</file>
-
+    <file>images/CurrentSource.png</file>
   </qresource>
 </RCC>

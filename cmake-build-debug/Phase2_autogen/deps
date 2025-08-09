@@ -695,6 +695,8 @@ Phase2_autogen/timestamp: \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Solver/Transient.h \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CapacitorComponent.cpp \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CapacitorComponent.h \
+	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CurrentComponent.cpp \
+	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CurrentComponent.h \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/GND.cpp \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/GND.h \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/GraphicComponent.cpp \

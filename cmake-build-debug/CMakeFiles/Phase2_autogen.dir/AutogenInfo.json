@@ -345,6 +345,12 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CurrentComponent.h",
+			"MU",
+			"NCV6FACNDT/moc_CurrentComponent.cpp",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/GND.h",
 			"MU",
 			"NCV6FACNDT/moc_GND.cpp",
@@ -606,6 +612,11 @@
 		],
 		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CapacitorComponent.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CurrentComponent.cpp",
 			"MU",
 			null
 		],

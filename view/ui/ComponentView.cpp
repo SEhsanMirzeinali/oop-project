@@ -1,4 +1,5 @@
 #include "ComponentView.h"
+
 #include <QWheelEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
@@ -15,6 +16,8 @@
 #include "../components/CapacitorComponent.h"
 #include "../components/InductorComponent.h"
 #include "../components/GND.h"
+#include "../components/CurrentComponent.h"
+
 
 #include "componentpropertydialog.h"
 #include "MainWindow.h"
@@ -136,6 +139,8 @@ void ComponentView::startPlacing(const QString& type) {
         component = new CapacitorComponent(this);
     } else if(componentType == "inductor") {
         component = new InductorComponent(this);
+    }else if(componentType == "current") {
+        component = new CurrentComponent(this);
     }else if(componentType=="ground") {
         ground=new GND(this);
     }
@@ -255,7 +260,6 @@ void ComponentView::keyPressEvent(QKeyEvent* event) {
                 // qDebug() << "فرکانس پایان:" << dialog.getACEndFreq();
                     netList->acSweepHandler(dialog.getACStartFreq(),dialog.getACEndFreq(),
                         dialog.getACNumPoints(),dialog.getACSweepType(),dialog.getACVariables(),dialog.getACOutputType());
-                qDebug() << "type:"<<dialog.getACOutputType();
 
                 break;
 

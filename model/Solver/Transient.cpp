@@ -39,9 +39,9 @@ std::vector<std::vector<double>> Transient::solve(CircuitModel& circuit, double 
     midSide = createMatDynamic(circuit);
     std::vector<double> X0(leftSide.size(), 0);
     results = solveMatrixODE(leftSide, midSide, rightSide, X0, TStep, TStart+((1+i)*TStep)/*TStop*/);
-//printvector(results);
+
+        //printvector(results);
     circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
-        //std::cout<<"inja\n";
 
 }
     return resultss;

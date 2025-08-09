@@ -15,6 +15,7 @@ void ToolBar::setupUI() {
     inductorBtn = new QPushButton(this);
     wireBtn = new QPushButton(this);
     groundBtn= new QPushButton(this);
+    currentBtn = new QPushButton(this);
 
     resistorBtn->setIcon(QIcon("../images/Resistor.png"));
     resistorBtn->setIconSize(QSize(32, 32));
@@ -40,16 +41,23 @@ void ToolBar::setupUI() {
     groundBtn->setIconSize(QSize(32, 32));
     groundBtn->setFixedSize(40, 40);
 
+    currentBtn->setIcon(QIcon("../images/CurrentSource.png"));
+    currentBtn->setIconSize(QSize(32, 32));
+    currentBtn->setFixedSize(40, 40);
+
     resistorBtn->setStyleSheet("QPushButton { border: none; }");
     voltageBtn->setStyleSheet("QPushButton { border: none; }");
     capacitorBtn->setStyleSheet("QPushButton { border: none; }");
     inductorBtn->setStyleSheet("QPushButton { border: none; }");
     wireBtn->setStyleSheet("QPushButton { border: none; }");
     groundBtn->setStyleSheet("QPushButton { border: none; }");
+    currentBtn->setStyleSheet("QPushButton { border: none; }");
 
     toolbarLayout->addWidget(resistorBtn);
     toolbarLayout->addStretch();
     toolbarLayout->addWidget(voltageBtn);
+    toolbarLayout->addStretch();
+    toolbarLayout->addWidget(currentBtn);
     toolbarLayout->addStretch();
     toolbarLayout->addWidget(wireBtn);
     toolbarLayout->addStretch();
@@ -67,3 +75,4 @@ QPushButton* ToolBar::getCapacitorButton() const { return capacitorBtn; }
 QPushButton* ToolBar::getInductorButton() const { return inductorBtn; }
 QPushButton* ToolBar::getWireButton() const { return wireBtn; }
 QPushButton* ToolBar::getGroundButton() const {return groundBtn;}
+QPushButton* ToolBar::getCurrentButton() const{return currentBtn;}

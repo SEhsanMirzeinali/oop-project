@@ -15,6 +15,7 @@ void NetListHandler::handleNetList() {
     std::regex addV(R"(V(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addC(R"(C(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addL(R"(L(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
+    std::regex addI(R"(I(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addSin(R"(V(\S+)\s+(\S+)\s+(\S+)\s+SINE\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addPulse(R"(V(\S+)\s+(\S+)\s+(\S+)\s+PULSE\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+))");
     std::regex addAC(R"(V(\S+)\s+(\S+)\s+(\S+)\s+AC\s+(\S+)\s+(\S+))");
@@ -32,6 +33,9 @@ for(int i=0 ; i<netList.size() ; i++) {
     }
     if(regex_match(netList[i], matches, addL)) {
         commandHandler.handle_Add_inductor(matches[1],matches[2],matches[3],matches[4]);
+    }
+    if(regex_match(netList[i], matches, addI)) {
+        commandHandler.handle_Add_CurrentSource(matches[1],matches[2],matches[3],matches[4]);
     }
     if(std::regex_match(netList[i],matches,addSin)) {
         commandHandler.handle_Add_SIN_voltage(matches[1],matches[2],matches[3],

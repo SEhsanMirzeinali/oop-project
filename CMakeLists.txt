@@ -73,6 +73,7 @@ add_executable(${PROJECT_NAME} ${SOURCES}
         view/ui/VoltageSourceDialog.cpp
         view/wire/WirePropertyDialog.cpp
         model/Solver/ACSweep.h
+        view/components/CurrentComponent.cpp
         #"controller/Supporting Controllers/IOController.cpp"
         #"model/Circuit Model/CircuitModel.cpp"
 )

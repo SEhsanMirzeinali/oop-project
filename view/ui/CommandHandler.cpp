@@ -189,11 +189,7 @@ void CommandHandler::handle_Add_VoltageSource(std::string name  , std::string no
 }
 void CommandHandler::handle_Add_CurrentSource(std::string name  , std::string node1 , std::string node2 , std::string value_string) {
     name = 'I' + name ;
-    for(auto n : names) {
-        if(name == n) {
-            throw Get_Exception::Duplicate_Name_Exception(name);
-        }
-    }
+
     double value_double = Change_unitsValue(value_string);
     if (value_double <= 0) {
         throw Get_Exception::Invalid_Value_Exception();

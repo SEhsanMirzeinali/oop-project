@@ -14,6 +14,7 @@ public:
     QPushButton* getInductorButton() const;
     QPushButton* getWireButton() const;
     QPushButton* getGroundButton() const;
+    QPushButton* getCurrentButton() const;
 
 private:
     void setupUI();
@@ -23,6 +24,7 @@ private:
     QPushButton* inductorBtn;
     QPushButton* wireBtn;
     QPushButton* groundBtn;
+    QPushButton* currentBtn;
 };
 
 #endif // TOOLBAR_H//

@@ -44,6 +44,8 @@ void MainWindow::setupConnections() {
             [this]() { view->startPlacing("inductor"); });
     connect(toolbar->getGroundButton(), &QPushButton::clicked,
     [this](){view->startPlacing("ground");});
+    connect(toolbar->getCurrentButton(), &QPushButton::clicked,
+        [this]() { view->startPlacing("current"); });
     connect(toolbar->getWireButton(), &QPushButton::clicked,
             [this]() { view->startWiring(); });
 }
