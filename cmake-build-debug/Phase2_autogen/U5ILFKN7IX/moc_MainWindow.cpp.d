@@ -155,19 +155,29 @@ D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/Phase2_autog
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QGraphicsPathItem \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QGraphicsView \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMenuBar \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolBar \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qabstractbutton.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgraphicsitem.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgraphicsscene.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgraphicsview.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmenu.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmenubar.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qscrollarea.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtabwidget.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtoolbar.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

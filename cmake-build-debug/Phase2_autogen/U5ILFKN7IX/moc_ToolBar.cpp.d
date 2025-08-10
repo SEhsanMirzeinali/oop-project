@@ -142,11 +142,21 @@ D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/Phase2_autog
   C:/Qt/6.7.3/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMenuBar \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolBar \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qboxlayout.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmenu.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmenubar.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtoolbar.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

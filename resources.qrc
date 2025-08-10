@@ -8,5 +8,7 @@
     <file>images/GND.png</file>
     <file>images/Probe.png</file>
     <file>images/CurrentSource.png</file>
+    <file>images/BlackBox.png</file>
+
   </qresource>
 </RCC>

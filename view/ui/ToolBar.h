@@ -3,21 +3,51 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include <QMenuBar>
+#include <QToolBar>
+#include <QVBoxLayout>
 
-class ToolBar : public QWidget {
+class ToolBar : public QWidget
+{
     Q_OBJECT
+
 public:
-    ToolBar(QWidget* parent = nullptr);
-    QPushButton* getResistorButton() const;
-    QPushButton* getVoltageButton() const;
-    QPushButton* getCapacitorButton() const;
-    QPushButton* getInductorButton() const;
-    QPushButton* getWireButton() const;
-    QPushButton* getGroundButton() const;
-    QPushButton* getCurrentButton() const;
+    explicit ToolBar(QWidget *parent = nullptr);
+
+    // Getter methods
+    QPushButton* getResistorButton() const { return resistorBtn; }
+    QPushButton* getVoltageButton() const { return voltageBtn; }
+    QPushButton* getCapacitorButton() const { return capacitorBtn; }
+    QPushButton* getInductorButton() const { return inductorBtn; }
+    QPushButton* getWireButton() const { return wireBtn; }
+    QPushButton* getGroundButton() const { return groundBtn; }
+    QPushButton* getCurrentButton() const { return currentBtn; }
+
+    signals:
+    void newProject();
+    void openProject();
+    void saveProject();
+    void undoAction();
+    void redoAction();
+    void spiceAnalysis();
+    void probeAction();
+    void newUnipolarAction();
+    void openUnipolarAction();
+
 
 private:
     void setupUI();
+    void createMenuBar();
+    //void createQuickAccessToolbar();
+    QPushButton* createToolButton(const QString& text, const QString& iconPath = "");
+    void addToolAction(QToolBar* toolbar, const QString& text, const QString& iconPath = "");
+
+    // Main components
+    QMenuBar* menuBar;
+    //QToolBar* quickAccessToolbar;
+    QHBoxLayout* toolbarLayout;
+
+    // Tool buttons
     QPushButton* resistorBtn;
     QPushButton* voltageBtn;
     QPushButton* capacitorBtn;
@@ -27,7 +57,4 @@ private:
     QPushButton* currentBtn;
 };
 
-#endif // TOOLBAR_H//
-// Created by Purple-Rose on 7/23/2025.
-//
-
+#endif // TOOLBAR_H

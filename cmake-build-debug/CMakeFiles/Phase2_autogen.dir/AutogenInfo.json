@@ -339,6 +339,12 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/BlackBoxComponent.h",
+			"MU",
+			"NCV6FACNDT/moc_BlackBoxComponent.cpp",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/CapacitorComponent.h",
 			"MU",
 			"NCV6FACNDT/moc_CapacitorComponent.cpp",
@@ -607,6 +613,11 @@
 		],
 		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Solver/Transient.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/BlackBoxComponent.cpp",
 			"MU",
 			null
 		],
