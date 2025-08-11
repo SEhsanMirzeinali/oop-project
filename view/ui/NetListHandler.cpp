@@ -63,3 +63,7 @@ void NetListHandler:: acSweepHandler(std::string startFreq , std::string stopFre
 void NetListHandler:: phaseSweepHandler(std::string baseFreq , std::string startPhase , std::string stopPhase,std::string n ,std::string variables) {
     commandHandler.handle_Phase_Analysis(baseFreq,startPhase,stopPhase,n,variables);
 }
+std::unordered_map<std::string, double> NetListHandler:: dcHandler() {
+    std::unordered_map<std::string, double> res=commandHandler.handle_DC_Analysis();
+    return res;
+}

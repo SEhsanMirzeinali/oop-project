@@ -72,6 +72,7 @@ void CircuitController::get_Voltage_source(std::string name, std::string node1, 
     std::shared_ptr<Node> n2 = circuit->addNode(node2);
     auto v = std::make_shared<VoltageSource>("DC",name,n1.get(),n2.get());
     v->setDcVariables(double_value);
+    v->setVoltage();
     circuit->addComponent(v);
 }
 
@@ -131,8 +132,9 @@ void CircuitController::get_TRAN(std::string Tstep_string, double Tstep_double, 
     , std::string Tstart_string, double Tstart_double, std::string Tmaxstep_string, double Tmaxstep_double) {
 }
 
-void CircuitController::DC_solve() {
-    DCAnalyse->solve(*circuit);
+std::unordered_map<std::string, double>CircuitController::DC_solve() {
+        std::unordered_map<std::string, double> map_result =DCAnalyse->solve(*circuit);
+    return map_result;
 }
 
 void CircuitController::tran_solve(double dt, double TStop, double TStart, double TMax_step, std::vector<std::string> namesAndVI) {

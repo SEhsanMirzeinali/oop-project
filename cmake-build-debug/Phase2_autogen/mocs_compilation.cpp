@@ -6,6 +6,7 @@
 #include "NCV6FACNDT/moc_GraphicComponent.cpp"
 #include "NCV6FACNDT/moc_InductorComponent.cpp"
 #include "NCV6FACNDT/moc_ResistorComponent.cpp"
+#include "NCV6FACNDT/moc_ThevenianNortonComponent.cpp"
 #include "NCV6FACNDT/moc_VoltageComponent.cpp"
 #include "U5ILFKN7IX/moc_ComponentPropertyDialog.cpp"
 #include "U5ILFKN7IX/moc_ComponentView.cpp"

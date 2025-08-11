@@ -381,6 +381,12 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ThevenianNortonComponent.h",
+			"MU",
+			"NCV6FACNDT/moc_ThevenianNortonComponent.cpp",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/VoltageComponent.h",
 			"MU",
 			"NCV6FACNDT/moc_VoltageComponent.cpp",
@@ -648,6 +654,11 @@
 		],
 		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ResistorComponent.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ThevenianNortonComponent.cpp",
 			"MU",
 			null
 		],

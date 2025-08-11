@@ -5,25 +5,39 @@
 #include "SimulationResults.h"
 #include <iomanip>
 
-void SimulationResults::DC_Analyse_Results(std::vector<double> results, CircuitModel& circuit) {
+#include <unordered_map>
+#include <string>
+#include <vector>
+#include <memory>
+
+std::unordered_map<std::string, double> SimulationResults::DC_Analyse_Results(std::vector<double> results,  CircuitModel& circuit)
+{
+    std::unordered_map<std::string, double> result_map;
+
     for (int i = 0; i < results.size(); i++) {
-        bool printed = false;
-        for (int j = 0; j < circuit.getNode().size(); j++) {
-            if (circuit.getNode()[j]->getNumber() == i) {
-                std::cout << "node number: " << i << " name: " << circuit.getNode()[j]->getName() << " voltage: ";
-                printed = true;
+        bool is_node = false;
+
+        // Check if this index corresponds to a node
+        for (const auto& node : circuit.getNode()) {
+            if (node->getNumber() == i) {
+                result_map[node->getName()] = results[i];
+                is_node = true;
+                break;
             }
         }
-        if (!printed) {
-            for (int j = 0; j < circuit.getComponents().size(); j++) {
-                std::shared_ptr<Component> comp = circuit.getComponents()[j];
+
+        // If not a node, check if it's a voltage source current
+        if (!is_node) {
+            for (const auto& comp : circuit.getComponents()) {
                 if (auto vs = std::dynamic_pointer_cast<VoltageSource>(comp)) {
-                    std::cout << "voltage source: " << vs->getName() << " current: ";
+                    // For voltage sources, we'll use a special key format
+                    result_map["I("+ vs->getName() +")"] = results[i];
                 }
             }
         }
-        std::cout << results[i] << std::endl;
     }
+
+    return result_map;
 }
 std::vector<double> SimulationResults::AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit,std::string outputType) {
 std::vector<std::complex<double>> basicResults;

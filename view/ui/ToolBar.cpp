@@ -53,8 +53,12 @@ void ToolBar::createMenuBar()
     // File menu
     QMenu* fileMenu = menuBar->addMenu("&File");
     fileMenu->addAction("&New Unipolar", this, &ToolBar::newUnipolarAction, QKeySequence("Ctrl+U"));
+    fileMenu->addAction("&New Thevenin&Norton", this, &ToolBar::newTNAction, QKeySequence("Ctrl+T"));
     fileMenu->addAction("&New Project", this, &ToolBar::newProject, QKeySequence::New);
-    fileMenu->addAction("&Open...", this, &ToolBar::openUnipolarAction, QKeySequence::Open);
+    fileMenu->addAction("&Open Unipolar", this, &ToolBar::openUnipolarAction, QKeySequence::Open);
+    fileMenu->addAction("&Open Thevinin", this, &ToolBar::openThevininAction, QKeySequence("Ctrl+Shift+T"));
+    fileMenu->addAction("&Open Norton", this, &ToolBar::openNortonAction, QKeySequence("Ctrl+Shift+N"));
+
     fileMenu->addAction("&Save", this, &ToolBar::saveProject, QKeySequence::Save);
     fileMenu->addSeparator();
     fileMenu->addAction("E&xit", qApp, &QApplication::quit, QKeySequence::Quit);

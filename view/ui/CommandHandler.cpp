@@ -369,11 +369,11 @@ void CommandHandler::handle_Add_TRAN(std::string Tstep , std::string Tstop , std
 }
 
 ////////////////////////////mir
-void CommandHandler::handle_DC_Analysis() {
+std::unordered_map<std::string, double>  CommandHandler::handle_DC_Analysis() {
     std::cout << "DC Analysis..." << std::endl;
-    Circuitcontroller.DC_solve();
+    std::unordered_map<std::string, double> res=Circuitcontroller.DC_solve();
     std::cout<<"done1\n";
-
+    return res;
 }
 void CommandHandler::handle_Tran_Analysis(std::string TStep,std::string TStop,std::string TStart,std::string TMax_step,std::string variables) {
     std::cout << "\nTran Analysis..." << std::endl;

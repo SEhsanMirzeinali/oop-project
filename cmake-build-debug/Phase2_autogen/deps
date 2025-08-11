@@ -712,6 +712,8 @@ Phase2_autogen/timestamp: \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/InductorComponent.h \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ResistorComponent.cpp \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ResistorComponent.h \
+	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ThevenianNortonComponent.cpp \
+	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/ThevenianNortonComponent.h \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/VoltageComponent.cpp \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/components/VoltageComponent.h \
 	D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/grid/Grid.cpp \

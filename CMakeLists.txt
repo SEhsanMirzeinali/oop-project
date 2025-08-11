@@ -75,6 +75,7 @@ add_executable(${PROJECT_NAME} ${SOURCES}
         model/Solver/ACSweep.h
         view/components/CurrentComponent.cpp
         view/components/BlackBoxComponent.h
+        view/components/ThevenianNortonComponent.h
         #"controller/Supporting Controllers/IOController.cpp"
         #"model/Circuit Model/CircuitModel.cpp"
 )

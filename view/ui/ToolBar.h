@@ -33,6 +33,11 @@ public:
     void probeAction();
     void newUnipolarAction();
     void openUnipolarAction();
+    void openThevininAction();
+    void openNortonAction();
+    void newTNAction();
+
+
 
 
 private:

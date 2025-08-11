@@ -51,8 +51,11 @@ void MainWindow::setupConnections() {
     connect(toolbar, &ToolBar::spiceAnalysis, view, &ComponentView::handleAnalysis);
     connect(toolbar, &ToolBar::probeAction, view, &ComponentView::handleProbeAction);
     connect(toolbar, &ToolBar::newUnipolarAction, view, &ComponentView::createUnipolar);
+    connect(toolbar, &ToolBar::newTNAction, view, &ComponentView::createTNSubCircuit);
     connect(toolbar, &ToolBar::openUnipolarAction, view, &ComponentView::loadUnipolarNetList);
     connect(toolbar, &ToolBar::newProject, view, &ComponentView::resetComponentView);
+    connect(toolbar, &ToolBar::openThevininAction, view, &ComponentView::chooseThevenin);
+    connect(toolbar, &ToolBar::openNortonAction, view, &ComponentView::chooseNorton);
 
 
 

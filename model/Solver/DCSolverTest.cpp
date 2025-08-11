@@ -9,7 +9,7 @@ void DCSolverTest::initializeTestCircuit(){
 
 
 }
-std::vector<double> DCSolverTest::solve(CircuitModel& circuit){
+std::unordered_map<std::string, double> DCSolverTest::solve(CircuitModel& circuit){
   std::vector<double> results;
   std::vector<std::vector<double>> leftSide;
   std::vector<double> rightSide;
@@ -35,8 +35,8 @@ std::vector<double> DCSolverTest::solve(CircuitModel& circuit){
   //
   //   std::cout<<*it<<std::endl;
   // }
-  circuitResults->DC_Analyse_Results(results,circuit);
-  return results;
+  std::unordered_map<std::string, double> map_result=circuitResults->DC_Analyse_Results(results,circuit);
+  return map_result;
 
 }
 void DCSolverTest::printvector(const std::vector<std::vector<double>>& vec) {

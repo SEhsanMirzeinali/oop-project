@@ -45,7 +45,10 @@ constexpr auto qt_meta_stringdata_CLASSToolBarENDCLASS = QtMocHelpers::stringDat
     "spiceAnalysis",
     "probeAction",
     "newUnipolarAction",
-    "openUnipolarAction"
+    "openUnipolarAction",
+    "openThevininAction",
+    "openNortonAction",
+    "newTNAction"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -58,25 +61,31 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSToolBarENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       9,       // signalCount
+      12,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   68,    2, 0x06,    1 /* Public */,
-       3,    0,   69,    2, 0x06,    2 /* Public */,
-       4,    0,   70,    2, 0x06,    3 /* Public */,
-       5,    0,   71,    2, 0x06,    4 /* Public */,
-       6,    0,   72,    2, 0x06,    5 /* Public */,
-       7,    0,   73,    2, 0x06,    6 /* Public */,
-       8,    0,   74,    2, 0x06,    7 /* Public */,
-       9,    0,   75,    2, 0x06,    8 /* Public */,
-      10,    0,   76,    2, 0x06,    9 /* Public */,
+       1,    0,   86,    2, 0x06,    1 /* Public */,
+       3,    0,   87,    2, 0x06,    2 /* Public */,
+       4,    0,   88,    2, 0x06,    3 /* Public */,
+       5,    0,   89,    2, 0x06,    4 /* Public */,
+       6,    0,   90,    2, 0x06,    5 /* Public */,
+       7,    0,   91,    2, 0x06,    6 /* Public */,
+       8,    0,   92,    2, 0x06,    7 /* Public */,
+       9,    0,   93,    2, 0x06,    8 /* Public */,
+      10,    0,   94,    2, 0x06,    9 /* Public */,
+      11,    0,   95,    2, 0x06,   10 /* Public */,
+      12,    0,   96,    2, 0x06,   11 /* Public */,
+      13,    0,   97,    2, 0x06,   12 /* Public */,
 
  // signals: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -116,6 +125,12 @@ Q_CONSTINIT const QMetaObject ToolBar::staticMetaObject = { {
         // method 'newUnipolarAction'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'openUnipolarAction'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'openThevininAction'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'openNortonAction'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'newTNAction'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -136,6 +151,9 @@ void ToolBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 6: _t->probeAction(); break;
         case 7: _t->newUnipolarAction(); break;
         case 8: _t->openUnipolarAction(); break;
+        case 9: _t->openThevininAction(); break;
+        case 10: _t->openNortonAction(); break;
+        case 11: _t->newTNAction(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -203,6 +221,27 @@ void ToolBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
                 return;
             }
         }
+        {
+            using _t = void (ToolBar::*)();
+            if (_t _q_method = &ToolBar::openThevininAction; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 9;
+                return;
+            }
+        }
+        {
+            using _t = void (ToolBar::*)();
+            if (_t _q_method = &ToolBar::openNortonAction; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 10;
+                return;
+            }
+        }
+        {
+            using _t = void (ToolBar::*)();
+            if (_t _q_method = &ToolBar::newTNAction; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 11;
+                return;
+            }
+        }
     }
     (void)_a;
 }
@@ -226,13 +265,13 @@ int ToolBar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 12;
     }
     return _id;
 }
@@ -289,5 +328,23 @@ void ToolBar::newUnipolarAction()
 void ToolBar::openUnipolarAction()
 {
     QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
+}
+
+// SIGNAL 9
+void ToolBar::openThevininAction()
+{
+    QMetaObject::activate(this, &staticMetaObject, 9, nullptr);
+}
+
+// SIGNAL 10
+void ToolBar::openNortonAction()
+{
+    QMetaObject::activate(this, &staticMetaObject, 10, nullptr);
+}
+
+// SIGNAL 11
+void ToolBar::newTNAction()
+{
+    QMetaObject::activate(this, &staticMetaObject, 11, nullptr);
 }
 QT_WARNING_POP
