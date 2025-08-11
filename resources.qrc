@@ -6,5 +6,7 @@
     <file>images/Inductor.png</file>
     <file>images/Wire.png</file>
     <file>images/GND.png</file>
+    <file>images/Probe.png</file>
+
   </qresource>
 </RCC>

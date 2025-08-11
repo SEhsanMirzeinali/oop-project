@@ -15,17 +15,18 @@ private:
     QList<QList<QPointF>> subPaths;
     QVector<GraphicComponent*> connectedComponents;
     QString wireName;
-    QGraphicsTextItem* labelItem = nullptr;
+    QGraphicsTextItem* nodeLabel = nullptr;
     static int wireCounter;
     bool isGnd;
 public:
     explicit WireComponent(QObject* parent = nullptr);
     ~WireComponent() override;
 
+    QGraphicsTextItem* getNodeLabel(){return nodeLabel;}
     QString getWireName() const;
     bool getIsGnd() const;
     void setWireName(const QString& name);
-    void updateLabelPosition();
+    void updateLabelPosition(QPointF p);
     void setConnectedComponent(QVector<GraphicComponent*> components);
     void addConnectedComponent(GraphicComponent* component);
     const QVector<GraphicComponent*>& getConnectedComponents() const;

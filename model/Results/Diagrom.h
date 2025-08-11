@@ -13,18 +13,16 @@ class CustomPlotVisualizer : public QObject
 
 public:
     explicit CustomPlotVisualizer(QObject *parent = nullptr);
-
-    void plotBasicGraph(
-        const std::vector<std::vector<std::vector<double>>>& multiData, // داده‌های چند نمودار
+    void plotBasicGraphWithMathOps(
+        const std::vector<std::vector<std::vector<double>>>& multiData,
         const QString& title,
         const QString& xLabel,
         const QString& yLabel,
-        const std::vector<QString>& legendNames // نام‌های راهنما برای هر نمودار
+        const std::vector<QString>& legendNames,
+        bool logX
     );
-
     void plotBarChart(const std::vector<std::pair<QString, double>>& data,
                      const QString& title = "نمودار میله‌ای");
-
     void savePlot(QCustomPlot* plot, const QString& filename, int width = 800, int height = 600);
     void enableCursorInteraction(QCustomPlot* plot);
     void enableAdvancedCursor(QCustomPlot* plot);

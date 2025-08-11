@@ -13,9 +13,17 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/study/term 2/project/oop-project-main/oop-project-main/controller/Supporting Controllers/IOController.cpp" "CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/main.cpp" "CMakeFiles/Phase2.dir/main.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/main.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/CircuitModel.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/Node.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/components/Capacitor.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/components/CurrentSource.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/components/Inductor.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/components/Resistor.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit Model/components/VoltageSource.cpp" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Diagrom.cpp" "CMakeFiles/Phase2.dir/model/Results/Diagrom.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Results/Diagrom.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/SimulationResults.cpp" "CMakeFiles/Phase2.dir/model/Results/SimulationResults.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Results/SimulationResults.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/qcustomplot.cpp" "CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Solver/ACSweep.cpp" "CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/model/Solver/AC analysis.cpp" "CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Solver/DCSolverTest.cpp" "CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Solver/DCSweep.cpp" "CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/model/Solver/NonlinearSolver.cpp" "CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj.d"
@@ -34,7 +42,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/study/term 2/project/oop-project-main/oop-project-main/view/ui/NetListHandler.cpp" "CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/view/ui/SimulationDialog.cpp" "CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/view/ui/ToolBar.cpp" "CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/view/ui/VoltageSourceDialog.cpp" "CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj.d"
   "C:/study/term 2/project/oop-project-main/oop-project-main/view/wire/WireComponent.cpp" "CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj.d"
+  "C:/study/term 2/project/oop-project-main/oop-project-main/view/wire/WirePropertyDialog.cpp" "CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj" "gcc" "CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

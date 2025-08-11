@@ -143,11 +143,41 @@ CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Results\qcustomplot.cpp" -o CMakeFiles\Phase2.dir\model\Results\qcustomplot.cpp.s
 
+CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Solver/AC\ analysis.cpp
+CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj -MF CMakeFiles\Phase2.dir\model\Solver\AC_analysis.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Solver\AC_analysis.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\AC analysis.cpp"
+
+CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\AC analysis.cpp" > CMakeFiles\Phase2.dir\model\Solver\AC_analysis.cpp.i
+
+CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\AC analysis.cpp" -o CMakeFiles\Phase2.dir\model\Solver\AC_analysis.cpp.s
+
+CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Solver/ACSweep.cpp
+CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj -MF CMakeFiles\Phase2.dir\model\Solver\ACSweep.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Solver\ACSweep.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\ACSweep.cpp"
+
+CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\ACSweep.cpp" > CMakeFiles\Phase2.dir\model\Solver\ACSweep.cpp.i
+
+CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\ACSweep.cpp" -o CMakeFiles\Phase2.dir\model\Solver\ACSweep.cpp.s
+
 CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj: CMakeFiles/Phase2.dir/flags.make
 CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Solver/DCSolverTest.cpp
 CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj -MF CMakeFiles\Phase2.dir\model\Solver\DCSolverTest.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Solver\DCSolverTest.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\DCSolverTest.cpp"
 
 CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.i: cmake_force
@@ -162,7 +192,7 @@ CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj: CMakeFiles/Phase2.dir/flags.
 CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Solver/DCSweep.cpp
 CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj -MF CMakeFiles\Phase2.dir\model\Solver\DCSweep.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Solver\DCSweep.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\DCSweep.cpp"
 
 CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.i: cmake_force
@@ -177,7 +207,7 @@ CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj: CMakeFiles/Phase2.di
 CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Solver/NonlinearSolver.cpp
 CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj -MF CMakeFiles\Phase2.dir\model\Solver\NonlinearSolver.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Solver\NonlinearSolver.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\NonlinearSolver.cpp"
 
 CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.i: cmake_force
@@ -192,7 +222,7 @@ CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj: CMakeFiles/Phase2.dir/flag
 CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Solver/Transient.cpp
 CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.obj -MF CMakeFiles\Phase2.dir\model\Solver\Transient.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Solver\Transient.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Solver\Transient.cpp"
 
 CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.i: cmake_force
@@ -207,7 +237,7 @@ CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj: CMakeFiles/Pha
 CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/components/CapacitorComponent.cpp
 CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.obj -MF CMakeFiles\Phase2.dir\view\components\CapacitorComponent.cpp.obj.d -o CMakeFiles\Phase2.dir\view\components\CapacitorComponent.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\components\CapacitorComponent.cpp"
 
 CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.i: cmake_force
@@ -222,7 +252,7 @@ CMakeFiles/Phase2.dir/view/components/GND.cpp.obj: CMakeFiles/Phase2.dir/flags.m
 CMakeFiles/Phase2.dir/view/components/GND.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/components/GND.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/components/GND.cpp
 CMakeFiles/Phase2.dir/view/components/GND.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Phase2.dir/view/components/GND.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Phase2.dir/view/components/GND.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/components/GND.cpp.obj -MF CMakeFiles\Phase2.dir\view\components\GND.cpp.obj.d -o CMakeFiles\Phase2.dir\view\components\GND.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\components\GND.cpp"
 
 CMakeFiles/Phase2.dir/view/components/GND.cpp.i: cmake_force
@@ -237,7 +267,7 @@ CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj: CMakeFiles/Phase
 CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/components/GraphicComponent.cpp
 CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.obj -MF CMakeFiles\Phase2.dir\view\components\GraphicComponent.cpp.obj.d -o CMakeFiles\Phase2.dir\view\components\GraphicComponent.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\components\GraphicComponent.cpp"
 
 CMakeFiles/Phase2.dir/view/components/GraphicComponent.cpp.i: cmake_force
@@ -252,7 +282,7 @@ CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj: CMakeFiles/Phas
 CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/components/InductorComponent.cpp
 CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.obj -MF CMakeFiles\Phase2.dir\view\components\InductorComponent.cpp.obj.d -o CMakeFiles\Phase2.dir\view\components\InductorComponent.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\components\InductorComponent.cpp"
 
 CMakeFiles/Phase2.dir/view/components/InductorComponent.cpp.i: cmake_force
@@ -267,7 +297,7 @@ CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj: CMakeFiles/Phas
 CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/components/ResistorComponent.cpp
 CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.obj -MF CMakeFiles\Phase2.dir\view\components\ResistorComponent.cpp.obj.d -o CMakeFiles\Phase2.dir\view\components\ResistorComponent.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\components\ResistorComponent.cpp"
 
 CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.i: cmake_force
@@ -282,7 +312,7 @@ CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj: CMakeFiles/Phase
 CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/components/VoltageComponent.cpp
 CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.obj -MF CMakeFiles\Phase2.dir\view\components\VoltageComponent.cpp.obj.d -o CMakeFiles\Phase2.dir\view\components\VoltageComponent.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\components\VoltageComponent.cpp"
 
 CMakeFiles/Phase2.dir/view/components/VoltageComponent.cpp.i: cmake_force
@@ -297,7 +327,7 @@ CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj: CMakeFiles/Phase2.dir/flags.make
 CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/grid/Grid.cpp
 CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/grid/Grid.cpp.obj -MF CMakeFiles\Phase2.dir\view\grid\Grid.cpp.obj.d -o CMakeFiles\Phase2.dir\view\grid\Grid.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\grid\Grid.cpp"
 
 CMakeFiles/Phase2.dir/view/grid/Grid.cpp.i: cmake_force
@@ -312,7 +342,7 @@ CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj: CMakeFiles/Phase2.dir/flag
 CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/CommandHandler.cpp
 CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\CommandHandler.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\CommandHandler.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\CommandHandler.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/CommandHandler.cpp.i: cmake_force
@@ -327,7 +357,7 @@ CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj: CMakeFiles/Phase2
 CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/ComponentPropertyDialog.cpp
 CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\ComponentPropertyDialog.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\ComponentPropertyDialog.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\ComponentPropertyDialog.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/ComponentPropertyDialog.cpp.i: cmake_force
@@ -342,7 +372,7 @@ CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj: CMakeFiles/Phase2.dir/flags
 CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/ComponentView.cpp
 CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\ComponentView.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\ComponentView.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\ComponentView.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/ComponentView.cpp.i: cmake_force
@@ -357,7 +387,7 @@ CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj: CMakeFiles/Phase2.dir/flags.ma
 CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/MainWindow.cpp
 CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\MainWindow.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\MainWindow.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\MainWindow.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.i: cmake_force
@@ -372,7 +402,7 @@ CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj: CMakeFiles/Phase2.dir/flag
 CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/NetListHandler.cpp
 CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\NetListHandler.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\NetListHandler.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\NetListHandler.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.i: cmake_force
@@ -387,7 +417,7 @@ CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj: CMakeFiles/Phase2.dir/fl
 CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/SimulationDialog.cpp
 CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\SimulationDialog.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\SimulationDialog.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\SimulationDialog.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.i: cmake_force
@@ -402,7 +432,7 @@ CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj: CMakeFiles/Phase2.dir/flags.make
 CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/ToolBar.cpp
 CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\ToolBar.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\ToolBar.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\ToolBar.cpp"
 
 CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.i: cmake_force
@@ -413,11 +443,26 @@ CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\ToolBar.cpp" -o CMakeFiles\Phase2.dir\view\ui\ToolBar.cpp.s
 
+CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/ui/VoltageSourceDialog.cpp
+CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj -MF CMakeFiles\Phase2.dir\view\ui\VoltageSourceDialog.cpp.obj.d -o CMakeFiles\Phase2.dir\view\ui\VoltageSourceDialog.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\VoltageSourceDialog.cpp"
+
+CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\VoltageSourceDialog.cpp" > CMakeFiles\Phase2.dir\view\ui\VoltageSourceDialog.cpp.i
+
+CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\view\ui\VoltageSourceDialog.cpp" -o CMakeFiles\Phase2.dir\view\ui\VoltageSourceDialog.cpp.s
+
 CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj: CMakeFiles/Phase2.dir/flags.make
 CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/wire/WireComponent.cpp
 CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj -MF CMakeFiles\Phase2.dir\view\wire\WireComponent.cpp.obj.d -o CMakeFiles\Phase2.dir\view\wire\WireComponent.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\wire\WireComponent.cpp"
 
 CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.i: cmake_force
@@ -428,11 +473,26 @@ CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\view\wire\WireComponent.cpp" -o CMakeFiles\Phase2.dir\view\wire\WireComponent.cpp.s
 
+CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/view/wire/WirePropertyDialog.cpp
+CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj -MF CMakeFiles\Phase2.dir\view\wire\WirePropertyDialog.cpp.obj.d -o CMakeFiles\Phase2.dir\view\wire\WirePropertyDialog.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\view\wire\WirePropertyDialog.cpp"
+
+CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\view\wire\WirePropertyDialog.cpp" > CMakeFiles\Phase2.dir\view\wire\WirePropertyDialog.cpp.i
+
+CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\view\wire\WirePropertyDialog.cpp" -o CMakeFiles\Phase2.dir\view\wire\WirePropertyDialog.cpp.s
+
 CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj: CMakeFiles/Phase2.dir/flags.make
 CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/controller/Core\ Controllers/CircuitController.cpp
 CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj -MF CMakeFiles\Phase2.dir\controller\Core_Controllers\CircuitController.cpp.obj.d -o CMakeFiles\Phase2.dir\controller\Core_Controllers\CircuitController.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\controller\Core Controllers\CircuitController.cpp"
 
 CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.i: cmake_force
@@ -447,7 +507,7 @@ CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj: CM
 CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/controller/Supporting\ Controllers/IOController.cpp
 CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj -MF CMakeFiles\Phase2.dir\controller\Supporting_Controllers\IOController.cpp.obj.d -o CMakeFiles\Phase2.dir\controller\Supporting_Controllers\IOController.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\controller\Supporting Controllers\IOController.cpp"
 
 CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.i: cmake_force
@@ -462,7 +522,7 @@ CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj: CMakeFiles/Phase
 CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
 CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/CircuitModel.cpp
 CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\CircuitModel.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\CircuitModel.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\CircuitModel.cpp"
 
 CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.i: cmake_force
@@ -473,6 +533,96 @@ CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\CircuitModel.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\CircuitModel.cpp.s
 
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/components/VoltageSource.cpp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\components\VoltageSource.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\VoltageSource.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\VoltageSource.cpp"
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\VoltageSource.cpp" > CMakeFiles\Phase2.dir\model\Circuit_Model\components\VoltageSource.cpp.i
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\VoltageSource.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\VoltageSource.cpp.s
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/components/CurrentSource.cpp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\components\CurrentSource.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\CurrentSource.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\CurrentSource.cpp"
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\CurrentSource.cpp" > CMakeFiles\Phase2.dir\model\Circuit_Model\components\CurrentSource.cpp.i
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\CurrentSource.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\CurrentSource.cpp.s
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/components/Capacitor.cpp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\components\Capacitor.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\Capacitor.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Capacitor.cpp"
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Capacitor.cpp" > CMakeFiles\Phase2.dir\model\Circuit_Model\components\Capacitor.cpp.i
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Capacitor.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\Capacitor.cpp.s
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/components/Inductor.cpp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\components\Inductor.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\Inductor.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Inductor.cpp"
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Inductor.cpp" > CMakeFiles\Phase2.dir\model\Circuit_Model\components\Inductor.cpp.i
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Inductor.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\Inductor.cpp.s
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/components/Resistor.cpp
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\components\Resistor.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\Resistor.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Resistor.cpp"
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Resistor.cpp" > CMakeFiles\Phase2.dir\model\Circuit_Model\components\Resistor.cpp.i
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\components\Resistor.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\components\Resistor.cpp.s
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj: CMakeFiles/Phase2.dir/flags.make
+CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj: CMakeFiles/Phase2.dir/includes_CXX.rsp
+CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj: C:/study/term\ 2/project/oop-project-main/oop-project-main/model/Circuit\ Model/Node.cpp
+CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj: CMakeFiles/Phase2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj -MF CMakeFiles\Phase2.dir\model\Circuit_Model\Node.cpp.obj.d -o CMakeFiles\Phase2.dir\model\Circuit_Model\Node.cpp.obj -c "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\Node.cpp"
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\Node.cpp" > CMakeFiles\Phase2.dir\model\Circuit_Model\Node.cpp.i
+
+CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\study\term 2\project\oop-project-main\oop-project-main\model\Circuit Model\Node.cpp" -o CMakeFiles\Phase2.dir\model\Circuit_Model\Node.cpp.s
+
 # Object files for target Phase2
 Phase2_OBJECTS = \
 "CMakeFiles/Phase2.dir/Phase2_autogen/mocs_compilation.cpp.obj" \
@@ -480,6 +630,8 @@ Phase2_OBJECTS = \
 "CMakeFiles/Phase2.dir/model/Results/Diagrom.cpp.obj" \
 "CMakeFiles/Phase2.dir/model/Results/SimulationResults.cpp.obj" \
 "CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj" \
 "CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj" \
 "CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj" \
 "CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj" \
@@ -498,10 +650,18 @@ Phase2_OBJECTS = \
 "CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj" \
 "CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj" \
 "CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj" \
+"CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj" \
 "CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj" \
+"CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj" \
 "CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj" \
 "CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj" \
-"CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj"
+"CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj" \
+"CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj"
 
 # External object files for target Phase2
 Phase2_EXTERNAL_OBJECTS =
@@ -511,6 +671,8 @@ Phase2.exe: CMakeFiles/Phase2.dir/main.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Results/Diagrom.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Results/SimulationResults.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Solver/DCSolverTest.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Solver/DCSweep.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Solver/NonlinearSolver.cpp.obj
@@ -529,22 +691,30 @@ Phase2.exe: CMakeFiles/Phase2.dir/view/ui/MainWindow.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/view/ui/NetListHandler.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/view/ui/SimulationDialog.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/controller/Core_Controllers/CircuitController.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/controller/Supporting_Controllers/IOController.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj
+Phase2.exe: CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj
 Phase2.exe: CMakeFiles/Phase2.dir/build.make
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6Charts.a
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6PrintSupport.a
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6OpenGLWidgets.a
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6OpenGL.a
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a
-Phase2.exe: D:/Qt/6.9.1/mingw_64/lib/libQt6Core.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6Charts.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6PrintSupport.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6OpenGLWidgets.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6OpenGL.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6Widgets.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6Gui.a
+Phase2.exe: D:/Qt/6.7.3/mingw_64/lib/libQt6Core.a
 Phase2.exe: CMakeFiles/Phase2.dir/linkLibs.rsp
 Phase2.exe: CMakeFiles/Phase2.dir/objects1.rsp
 Phase2.exe: CMakeFiles/Phase2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable Phase2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_38) "Linking CXX executable Phase2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Phase2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -207,21 +207,64 @@ void CommandHandler::handle_Add_CurrentSource(std::string name  , std::string no
     // File_output << name << " " << node1 << " " << node2 << " " << value_string << std::endl;
     // Files.back().write(File_output.str());
 }
-void CommandHandler::handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string Vofset , std::string Vamp , std::string Freq) {
+void CommandHandler:: handle_Add_AC_voltage(std::string name , std::string node1 , std::string node2 , std::string ampl , std::string phase) {
+    name = 'V' + name ;
+    double ampl_double = Change_unitsValue(ampl);
+    double phase_double = Change_unitsValue(phase);
+    Circuitcontroller.get_AC_voltage(name , node1 , node2 , ampl_double,phase_double);
+    std::cout << name << " "<< node1 << " " << node2 << " " << ampl <<"  Done" << std::endl;
+
+}
+void CommandHandler::handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string offset , std::string ampl , std::string Freq,
+    std::string delay,std::string theta,std::string phi,std::string cycles) {
     name = 'V' + name ;
     for(auto n : names) {
         if(name == n) {
-            throw Get_Exception::Duplicate_Name_Exception(name);
+           // throw Get_Exception::Duplicate_Name_Exception(name);
         }
     }
-    double Vofset_double = Change_unitsValue(Vofset);
-    double Vamp_double = Change_unitsValue(Vamp);
+    double offset_double = Change_unitsValue(offset);
+    double ampl_double = Change_unitsValue(ampl);
     double freq_double = Change_unitsValue(Freq);
+    double delay_double = Change_unitsValue(delay);
+    double theta_double = Change_unitsValue(theta);
+    double phi_double = Change_unitsValue(phi);
+    double cycles_double = Change_unitsValue(cycles);
+
     names.push_back(name);
-    Circuitcontroller.get_SIN_voltage(name , node1 , node2 , Vofset , Vofset_double,
-        Vamp, Vamp_double,Freq, freq_double);
-    std::cout << name << " " << node1 << " " << node2 << " " << Vofset_double << " " <<
-        Vamp_double << " " << freq_double << std::endl;
+    Circuitcontroller.get_SIN_voltage(name , node1 , node2 , offset_double,
+        ampl_double, freq_double,delay_double, theta_double, phi_double, cycles_double);
+    // std::cout << name << " " << node1 << " " << node2 << " " << Vofset_double << " " <<
+    //     Vamp_double << " " << freq_double << std::endl;
+
+    ///////////////////// File Handling
+    // std::ostringstream File_output;
+    // File_output << "SIN " << name << " " << node1 << " " << node2 << " " << "(Vofset :" << Vofset << " /Vamp : " << Vamp << " /Freq : " << Freq << ")" << std::endl;
+    // Files.back().write(File_output.str());
+}
+void CommandHandler::handle_Add_PULSE_voltage(std::string name , std::string node1 , std::string node2 ,
+    std::string VInitial , std::string VOn , std::string TDelay,
+    std::string TRise,std::string TFall,std::string TOn,std::string TPeriod ,std::string cycles) {
+    name = 'V' + name ;
+    for(auto n : names) {
+        if(name == n) {
+            // throw Get_Exception::Duplicate_Name_Exception(name);
+        }
+    }
+    double initial_double = Change_unitsValue(VInitial);
+    double Von_double = Change_unitsValue(VOn);
+    double delay_double = Change_unitsValue(TDelay);
+    double rise_double = Change_unitsValue(TRise);
+    double fall_double = Change_unitsValue(TFall);
+    double TOn_double = Change_unitsValue(TOn);
+    double period_double = Change_unitsValue(TPeriod);
+    double cycles_double = Change_unitsValue(cycles);
+
+    names.push_back(name);
+    Circuitcontroller.get_PULSE_voltage(name , node1 , node2 , initial_double,
+        Von_double,delay_double, rise_double, fall_double,TOn_double,period_double, cycles_double);
+    // std::cout << name << " " << node1 << " " << node2 << " " << Vofset_double << " " <<
+    //     Vamp_double << " " << freq_double << std::endl;
 
     ///////////////////// File Handling
     // std::ostringstream File_output;
@@ -358,6 +401,71 @@ void CommandHandler::handle_Tran_Analysis(std::string TStep,std::string TStop,st
 
 
     Circuitcontroller.tran_solve(Tstep_double,Tstop_double,Tstart_double,Tmax_double,names);
+    ///////////////////// File Handling
+    // std::ostringstream File_output;
+    // for(int i=0 ; i<names.size() ; i++) {
+    //     File_output << "TRAN : " <<TStep << " " << TStop << " " << TStart << " " << TMax_step  << " "<<names[i][0]<<"("<<names[i].substr(1)<<")"<< std::endl;
+    // }
+    // Files.back().write(File_output.str());
+
+}
+void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables) {
+    std::cout << "\nAC Analysis..." << std::endl;
+    std::vector<std::string> names;
+    std::string n;
+    for(int i=0 ; i<variables.size() ; i++) {
+        if(variables[i] == 'V' || variables[i]=='I') {
+            n.push_back(variables[i]);
+            for(int j=i+2 ; variables[j]!=')'; j++) {
+                n.push_back(variables[j]);
+            }
+            names.push_back(n);
+            n.clear();
+        }
+    }
+
+    double num_int = Change_unitsValue(numOfPoints);
+    double Fstart_double = Change_unitsValue(FStart);
+    double Fstop_double = Change_unitsValue(FStop);
+
+    //double Tmax_double = Change_unitsValue(TMax_step);
+
+    //std::cout<<"start: "<<Fstart_double<<" stop: "<<Fstop_double<<" N: "<<num_int<<" type: "<<typeOfSweep<<" variables: "<<names[0]<<std::endl;
+
+
+    Circuitcontroller.ac_solve(Fstart_double,Fstop_double ,num_int,typeOfSweep,names);
+
+    ///////////////////// File Handling
+    // std::ostringstream File_output;
+    // for(int i=0 ; i<names.size() ; i++) {
+    //     File_output << "TRAN : " <<TStep << " " << TStop << " " << TStart << " " << TMax_step  << " "<<names[i][0]<<"("<<names[i].substr(1)<<")"<< std::endl;
+    // }
+    // Files.back().write(File_output.str());
+}
+void CommandHandler::handle_Phase_Analysis(std::string baseFreq,std::string PStart,std::string PStop,std::string numOfPoints,std::string variables) {
+    std::cout << "\nPhase Analysis..." << std::endl;
+    std::vector<std::string> names;
+    std::string n;
+    for(int i=0 ; i<variables.size() ; i++) {
+        if(variables[i] == 'V' || variables[i]=='I') {
+            n.push_back(variables[i]);
+            for(int j=i+2 ; variables[j]!=')'; j++) {
+                n.push_back(variables[j]);
+            }
+            names.push_back(n);
+            n.clear();
+        }
+    }
+    int num_int = Change_unitsValue(numOfPoints);
+    double baseFdouble = Change_unitsValue(baseFreq);
+    double Pstop_double = Change_unitsValue(PStop);
+    double Pstart_double = Change_unitsValue(PStart);
+    //double Tmax_double = Change_unitsValue(TMax_step);
+
+    //std::cout<<"start: "<<Pstart_double<<" stop: "<<Pstop_double<<" N: "<<num_int<<" baseFreq: "<<baseFdouble<<" variables: "<<names[0]<<std::endl;
+
+    Circuitcontroller.phase_solve(baseFdouble,Pstart_double,Pstop_double,num_int,names);
+
     ///////////////////// File Handling
     // std::ostringstream File_output;
     // for(int i=0 ; i<names.size() ; i++) {

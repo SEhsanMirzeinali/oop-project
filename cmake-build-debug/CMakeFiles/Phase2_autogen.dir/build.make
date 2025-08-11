@@ -67,8 +67,8 @@ include CMakeFiles/Phase2_autogen.dir/progress.make
 
 CMakeFiles/Phase2_autogen: Phase2_autogen/timestamp
 
-Phase2_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/moc.exe
-Phase2_autogen/timestamp: D:/Qt/6.9.1/mingw_64/bin/uic.exe
+Phase2_autogen/timestamp: D:/Qt/6.7.3/mingw_64/bin/moc.exe
+Phase2_autogen/timestamp: D:/Qt/6.7.3/mingw_64/bin/uic.exe
 Phase2_autogen/timestamp: CMakeFiles/Phase2_autogen.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="C:\study\term 2\project\oop-project-main\oop-project-main\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Phase2"
 	"D:\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E cmake_autogen "C:/study/term 2/project/oop-project-main/oop-project-main/cmake-build-debug/CMakeFiles/Phase2_autogen.dir/AutogenInfo.json" Debug

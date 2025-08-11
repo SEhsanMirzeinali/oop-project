@@ -26,8 +26,11 @@ class CommandHandler {
     void handle_Delete_element(std::string name , char RLC);
     void handle_Delete_ground(std::string node);
     static std::vector<std::string> names;
-    void handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string Vofset , std::string Vamp , std::string Freq);
-
+    void handle_Add_AC_voltage(std::string name , std::string node1 , std::string node2 , std::string ampl , std::string phase);
+    void handle_Add_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string offset , std::string ampl , std::string Freq,
+        std::string delay,std::string theta,std::string phi,std::string cycles) ;
+    void handle_Add_PULSE_voltage(std::string name , std::string node1 , std::string node2 , std::string VInitial , std::string VOn , std::string TDelay,
+    std::string TRise,std::string TFall,std::string TOn,std::string TPeriod ,std::string cycles) ;
     void handle_Add_VCVS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 , std::string CtrN2 , std::string Gain);
     void handle_Add_VCCS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 , std::string CtrN2 , std::string Gain);
     void handle_Add_CCVS(std::string name , std::string node1 , std::string node2 , std::string Vname , std::string Gain);
@@ -37,6 +40,8 @@ class CommandHandler {
     ///////////////////////////////mir
     void handle_DC_Analysis();
     void handle_Tran_Analysis(std::string dt,std::string Tstop,std::string Tstart,std::string Tmax_step,std::string variables);
+    void handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables);
+    void handle_Phase_Analysis(std::string baseFreq,std::string PStart,std::string PStop,std::string numOfPoints,std::string variables);
     void handle_print_all_nodes();
     void handle_print_All_elements();
     void handle_print_element(std::string type);

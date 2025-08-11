@@ -24,9 +24,17 @@ private:
     QCursor componentCursor;
     QGraphicsItem* lastHoveredItem = nullptr;
     NetListHandler* netList;
+    QString variables;
+    bool isVProbe=false;
+    QGraphicsTextItem* variablesLabel = new QGraphicsTextItem();
+
+
 
 
     bool isComponent(QGraphicsItem* item) const;
+    bool isWire(QGraphicsItem* item) const;
+    bool isWireLabel(QGraphicsItem* item) const;
+
     void updateHoverState(QGraphicsItem* item, const QPointF& scenePos);
 
     void drawPortMarkers(GraphicComponent* comp);
@@ -44,6 +52,7 @@ public:
     void startWiring();
     void startPlacing(const QString& type);
     std::vector<std::string> createNetList(QVector<GraphicComponent*>);
+    void setupProbe();
 
 protected:
     void wheelEvent(QWheelEvent* event) override;

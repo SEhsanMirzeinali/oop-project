@@ -10,6 +10,14 @@ WireComponent::WireComponent(QObject* parent)
     wireName = "n00" + QString::number(++wireCounter);
     setPen(QPen(Qt::black, 2));
     setFlag(QGraphicsItem::ItemIsFocusable, true);
+
+    nodeLabel = new QGraphicsTextItem(this); // لیبل فرزند وایر است
+    nodeLabel->setPlainText(wireName); // متن اولیه
+    nodeLabel->setDefaultTextColor(Qt::black); // رنگ متن
+    QFont font("Arial", 12, QFont::Bold); // فونت Arial با سایز 10 و حالت Bold
+    nodeLabel->setFont(font);
+    nodeLabel->setZValue(20); // لیبل بالای وایر نمایش داده شود
+    //nodeLabel->setPos(100, 100);
 }
 
 WireComponent::~WireComponent() {}
@@ -22,19 +30,21 @@ bool WireComponent::getIsGnd() const {
     return isGnd;
 }
 
-void WireComponent::setWireName(const QString& name)
-{
+void WireComponent::setWireName(const QString& name) {
     wireName = name;
-    if (labelItem) {
-        labelItem->setPlainText(wireName);
+    if (nodeLabel) {
+        nodeLabel->setPlainText(wireName);
+        //updateLabelPosition(); // موقعیت لیبل را دوباره محاسبه کنید
     }
 }
 
-void WireComponent::updateLabelPosition()
+void WireComponent::updateLabelPosition(QPointF p)
 {
-    if (labelItem && !points.isEmpty()) {
+    nodeLabel->setPos(p);
+    return;
+    if (nodeLabel && !points.isEmpty()) {
         QPointF midPoint = (points.first() + points.last()) / 2;
-        labelItem->setPos(midPoint);
+        nodeLabel->setPos(midPoint);
     }
 }
 

@@ -7,6 +7,7 @@
 
 #include <string>
 
+#include "ACSweep.h"
 #include "../../model/Circuit Model/CircuitModel.h"
 #include"../../model/Solver/DCSolverTest.h"
 #include"../../model/Solver/Transient.h"
@@ -21,11 +22,13 @@ private:
     std::shared_ptr<CircuitModel> circuit;
     std::shared_ptr<DCSolverTest> DCAnalyse;
     std::shared_ptr<Transient> transientAnalyse;
+    std::shared_ptr<ACSweep> acAnalyse;
+
 public:
     //CircuitController();
 
     CircuitController() : circuit(std::make_shared<CircuitModel>()) , DCAnalyse(std::make_shared<DCSolverTest>())
-    ,transientAnalyse(std::make_shared<Transient>()){}
+    ,transientAnalyse(std::make_shared<Transient>()),acAnalyse(std::make_shared<ACSweep>()){}
     ////////////////////////////////// Fotuhi
     void get_Resistors(std::string name , std::string node1 , std::string node2 , std::string string_value , double double_value);
     void get_Capacitors(std::string name , std::string node1 , std::string node2 , std::string string_value , double double_value);
@@ -38,8 +41,11 @@ public:
     void get_Current_source(std::string name , std::string node1 , std::string node2 , std::string string_value , double double_value);
 
 
-    void get_SIN_voltage(std::string name , std::string node1 , std::string node2 , std::string Vofset_string ,
-        double Vofset_double , std::string Vamp_string , double Vamp_double , std::string Freq_string , double Freq_double) ;
+    void get_AC_voltage(std::string name, std::string node1, std::string node2,double ampl, double phase);
+    void get_SIN_voltage(std::string name, std::string node1, std::string node2,
+        double offset, double ampl, double freq,double TDelay,double theta, double phase ,double cycles);
+    void get_PULSE_voltage(std::string name, std::string node1, std::string node2,
+    double init, double von, double delay,double rise,double fall, double ton,double period,double cycles);
     void get_VCVS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 ,std::string CtrN2
         , std::string Gain_string , double Gain_double) ;
     void get_VCCS(std::string name , std::string node1 , std::string node2 , std::string CtrN1 ,std::string CtrN2
@@ -54,6 +60,11 @@ public:
 ////////////////////////////mir
     void DC_solve();
     void tran_solve(double dt,double TStop,double TStart,double TMax_step,std::vector<std::string> namesAndVI);
+    void ac_solve(double startFreq , double endFreq ,
+            int numOfPoints ,std::string typeOfSweep,std::vector<std::string> namesAndVI);
+    void phase_solve(double baseFreq ,double startPhase, double endPhase ,
+        int numOfPoints ,std::vector<std::string> namesAndVI);
+
     void print_All_nodes() const;
     void print_All_elements() const;
     void print_element(std::string type);
@@ -61,27 +72,6 @@ public:
 
     ////////////////////////////////// end
 
-    // Add a new component
-/*    void addComponent(ComponentType type, double value, int node1, int node2) {
-        Component* component;
-        switch (type) {
-            case RESISTOR: component = new Resistor(value); break;
-            case CAPACITOR: component = new Capacitor(value); break;
-            // ... other component types
-        }
-        circuit.addComponent(component, node1, node2);
-    }
-
-    // Remove a component by ID
-    void removeComponent(int componentId) {
-        circuit.removeComponent(componentId);
-    }
-
-    // Update component value
-    void updateComponent(int componentId, double newValue) {
-        circuit.getComponent(componentId).setValue(newValue);
-    }
-*/
 };
 
 

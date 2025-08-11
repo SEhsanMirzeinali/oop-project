@@ -45,7 +45,6 @@ file(GLOB_RECURSE SOURCES
 
 find_package(Qt6 COMPONENTS Core Gui Widgets Charts PrintSupport REQUIRED)
 
-
 add_executable(${PROJECT_NAME} ${SOURCES}
         view/ui/MainWindow.cpp
         view/ui/MainWindow.h
@@ -65,9 +64,18 @@ add_executable(${PROJECT_NAME} ${SOURCES}
         "model/Circuit Model/CircuitModel.cpp"
         view/ui/SimulationDialog.cpp
         view/ui/SimulationDialog.cpp
+        "model/Circuit Model/components/VoltageSource.cpp"
+        "model/Circuit Model/components/CurrentSource.cpp"
+        "model/Circuit Model/components/Capacitor.cpp"
+        "model/Circuit Model/components/Inductor.cpp"
+        "model/Circuit Model/components/Resistor.cpp"
+        "model/Circuit Model/Node.cpp"
+        view/ui/VoltageSourceDialog.cpp
+        view/wire/WirePropertyDialog.cpp
+        model/Solver/ACSweep.h
+        model/Results/qcustomplot.cpp
         model/Results/Diagrom.cpp
         model/Results/Diagrom.h
-        model/Results/qcustomplot.cpp
         #"controller/Supporting Controllers/IOController.cpp"
         #"model/Circuit Model/CircuitModel.cpp"
 )
@@ -78,7 +86,6 @@ target_link_libraries(${PROJECT_NAME}
         Qt::Widgets
         Qt6::Charts
         Qt6::PrintSupport
-
 )
 
 # Windows DLL handling (مطابق قبل)

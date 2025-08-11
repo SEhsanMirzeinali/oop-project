@@ -274,6 +274,150 @@ model/Circuit_Model/CircuitModel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/CircuitModel.cpp.s
 .PHONY : model/Circuit_Model/CircuitModel.cpp.s
 
+model/Circuit_Model/Node.obj: model/Circuit_Model/Node.cpp.obj
+.PHONY : model/Circuit_Model/Node.obj
+
+# target to build an object file
+model/Circuit_Model/Node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.obj
+.PHONY : model/Circuit_Model/Node.cpp.obj
+
+model/Circuit_Model/Node.i: model/Circuit_Model/Node.cpp.i
+.PHONY : model/Circuit_Model/Node.i
+
+# target to preprocess a source file
+model/Circuit_Model/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.i
+.PHONY : model/Circuit_Model/Node.cpp.i
+
+model/Circuit_Model/Node.s: model/Circuit_Model/Node.cpp.s
+.PHONY : model/Circuit_Model/Node.s
+
+# target to generate assembly for a file
+model/Circuit_Model/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/Node.cpp.s
+.PHONY : model/Circuit_Model/Node.cpp.s
+
+model/Circuit_Model/components/Capacitor.obj: model/Circuit_Model/components/Capacitor.cpp.obj
+.PHONY : model/Circuit_Model/components/Capacitor.obj
+
+# target to build an object file
+model/Circuit_Model/components/Capacitor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.obj
+.PHONY : model/Circuit_Model/components/Capacitor.cpp.obj
+
+model/Circuit_Model/components/Capacitor.i: model/Circuit_Model/components/Capacitor.cpp.i
+.PHONY : model/Circuit_Model/components/Capacitor.i
+
+# target to preprocess a source file
+model/Circuit_Model/components/Capacitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.i
+.PHONY : model/Circuit_Model/components/Capacitor.cpp.i
+
+model/Circuit_Model/components/Capacitor.s: model/Circuit_Model/components/Capacitor.cpp.s
+.PHONY : model/Circuit_Model/components/Capacitor.s
+
+# target to generate assembly for a file
+model/Circuit_Model/components/Capacitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Capacitor.cpp.s
+.PHONY : model/Circuit_Model/components/Capacitor.cpp.s
+
+model/Circuit_Model/components/CurrentSource.obj: model/Circuit_Model/components/CurrentSource.cpp.obj
+.PHONY : model/Circuit_Model/components/CurrentSource.obj
+
+# target to build an object file
+model/Circuit_Model/components/CurrentSource.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.obj
+.PHONY : model/Circuit_Model/components/CurrentSource.cpp.obj
+
+model/Circuit_Model/components/CurrentSource.i: model/Circuit_Model/components/CurrentSource.cpp.i
+.PHONY : model/Circuit_Model/components/CurrentSource.i
+
+# target to preprocess a source file
+model/Circuit_Model/components/CurrentSource.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.i
+.PHONY : model/Circuit_Model/components/CurrentSource.cpp.i
+
+model/Circuit_Model/components/CurrentSource.s: model/Circuit_Model/components/CurrentSource.cpp.s
+.PHONY : model/Circuit_Model/components/CurrentSource.s
+
+# target to generate assembly for a file
+model/Circuit_Model/components/CurrentSource.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/CurrentSource.cpp.s
+.PHONY : model/Circuit_Model/components/CurrentSource.cpp.s
+
+model/Circuit_Model/components/Inductor.obj: model/Circuit_Model/components/Inductor.cpp.obj
+.PHONY : model/Circuit_Model/components/Inductor.obj
+
+# target to build an object file
+model/Circuit_Model/components/Inductor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.obj
+.PHONY : model/Circuit_Model/components/Inductor.cpp.obj
+
+model/Circuit_Model/components/Inductor.i: model/Circuit_Model/components/Inductor.cpp.i
+.PHONY : model/Circuit_Model/components/Inductor.i
+
+# target to preprocess a source file
+model/Circuit_Model/components/Inductor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.i
+.PHONY : model/Circuit_Model/components/Inductor.cpp.i
+
+model/Circuit_Model/components/Inductor.s: model/Circuit_Model/components/Inductor.cpp.s
+.PHONY : model/Circuit_Model/components/Inductor.s
+
+# target to generate assembly for a file
+model/Circuit_Model/components/Inductor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Inductor.cpp.s
+.PHONY : model/Circuit_Model/components/Inductor.cpp.s
+
+model/Circuit_Model/components/Resistor.obj: model/Circuit_Model/components/Resistor.cpp.obj
+.PHONY : model/Circuit_Model/components/Resistor.obj
+
+# target to build an object file
+model/Circuit_Model/components/Resistor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.obj
+.PHONY : model/Circuit_Model/components/Resistor.cpp.obj
+
+model/Circuit_Model/components/Resistor.i: model/Circuit_Model/components/Resistor.cpp.i
+.PHONY : model/Circuit_Model/components/Resistor.i
+
+# target to preprocess a source file
+model/Circuit_Model/components/Resistor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.i
+.PHONY : model/Circuit_Model/components/Resistor.cpp.i
+
+model/Circuit_Model/components/Resistor.s: model/Circuit_Model/components/Resistor.cpp.s
+.PHONY : model/Circuit_Model/components/Resistor.s
+
+# target to generate assembly for a file
+model/Circuit_Model/components/Resistor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/Resistor.cpp.s
+.PHONY : model/Circuit_Model/components/Resistor.cpp.s
+
+model/Circuit_Model/components/VoltageSource.obj: model/Circuit_Model/components/VoltageSource.cpp.obj
+.PHONY : model/Circuit_Model/components/VoltageSource.obj
+
+# target to build an object file
+model/Circuit_Model/components/VoltageSource.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.obj
+.PHONY : model/Circuit_Model/components/VoltageSource.cpp.obj
+
+model/Circuit_Model/components/VoltageSource.i: model/Circuit_Model/components/VoltageSource.cpp.i
+.PHONY : model/Circuit_Model/components/VoltageSource.i
+
+# target to preprocess a source file
+model/Circuit_Model/components/VoltageSource.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.i
+.PHONY : model/Circuit_Model/components/VoltageSource.cpp.i
+
+model/Circuit_Model/components/VoltageSource.s: model/Circuit_Model/components/VoltageSource.cpp.s
+.PHONY : model/Circuit_Model/components/VoltageSource.s
+
+# target to generate assembly for a file
+model/Circuit_Model/components/VoltageSource.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.s
+.PHONY : model/Circuit_Model/components/VoltageSource.cpp.s
+
 model/Results/Diagrom.obj: model/Results/Diagrom.cpp.obj
 .PHONY : model/Results/Diagrom.obj
 
@@ -345,6 +489,54 @@ model/Results/qcustomplot.s: model/Results/qcustomplot.cpp.s
 model/Results/qcustomplot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/qcustomplot.cpp.s
 .PHONY : model/Results/qcustomplot.cpp.s
+
+model/Solver/ACSweep.obj: model/Solver/ACSweep.cpp.obj
+.PHONY : model/Solver/ACSweep.obj
+
+# target to build an object file
+model/Solver/ACSweep.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.obj
+.PHONY : model/Solver/ACSweep.cpp.obj
+
+model/Solver/ACSweep.i: model/Solver/ACSweep.cpp.i
+.PHONY : model/Solver/ACSweep.i
+
+# target to preprocess a source file
+model/Solver/ACSweep.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.i
+.PHONY : model/Solver/ACSweep.cpp.i
+
+model/Solver/ACSweep.s: model/Solver/ACSweep.cpp.s
+.PHONY : model/Solver/ACSweep.s
+
+# target to generate assembly for a file
+model/Solver/ACSweep.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/ACSweep.cpp.s
+.PHONY : model/Solver/ACSweep.cpp.s
+
+model/Solver/AC_analysis.obj: model/Solver/AC_analysis.cpp.obj
+.PHONY : model/Solver/AC_analysis.obj
+
+# target to build an object file
+model/Solver/AC_analysis.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.obj
+.PHONY : model/Solver/AC_analysis.cpp.obj
+
+model/Solver/AC_analysis.i: model/Solver/AC_analysis.cpp.i
+.PHONY : model/Solver/AC_analysis.i
+
+# target to preprocess a source file
+model/Solver/AC_analysis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.i
+.PHONY : model/Solver/AC_analysis.cpp.i
+
+model/Solver/AC_analysis.s: model/Solver/AC_analysis.cpp.s
+.PHONY : model/Solver/AC_analysis.s
+
+# target to generate assembly for a file
+model/Solver/AC_analysis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/AC_analysis.cpp.s
+.PHONY : model/Solver/AC_analysis.cpp.s
 
 model/Solver/DCSolverTest.obj: model/Solver/DCSolverTest.cpp.obj
 .PHONY : model/Solver/DCSolverTest.obj
@@ -778,6 +970,30 @@ view/ui/ToolBar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/ui/ToolBar.cpp.s
 .PHONY : view/ui/ToolBar.cpp.s
 
+view/ui/VoltageSourceDialog.obj: view/ui/VoltageSourceDialog.cpp.obj
+.PHONY : view/ui/VoltageSourceDialog.obj
+
+# target to build an object file
+view/ui/VoltageSourceDialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.obj
+.PHONY : view/ui/VoltageSourceDialog.cpp.obj
+
+view/ui/VoltageSourceDialog.i: view/ui/VoltageSourceDialog.cpp.i
+.PHONY : view/ui/VoltageSourceDialog.i
+
+# target to preprocess a source file
+view/ui/VoltageSourceDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.i
+.PHONY : view/ui/VoltageSourceDialog.cpp.i
+
+view/ui/VoltageSourceDialog.s: view/ui/VoltageSourceDialog.cpp.s
+.PHONY : view/ui/VoltageSourceDialog.s
+
+# target to generate assembly for a file
+view/ui/VoltageSourceDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/ui/VoltageSourceDialog.cpp.s
+.PHONY : view/ui/VoltageSourceDialog.cpp.s
+
 view/wire/WireComponent.obj: view/wire/WireComponent.cpp.obj
 .PHONY : view/wire/WireComponent.obj
 
@@ -801,6 +1017,30 @@ view/wire/WireComponent.s: view/wire/WireComponent.cpp.s
 view/wire/WireComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/wire/WireComponent.cpp.s
 .PHONY : view/wire/WireComponent.cpp.s
+
+view/wire/WirePropertyDialog.obj: view/wire/WirePropertyDialog.cpp.obj
+.PHONY : view/wire/WirePropertyDialog.obj
+
+# target to build an object file
+view/wire/WirePropertyDialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.obj
+.PHONY : view/wire/WirePropertyDialog.cpp.obj
+
+view/wire/WirePropertyDialog.i: view/wire/WirePropertyDialog.cpp.i
+.PHONY : view/wire/WirePropertyDialog.i
+
+# target to preprocess a source file
+view/wire/WirePropertyDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.i
+.PHONY : view/wire/WirePropertyDialog.cpp.i
+
+view/wire/WirePropertyDialog.s: view/wire/WirePropertyDialog.cpp.s
+.PHONY : view/wire/WirePropertyDialog.s
+
+# target to generate assembly for a file
+view/wire/WirePropertyDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/wire/WirePropertyDialog.cpp.s
+.PHONY : view/wire/WirePropertyDialog.cpp.s
 
 # Help Target
 help:
@@ -828,6 +1068,24 @@ help:
 	@echo ... model/Circuit_Model/CircuitModel.obj
 	@echo ... model/Circuit_Model/CircuitModel.i
 	@echo ... model/Circuit_Model/CircuitModel.s
+	@echo ... model/Circuit_Model/Node.obj
+	@echo ... model/Circuit_Model/Node.i
+	@echo ... model/Circuit_Model/Node.s
+	@echo ... model/Circuit_Model/components/Capacitor.obj
+	@echo ... model/Circuit_Model/components/Capacitor.i
+	@echo ... model/Circuit_Model/components/Capacitor.s
+	@echo ... model/Circuit_Model/components/CurrentSource.obj
+	@echo ... model/Circuit_Model/components/CurrentSource.i
+	@echo ... model/Circuit_Model/components/CurrentSource.s
+	@echo ... model/Circuit_Model/components/Inductor.obj
+	@echo ... model/Circuit_Model/components/Inductor.i
+	@echo ... model/Circuit_Model/components/Inductor.s
+	@echo ... model/Circuit_Model/components/Resistor.obj
+	@echo ... model/Circuit_Model/components/Resistor.i
+	@echo ... model/Circuit_Model/components/Resistor.s
+	@echo ... model/Circuit_Model/components/VoltageSource.obj
+	@echo ... model/Circuit_Model/components/VoltageSource.i
+	@echo ... model/Circuit_Model/components/VoltageSource.s
 	@echo ... model/Results/Diagrom.obj
 	@echo ... model/Results/Diagrom.i
 	@echo ... model/Results/Diagrom.s
@@ -837,6 +1095,12 @@ help:
 	@echo ... model/Results/qcustomplot.obj
 	@echo ... model/Results/qcustomplot.i
 	@echo ... model/Results/qcustomplot.s
+	@echo ... model/Solver/ACSweep.obj
+	@echo ... model/Solver/ACSweep.i
+	@echo ... model/Solver/ACSweep.s
+	@echo ... model/Solver/AC_analysis.obj
+	@echo ... model/Solver/AC_analysis.i
+	@echo ... model/Solver/AC_analysis.s
 	@echo ... model/Solver/DCSolverTest.obj
 	@echo ... model/Solver/DCSolverTest.i
 	@echo ... model/Solver/DCSolverTest.s
@@ -891,9 +1155,15 @@ help:
 	@echo ... view/ui/ToolBar.obj
 	@echo ... view/ui/ToolBar.i
 	@echo ... view/ui/ToolBar.s
+	@echo ... view/ui/VoltageSourceDialog.obj
+	@echo ... view/ui/VoltageSourceDialog.i
+	@echo ... view/ui/VoltageSourceDialog.s
 	@echo ... view/wire/WireComponent.obj
 	@echo ... view/wire/WireComponent.i
 	@echo ... view/wire/WireComponent.s
+	@echo ... view/wire/WirePropertyDialog.obj
+	@echo ... view/wire/WirePropertyDialog.i
+	@echo ... view/wire/WirePropertyDialog.s
 .PHONY : help
 
 

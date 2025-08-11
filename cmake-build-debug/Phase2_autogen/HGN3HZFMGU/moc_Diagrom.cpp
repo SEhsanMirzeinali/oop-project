@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Diagrom.h'
 **
-** Created by: The Qt Meta Object Compiler version 69 (Qt 6.9.1)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -19,8 +19,8 @@
 #include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Diagrom.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 69
-#error "This file was generated using the moc from 6.9.1. It"
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.7.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -33,41 +33,51 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN20CustomPlotVisualizerE_t {};
+
+#ifdef QT_MOC_HAS_STRINGDATA
+struct qt_meta_stringdata_CLASSCustomPlotVisualizerENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSCustomPlotVisualizerENDCLASS = QtMocHelpers::stringData(
+    "CustomPlotVisualizer"
+);
+#else  // !QT_MOC_HAS_STRINGDATA
+#error "qtmochelpers.h not found or too old."
+#endif // !QT_MOC_HAS_STRINGDATA
 } // unnamed namespace
 
-template <> constexpr inline auto CustomPlotVisualizer::qt_create_metaobjectdata<qt_meta_tag_ZN20CustomPlotVisualizerE_t>()
-{
-    namespace QMC = QtMocConstants;
-    QtMocHelpers::StringRefStorage qt_stringData {
-        "CustomPlotVisualizer"
-    };
+Q_CONSTINIT static const uint qt_meta_data_CLASSCustomPlotVisualizerENDCLASS[] = {
 
-    QtMocHelpers::UintData qt_methods {
-    };
-    QtMocHelpers::UintData qt_properties {
-    };
-    QtMocHelpers::UintData qt_enums {
-    };
-    return QtMocHelpers::metaObjectData<CustomPlotVisualizer, qt_meta_tag_ZN20CustomPlotVisualizerE_t>(QMC::MetaObjectFlag{}, qt_stringData,
-            qt_methods, qt_properties, qt_enums);
-}
+ // content:
+      12,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
 Q_CONSTINIT const QMetaObject CustomPlotVisualizer::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN20CustomPlotVisualizerE_t>.stringdata,
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN20CustomPlotVisualizerE_t>.data,
+    qt_meta_stringdata_CLASSCustomPlotVisualizerENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSCustomPlotVisualizerENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN20CustomPlotVisualizerE_t>.metaTypes,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSCustomPlotVisualizerENDCLASS_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<CustomPlotVisualizer, std::true_type>
+    >,
     nullptr
 } };
 
 void CustomPlotVisualizer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<CustomPlotVisualizer *>(_o);
-    (void)_t;
-    (void)_c;
+    (void)_o;
     (void)_id;
+    (void)_c;
     (void)_a;
 }
 
@@ -79,7 +89,7 @@ const QMetaObject *CustomPlotVisualizer::metaObject() const
 void *CustomPlotVisualizer::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN20CustomPlotVisualizerE_t>.strings))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSCustomPlotVisualizerENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }

@@ -6,6 +6,9 @@
 #define COMPONENT_H
 
 #include"Node.h"
+#include<vector>
+#include<string>
+#include<complex>
 
 class Component {
 public:

@@ -5,20 +5,37 @@
 
 CustomPlotVisualizer::CustomPlotVisualizer(QObject *parent) : QObject(parent) {}
 
-void CustomPlotVisualizer::plotBasicGraph(
+struct GraphData {
+    QVector<double> x;
+    QVector<double> y;
+    QString name;
+};
+
+std::vector<GraphData> internalGraphs;  // ذخیره داخلی همه نمودارها
+
+void CustomPlotVisualizer::plotBasicGraphWithMathOps(
     const std::vector<std::vector<std::vector<double>>>& multiData,
     const QString& title,
     const QString& xLabel,
     const QString& yLabel,
-    const std::vector<QString>& legendNames
+    const std::vector<QString>& legendNames,
+    bool logX // ← پارامتر جدید برای کنترل محور X
 ) {
+    internalGraphs.clear();
+
     QMainWindow* window = createPlotWindow(title);
     QCustomPlot* plot = new QCustomPlot();
     window->setCentralWidget(plot);
 
     setupCustomPlot(plot, title, xLabel, yLabel, true);
 
-    // رسم نمودارها
+    // اگر کاربر خواست محور X لگاریتمی باشد
+    if (logX) {
+        plot->xAxis->setScaleType(QCPAxis::stLogarithmic);
+        plot->xAxis->setNumberFormat("eb");  // scientific notation
+        plot->xAxis->setNumberPrecision(0);
+    }
+
     for (size_t i = 0; i < multiData.size(); ++i) {
         QVector<double> xData, yData;
         for (const auto& point : multiData[i]) {
@@ -30,14 +47,180 @@ void CustomPlotVisualizer::plotBasicGraph(
 
         plot->addGraph();
         plot->graph(i)->setData(xData, yData);
-        plot->graph(i)->setName(legendNames[i]);
+        plot->graph(i)->setName(i < legendNames.size() ? legendNames[i] : QString("Graph %1").arg(i + 1));
         plot->graph(i)->setPen(QPen(QColor::fromHsv(i * 360 / multiData.size(), 255, 200), 2));
+
+        internalGraphs.push_back({xData, yData, plot->graph(i)->name()});
     }
 
     enableAdvancedCursor(plot);
     plot->rescaleAxes();
     window->show();
+
+
+    plot->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(plot, &QWidget::customContextMenuRequested, [=](const QPoint& pos) {
+        QMenu menu;
+        QAction* changeColorAction = menu.addAction("تغییر رنگ نمودار");
+        QAction* addGraphsAction = menu.addAction("جمع دو نمودار");
+        QAction* subGraphsAction = menu.addAction("تفریق دو نمودار");
+        QAction* mulGraphsAction = menu.addAction("ضرب دو نمودار");
+
+        QAction* changeTitleAction = menu.addAction("تغییر عنوان نمودار");
+        QAction* changeXLabelAction = menu.addAction("تغییر برچسب محور X");
+        QAction* changeYLabelAction = menu.addAction("تغییر برچسب محور Y");
+
+        QAction* selected = menu.exec(plot->mapToGlobal(pos));
+        if (!selected) return;
+
+        if (selected == changeColorAction) {
+            QStringList graphNames;
+            for (const auto& g : internalGraphs)
+                graphNames << g.name;
+
+            bool ok;
+            QString selectedGraph = QInputDialog::getItem(plot, "انتخاب نمودار", "نمودار:", graphNames, 0, false, &ok);
+            if (!ok) return;
+
+            int graphIndex = -1;
+            for (int i = 0; i < plot->graphCount(); ++i) {
+                if (plot->graph(i)->name() == selectedGraph) {
+                    graphIndex = i;
+                    break;
+                }
+            }
+            if (graphIndex == -1) return;
+
+            QStringList colorNames = {"Red", "Green", "Blue", "Black", "Cyan", "Magenta", "Yellow"};
+            QString selectedColorName = QInputDialog::getItem(plot, "انتخاب رنگ", "رنگ جدید:", colorNames, 0, false, &ok);
+            if (!ok || selectedColorName.isEmpty()) return;
+
+            QColor newColor(selectedColorName);
+            QColor currentColor = plot->graph(graphIndex)->pen().color();
+            if (newColor != currentColor) {
+                plot->graph(graphIndex)->setPen(QPen(newColor, 2));
+                plot->replot();
+            }
+        }
+
+        else if (selected == changeTitleAction) {
+            bool ok;
+            QString currentTitle = plot->plotLayout()->rowCount() > 0 && plot->plotLayout()->elementAt(0)
+                                   ? plot->plotLayout()->elementAt(0)->objectName()
+                                   : "";
+
+            QString newTitle = QInputDialog::getText(plot, "تغییر عنوان", "عنوان جدید:", QLineEdit::Normal, currentTitle, &ok);
+                        if (ok && !newTitle.isEmpty()) {
+                plot->plotLayout()->insertRow(0);
+                QCPTextElement* titleElement = new QCPTextElement(plot, newTitle, QFont("Sans", 12, QFont::Bold));
+                plot->plotLayout()->addElement(0, 0, titleElement);
+                plot->replot();
+            }
+        }
+
+        else if (selected == changeXLabelAction) {
+            bool ok;
+            QString newX = QInputDialog::getText(plot, "تغییر برچسب محور X", "متن جدید:", QLineEdit::Normal, plot->xAxis->label(), &ok);
+            if (ok && !newX.isEmpty()) {
+                plot->xAxis->setLabel(newX);
+                plot->replot();
+            }
+        }
+
+        else if (selected == changeYLabelAction) {
+            bool ok;
+            QString newY = QInputDialog::getText(plot, "تغییر برچسب محور Y", "متن جدید:", QLineEdit::Normal, plot->yAxis->label(), &ok);
+            if (ok && !newY.isEmpty()) {
+                plot->yAxis->setLabel(newY);
+                plot->replot();
+            }
+        }
+
+        else {
+            QStringList graphNames;
+            for (const auto& g : internalGraphs)
+                graphNames << g.name;
+
+            bool ok1, ok2;
+            QString g1Name = QInputDialog::getItem(plot, "انتخاب نمودار اول", "نمودار:", graphNames, 0, false, &ok1);
+            QString g2Name = QInputDialog::getItem(plot, "انتخاب نمودار دوم", "نمودار:", graphNames, 0, false, &ok2);
+            if (!ok1 || !ok2 || g1Name == g2Name) return;
+
+            auto it1 = std::find_if(internalGraphs.begin(), internalGraphs.end(), [&](const GraphData& g){ return g.name == g1Name; });
+            auto it2 = std::find_if(internalGraphs.begin(), internalGraphs.end(), [&](const GraphData& g){ return g.name == g2Name; });
+            if (it1 == internalGraphs.end() || it2 == internalGraphs.end()) return;
+
+            QVector<double> x, y;
+            int n = std::min(it1->x.size(), it2->x.size());
+            for (int i = 0; i < n; ++i) {
+                x.push_back(it1->x[i]);
+                double val = 0;
+                if (selected == addGraphsAction) val = it1->y[i] + it2->y[i];
+                else if (selected == subGraphsAction) val = it1->y[i] - it2->y[i];
+                else if (selected == mulGraphsAction) val = it1->y[i] * it2->y[i];
+                y.push_back(val);
+            }
+
+            int index = plot->graphCount();
+            plot->addGraph();
+            plot->graph(index)->setData(x, y);
+            QString newName = QString("(%1 %2 %3)")
+                              .arg(it1->name)
+                              .arg(selected == addGraphsAction ? "+" : selected == subGraphsAction ? "−" : "×")
+                              .arg(it2->name);
+            plot->graph(index)->setName(newName);
+            plot->graph(index)->setPen(QPen(Qt::darkMagenta, 2));
+            plot->replot();
+
+            internalGraphs.push_back({x, y, newName});
+        }
+        // امکان تغییر label نمودار با کلیک راست روی نمودار
+        plot->setInteractions(QCP::iSelectPlottables); // اطمینان از فعال بودن انتخاب نمودار
+
+    connect(plot, &QCustomPlot::mousePress, plot, [=](QMouseEvent *event) {
+    if (event->button() == Qt::RightButton) {
+        // بررسی اینکه روی چه چیزی کلیک شده
+        bool foundGraph = false;
+        for (int i = 0; i < plot->graphCount(); ++i) {
+            QCPGraph* graph = plot->graph(i);
+            if (!graph) continue;
+
+            double distance = graph->selectTest(event->pos(), false); // بررسی نزدیکی به graph
+            if (distance < 5) { // اگه خیلی نزدیک بود (5 پیکسل)
+                foundGraph = true;
+
+                // نمایش پنجره تغییر نام
+                bool ok;
+                QString currentLabel = graph->name();
+                QString newLabel = QInputDialog::getText(plot, "تغییر برچسب نمودار", "نام جدید:", QLineEdit::Normal, currentLabel, &ok);
+                if (ok && !newLabel.isEmpty()) {
+                    graph->setName(newLabel);
+                    plot->legend->setVisible(true);
+                    plot->replot();
+
+                    // بروزرسانی internalGraphs همزمان
+                    for (GraphData& g : internalGraphs) {
+                        if (g.name == currentLabel) {
+                            g.name = newLabel;
+                            break;
+                        }
+                    }
+                }
+                break; // فقط یک نمودار باید هدف باشد
+            }
+        }
+
+        // اگه هیچ نموداری کلیک نشد، کاری نکن
+        if (!foundGraph) {
+            qDebug() << "کلیک راست روی فضای خالی";
+        }
+    }
+    });
+
+    });
 }
+
+
 
 void CustomPlotVisualizer::enableAdvancedCursor(QCustomPlot* plot) {
     if (plot->graphCount() == 0) {
