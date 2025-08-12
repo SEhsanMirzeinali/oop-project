@@ -10,7 +10,7 @@
 
 class ResultController {
 private:
-    SimulationResults results;
+    //SimulationResults results;
 
 public:
   void handle_DC_Analyse(std::vector <double> results,CircuitModel& circuit);

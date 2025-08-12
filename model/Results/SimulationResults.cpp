@@ -39,102 +39,143 @@ std::unordered_map<std::string, double> SimulationResults::DC_Analyse_Results(st
 
     return result_map;
 }
-std::vector<double> SimulationResults::AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit,std::string outputType) {
-std::vector<std::complex<double>> basicResults;
-//circuit.setNodesNumber();
-for(int i=0 ; i<results.size()-1 ; i++) {
-    for(int j=0 ; j<circuit.getNode().size() ; j++) {
-        //std::cout<<circuit.getNode()[j]->getName()<<" num: "<<circuit.getNode()[j]->getNumber()<<std::endl;
+std::vector<double> SimulationResults::AC_Analysis(
+    std::string type,
+    std::vector<std::complex<double>> results,
+    double omega,
+    double phase,
+    std::vector<std::string> variables,
+    CircuitModel& circuit)
+{
+    std::vector<std::complex<double>> basicResults;
 
-        if (circuit.getNode()[j]->getNumber() == i) {
-            circuit.getNode()[j]->setCVoltage(results[i]);
-        }
-        if (circuit.getNode()[j]->getNumber()==-1) {
-            circuit.getNode()[j]->setCVoltage({0,0});
-        }
-    }
-}
-
-    for (const auto& comp : circuit.getComponents()) {
-        if (auto voltageSource = std::dynamic_pointer_cast<VoltageSource>(comp)) {
-            voltageSource->setCCurrent(results[results.size()-1]);
-        }
-    }
-
-    for (int i = 0; i < variables.size(); i++) {
-        //std::cout<<"name: "<<variables[i]<<std::endl;
-
-        if (variables[i][0] == 'V') {
-            for (int j = 0; j < circuit.getNode().size(); j++) {
-                if (variables[i].substr(1) == circuit.getNode()[j]->getName()) {
-                    basicResults.push_back(circuit.getNode()[j]->getCVoltage());
-                    break;
-                }
+    // 1. Set complex voltages for nodes
+    for(int i = 0; i < results.size()-1; i++) {
+        for(const auto& node : circuit.getNode()) {
+            if(node->getNumber() == i) {
+                node->setCVoltage(results[i]);
             }
-        }
-        if (variables[i][0] == 'I') {
-            for (const auto& comp : circuit.getComponents()) {
-
-                if(variables[i].substr(1) == comp->getName()) {
-                    if (auto voltageSource = std::dynamic_pointer_cast<VoltageSource>(comp)) {
-                            basicResults.push_back(voltageSource->getCCurrent());
-                    }
-                    if(auto r = std::dynamic_pointer_cast<Resistor>(comp)) {
-                        basicResults.push_back((r->getNode1()->getCVoltage()-r->getNode2()->getCVoltage())/r->getResistance());
-                    }
-                    if(auto c = std::dynamic_pointer_cast<Capacitor>(comp)) {
-                        basicResults.push_back((c->getNode1()->getCVoltage()-c->getNode2()->getCVoltage())/c->getImpedance(omega));
-                    }
-                    if(auto l = std::dynamic_pointer_cast<Inductor>(comp)) {
-                        basicResults.push_back((l->getNode1()->getCVoltage()-l->getNode2()->getCVoltage())/l->getImpedance(omega));
-                    }
-                }
+            if(node->getNumber() == -1) {
+                node->setCVoltage({0,0});
             }
         }
     }
-    // for(int i=0 ; i<basicResults.size() ; i++) {
-    //     std::cout<<"basic: "<<basicResults[i]<<" ,";
-    // }
-    std::cout<<std::endl;
+
+    // 2. Set complex current for voltage sources
+    for(const auto& comp : circuit.getComponents()) {
+        if(auto voltageSource = std::dynamic_pointer_cast<VoltageSource>(comp)) {
+            voltageSource->setCCurrent(results.back()); // Last element is current
+        }
+    }
+
+    // 3. Process requested variables
+    for(const auto& var : variables) {
+        if(var.empty()) continue;
+
+        try {
+            if(var[0] == 'V') {
+                // Handle voltage variables
+                std::string nodeName = var.substr(1);
+                bool found = false;
+
+                for(const auto& node : circuit.getNode()) {
+                    if(node->getName() == nodeName) {
+                        basicResults.push_back(node->getCVoltage());
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found) {
+                    std::cerr << "Warning: Node " << nodeName << " not found for variable " << var << std::endl;
+                    basicResults.push_back({0,0});
+                }
+            }
+            else if(var[0] == 'I') {
+                // Handle current variables
+                std::string compName = var.substr(1);
+                bool found = false;
+
+                for(const auto& comp : circuit.getComponents()) {
+                    if(comp->getName() == compName) {
+                        if(auto vs = std::dynamic_pointer_cast<VoltageSource>(comp)) {
+                            basicResults.push_back(vs->getCCurrent());
+                        }
+                        else if(auto r = std::dynamic_pointer_cast<Resistor>(comp)) {
+                            auto v_diff = r->getNode1()->getCVoltage() - r->getNode2()->getCVoltage();
+                            basicResults.push_back(v_diff / r->getResistance());
+                        }
+                        else if(auto c = std::dynamic_pointer_cast<Capacitor>(comp)) {
+                            auto v_diff = c->getNode1()->getCVoltage() - c->getNode2()->getCVoltage();
+                            basicResults.push_back(v_diff / c->getImpedance(omega));
+                        }
+                        else if(auto l = std::dynamic_pointer_cast<Inductor>(comp)) {
+                            auto v_diff = l->getNode1()->getCVoltage() - l->getNode2()->getCVoltage();
+                            basicResults.push_back(v_diff / l->getImpedance(omega));
+                        }
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found) {
+                    std::cerr << "Warning: Component " << compName << " not found for variable " << var << std::endl;
+                    basicResults.push_back({0,0});
+                }
+            }
+            else {
+                std::cerr << "Warning: Invalid variable prefix in " << var << " (should be V or I)" << std::endl;
+                basicResults.push_back({0,0});
+            }
+        }
+        catch(const std::exception& e) {
+            std::cerr << "Error processing variable " << var << ": " << e.what() << std::endl;
+            basicResults.push_back({0,0});
+        }
+    }
+
+    // 4. Prepare final results based on analysis type
     std::vector<double> finalRes;
-    if(type=="AC") {
-        finalRes.push_back(omega/6.28);
-        for (const auto& complex_num : basicResults) {
-            if(outputType=="Decibel") {
-                finalRes.push_back(20*std::log10(std::abs(complex_num)));
-            }
-            else if(outputType=="Linear") {
-                finalRes.push_back((std::abs(complex_num)));
-            }
+    double freq = omega / (2 * M_PI);  // More precise than 6.28
+
+    if(type == "AC") {
+        finalRes.push_back(freq);
+        for(const auto& complex_num : basicResults) {
+            double magnitude = std::abs(complex_num);
+            // Handle very small magnitudes to avoid log10(0)
+            //std::cout << "complex_num:  " << complex_num << std::endl;
+            finalRes.push_back(magnitude > 1e-20 ? 20*log10(magnitude) : -200);
         }
     }
-    else if(type=="Phase") {
+    else if(type == "Phase") {
         finalRes.push_back(phase);
-        for (const auto& complex_num : basicResults) {
+        for(const auto& complex_num : basicResults) {
             double phase_rad = std::arg(complex_num);
-            double phase_deg = phase_rad * 180.0 / 3.14;
+            double phase_deg = phase_rad * 180.0 / M_PI;  // More precise than 3.14
             finalRes.push_back(phase_deg);
-
         }
     }
+    else {
+        std::cerr << "Error: Unknown analysis type " << type << std::endl;
+        return {};
+    }
 
-    double freq = omega/6.28;
-    std::cout<<"freq: "<<freq<<std::endl;
-    for(int i=0 ; i<variables.size() ; i++) {
-        if(variables[i]!="V")
-        std::cout<<variables[i]<<"        ";
+    // 5. Print results (optional, can be removed or made configurable)
+    std::cout << std::fixed << std::setprecision(3);
+    std::cout << "Frequency: " << freq << " Hz" << std::endl;
+    std::cout << "Variables: ";
+    for(const auto& var : variables) {
+        std::cout << std::setw(12) << var;
     }
-    std::cout<<std::endl;
-    for(int i=0 ; i<finalRes.size() ; i++) {
-        std::cout<<finalRes[i]<<", ";
+    std::cout << std::endl << "Values:    ";
+    for(size_t i = 1; i < finalRes.size(); i++) {
+        std::cout << std::setw(12) << finalRes[i];
     }
-    std::cout<<std::endl;
+    std::cout << std::endl << std::endl;
+
     return finalRes;
 }
-    std::vector<std::vector<double>> SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,
-                                        std::vector<std::string> variables,
-                                        double TStart,double dt,
-                                        CircuitModel& circuit) {
+std::string SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,std::vector<std::string> variables,double TStart,double dt,CircuitModel& circuit) {
     std::vector<std::vector<double>> finalRes;
     std::vector<int> indexes;
 
@@ -241,7 +282,42 @@ for(int i=0 ; i<results.size()-1 ; i++) {
         }
         std::cout << std::endl;
     }
-    return finalRes;
+
+    ///////////////////// ذخیره در فایل ////////////
+    // auto now = std::chrono::system_clock::now();
+    // auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    // std::string filename = "C:/study/term 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Analysis_" + std::to_string(ms) + ".csv";
+    //
+    // std::ofstream outFile(filename);
+    // if (!outFile) {
+    //     std::cerr << "Error: Could not open file for writing!" << std::endl;
+    // } else {
+    //     // هدر CSV
+    //     outFile << "Time";
+    //     for (const auto& var : variables) outFile << "," << var;
+    //     outFile << "\n";
+    //
+    //     // داده‌ها
+    //     for (int i = TStart / dt + 1; i < finalRes.size(); i++) {
+    //         for (int j = 0; j < finalRes[i].size(); j++) {
+    //             outFile << std::fixed << std::setprecision(6) << finalRes[i][j];
+    //             if (j != finalRes[i].size() - 1) outFile << ",";
+    //         }
+    //         outFile << "\n";
+    //     }
+    //     outFile.close();
+    // }
+
+    ////////
+    if (!variables.empty()) {
+        QString title = "Transient Analysis";
+        QString xAxisTitle = "Time (s)";  // عنوان محور X برای تحلیل Transient
+        QString yAxisTitle = "Values";
+        plotResults(finalRes, title, xAxisTitle, yAxisTitle, variables);
+    }
+
+    //return filename; // اسم فایل رو برمی‌گردونیم برای خواندن بعدی
+    return "s";
 }
 
 std::vector<std::vector<double>> SimulationResults::extractTwoColumns(
@@ -263,6 +339,25 @@ std::vector<std::vector<double>> SimulationResults::extractTwoColumns(
     return result;
 }
 
+// std::vector<std::vector<double>> SimulationResults::extractTwoColumns(
+//     const std::vector<std::vector<double>>& matrix,
+//     std::vector<int> columnIndices
+// ) {
+//     std::vector<std::vector<double>> result;
+//
+//     for (const auto& row : matrix) {
+//         std::vector<double> selectedColumns;
+//         for (int col : columnIndices) {
+//             if (col >= 0 && col < row.size()) {
+//                 selectedColumns.push_back(row[col]);
+//             }
+//         }
+//         result.push_back(selectedColumns);
+//     }
+//
+//     return result;
+// }
+
 std::vector<double> SimulationResults::extractSingleColumn(
     const std::vector<std::vector<double>>& matrix,
     int columnIndex
@@ -276,4 +371,88 @@ std::vector<double> SimulationResults::extractSingleColumn(
     }
 
     return result;
+}
+void SimulationResults::plotResults(
+    const std::vector<std::vector<double>>& data,
+    const QString& title,
+    const QString& xAxisTitle,  // پارامتر جدید اضافه شده
+    const QString& yAxisTitle,
+    const std::vector<std::string>& variables
+) {
+    std::vector<std::vector<std::vector<double>>> multiData;
+    std::vector<QString> legendNames;
+
+    // استخراج ستون‌های مورد نظر (ستون ۰ = زمان/فرکانس، ستون‌های بعدی = متغیرها)
+    for (size_t i = 1; i < data[0].size(); ++i) {
+        std::vector<std::vector<double>> singleVarData;
+        for (const auto& row : data) {
+            singleVarData.push_back({row[0], row[i]}); // زمان/فرکانس و مقدار متغیر
+        }
+        multiData.push_back(singleVarData);
+        legendNames.push_back(QString::fromStdString(variables[i - 1]));
+    }
+
+    plotter.plotBasicGraphWithMathOps(multiData, title, xAxisTitle, yAxisTitle, legendNames , false);
+}
+
+void SimulationResults::PlotACAnalysis(
+    const std::vector<std::vector<std::complex<double>>>& results,
+    const std::vector<std::string>& variables,
+    const QString& title,
+    const QString& xAxisTitle,
+    const QString& yAxisTitle)
+{
+    if (results.empty() || variables.empty()) return;
+
+    // جدا کردن داده‌های دامنه و فاز
+    std::vector<std::vector<std::vector<double>>> magnitudeData;
+    std::vector<std::vector<std::vector<double>>> phaseData;
+    std::vector<QString> legendNames;
+
+    // ستون اول: فرکانس
+    // ستون‌های بعدی: متغیرها
+    for (size_t varIdx = 0; varIdx < variables.size(); ++varIdx) {
+        std::vector<std::vector<double>> magDataForVar;
+        std::vector<std::vector<double>> phaseDataForVar;
+
+        for (const auto& row : results) {
+            if (row.size() > varIdx + 1) { // +1 because first column is frequency
+                double freq = row[0].real();
+                std::complex<double> value = row[varIdx + 1];
+
+                // محاسبه دامنه به دسی‌بل
+                double magnitude = abs(value) > 1e-20 ? 20*log10(abs(value)) : -200;
+                //std::cout << "Value :  " << value << "  Magnityde :  " << magnitude << std::endl;
+                magDataForVar.push_back({freq, magnitude});
+
+                // محاسبه فاز به درجه
+                double phase = std::arg(value) * 180.0 / M_PI;
+                phaseDataForVar.push_back({freq, phase});
+            }
+        }
+
+        magnitudeData.push_back(magDataForVar);
+        phaseData.push_back(phaseDataForVar);
+        legendNames.push_back(QString::fromStdString(variables[varIdx]));
+    }
+
+    // رسم دامنه با محور X لگاریتمی
+    plotter.plotBasicGraphWithMathOps(
+        magnitudeData,
+        title + " - Magnitude (dB)",
+        xAxisTitle,
+        "Magnitude (dB)",
+        legendNames,
+        true // ← فرکانس لاگ
+    );
+
+    // رسم فاز با محور X خطی
+    plotter.plotBasicGraphWithMathOps(
+        phaseData,
+        title + " - Phase (degrees)",
+        xAxisTitle,
+        "Phase (degrees)",
+        legendNames,
+        false
+    );
 }

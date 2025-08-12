@@ -14,229 +14,137 @@
 #include <algorithm>
 using namespace Eigen;
 
-std::vector<std::vector<std::complex<double>>> ACSweep::solve(CircuitModel& circuit,double StartFreq ,
-    double EndFreq , int numOfPoints ,std::string typeOfSweep,std::vector<std::string> variables,std::string outputType) {
-    std::vector<std::vector<std::complex<double>>> resultss;
-    double currentFreq;
+std::vector<std::vector<std::complex<double>>> ACSweep::solve(
+    CircuitModel& circuit, double StartFreq, double EndFreq,
+    int numOfPoints, std::string typeOfSweep, std::vector<std::string> variables)
+{
+    std::vector<std::vector<std::complex<double>>> results_all;
+    results_all.reserve(numOfPoints);
+
+    double currentFreq = StartFreq;
+
     for (int i = 0; i < numOfPoints; i++) {
+        // 1- محاسبه فرکانس فعلی
         if (typeOfSweep == "Linear") {
             currentFreq = StartFreq + i*(EndFreq - StartFreq)/(numOfPoints-1);
         }
         else if (typeOfSweep == "Octave") {
-            currentFreq = StartFreq*pow(2.0,i*log2(EndFreq / StartFreq)/(numOfPoints-1));
+            currentFreq = StartFreq * pow(2.0, i*log2(EndFreq / StartFreq)/(numOfPoints-1));
         }
         else if (typeOfSweep == "Decade") {
-            currentFreq = StartFreq*pow(10.0,i*log10(EndFreq / StartFreq)/(numOfPoints-1));
+            currentFreq = StartFreq * pow(10.0, i*log10(EndFreq / StartFreq)/(numOfPoints-1));
         }
-        //currentTime = TStart + i*TStep;
 
+        // 2- آپدیت منابع ولتاژ AC
         for (auto& comp : circuit.getComponents()) {
             if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
-                if (vs->getNode1() && vs->getNode2()) {
-                    vs->setOmega(2*3.14*currentFreq);
-                    vs->setVoltage();
-                }
+                vs->setOmega(2.0 * M_PI * currentFreq);
+                vs->setVoltage();
             }
         }
 
-        std::vector<std::complex<double>> results;
-        std::vector<std::vector<std::complex<double>>> leftSide;
-        std::vector<std::complex<double>> rightSide;
-                //std::cout<<"freq: "<<currentFreq<<std::endl;
+        // 3- ساخت ماتریس‌ها
+        auto G = createMatG(circuit);
+        auto B = createMatB(circuit);
+        auto C = createMatC(circuit);
+        auto D = createMatD(circuit);
+        auto E = createMatE(circuit);
+        auto J = createMatJ(circuit);
 
-        std::vector<std::vector<std::complex<double>>> G = createMatG(circuit);
+        auto leftSide = combineLeftSide(G, B, C, D);
+        auto rightSide = combineRightSide(J, E);
 
-        std::vector<std::vector<std::complex<double>>> B = createMatB(circuit);
-        std::vector<std::vector<std::complex<double>>> C = createMatC(circuit);
-        std::vector<std::vector<std::complex<double>>> D = createMatD(circuit);
-        std::vector<std::complex<double>> E = createMatE(circuit);
-        std::vector<std::complex<double>> J = createMatJ(circuit);
+        // 4- حل سیستم
+        auto X = solveComplexSystem(leftSide, rightSide);
 
-        leftSide = combineLeftSide(G, B, C, D);
-        rightSide = combineRightSide(J, E);
-         results = solveComplexSystem(leftSide,rightSide);
+        // 5- ذخیره نتایج: ستون اول فرکانس، بقیه ولتاژ/جریان‌ها
+        std::vector<std::complex<double>> row;
+        row.reserve(X.size() + 1);
+        row.push_back(std::complex<double>(currentFreq, 0.0));
+        row.insert(row.end(), X.begin(), X.end());
+        results_all.push_back(row);
 
-        // for(int i=0 ; i<rightSide.size() ; i++) {
-        //     std::cout<<"rightSide["<<i<<"]: "<<rightSide[i]<<std::endl;
-        // }
-        // std::cout<<std::endl<<"left side: \n";
-        // for(int i=0 ; i<leftSide.size(); i++) {
-        //     for(int j=0 ; j<leftSide.size() ; j++) {
-        //         std::cout<<leftSide[i][j]<<" ";
-        //     }
-        //     std::cout<<std::endl;
-        // }
-        // for(int i=0 ; i<results.size() ; i++) {
-        //     std::cout<<"results["<<i<<"]: "<<results[i]<<std::endl;
-        // }
-        double omega,ampl,phase;
+        // 6- ارسال به آنالیزور (اختیاری)
+        double omega = 0.0, phase = 0.0;
         for (auto& comp : circuit.getComponents()) {
             if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
-                if (vs->getNode1() && vs->getNode2()) {
-                    omega = vs->getOmega();
-                    phase=vs->getPhase();
-                }
+                omega = vs->getOmega();
+                phase = vs->getPhase();
             }
         }
-        circuitResults->AC_Analysis("AC",results,omega,phase,variables,circuit, outputType);
-        //printvector(results);
-        //circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
-        //std::cout<<"inja\n";
-
+        circuitResults->AC_Analysis("AC", X, omega, phase, variables, circuit);
     }
-    return resultss;
+
+    circuitResults->PlotACAnalysis(results_all, variables, "AC Frequency Sweep");
+
+    return results_all;
 }
-std::vector<std::vector<std::complex<double>>> ACSweep::Phasesolve(CircuitModel& circuit,double baseFreq,
-    double StartPhase ,double EndPhase , int numOfPoints ,std::vector<std::string> variables) {
-    std::vector<std::vector<std::complex<double>>> resultss;
+
+std::vector<std::vector<std::complex<double>>> ACSweep::Phasesolve(
+    CircuitModel& circuit, double baseFreq,
+    double StartPhase, double EndPhase,
+    int numOfPoints, std::vector<std::string> variables)
+{
+    std::vector<std::vector<std::complex<double>>> results_all;
+    results_all.reserve(numOfPoints);
+
+    // یک بار برای همه، ω را تنظیم می‌کنیم
     for (auto& comp : circuit.getComponents()) {
         if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
-            if (vs->getNode1() && vs->getNode2()) {
-                vs->setOmega(2*3.14*baseFreq);
-            }
+            vs->setOmega(2.0 * M_PI * baseFreq);
         }
     }
-    double currentPhase;
+
+    double currentPhase = StartPhase;
 
     for (int i = 0; i < numOfPoints; i++) {
-        currentPhase = StartPhase + i*(EndPhase - StartPhase)/(numOfPoints-1);
+        // 1- محاسبه فاز فعلی
+        currentPhase = StartPhase + i * (EndPhase - StartPhase) / (numOfPoints - 1);
 
-
+        // 2- آپدیت منابع ولتاژ با فاز جدید
         for (auto& comp : circuit.getComponents()) {
             if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
-                if (vs->getNode1() && vs->getNode2()) {
-                    vs->setPhase(currentPhase);
-                    vs->setVoltage();
-                }
+                vs->setPhase(currentPhase);
+                vs->setVoltage();
             }
         }
 
-        std::vector<std::complex<double>> results;
-        std::vector<std::vector<std::complex<double>>> leftSide;
-        std::vector<std::complex<double>> rightSide;
+        // 3- ساخت ماتریس‌ها
+        auto G = createMatG(circuit);
+        auto B = createMatB(circuit);
+        auto C = createMatC(circuit);
+        auto D = createMatD(circuit);
+        auto E = createMatE(circuit);
+        auto J = createMatJ(circuit);
 
-        std::vector<std::vector<std::complex<double>>> G = createMatG(circuit);
+        auto leftSide = combineLeftSide(G, B, C, D);
+        auto rightSide = combineRightSide(J, E);
 
-        std::vector<std::vector<std::complex<double>>> B = createMatB(circuit);
-        std::vector<std::vector<std::complex<double>>> C = createMatC(circuit);
-        std::vector<std::vector<std::complex<double>>> D = createMatD(circuit);
-        std::vector<std::complex<double>> E = createMatE(circuit);
-        std::vector<std::complex<double>> J = createMatJ(circuit);
+        // 4- حل سیستم
+        auto X = solveComplexSystem(leftSide, rightSide);
 
-        leftSide = combineLeftSide(G, B, C, D);
-        rightSide = combineRightSide(J, E);
-         results = solveComplexSystem(leftSide,rightSide);
+        // 5- ذخیره نتایج: ستون اول فاز، بقیه ولتاژ/جریان‌ها
+        std::vector<std::complex<double>> row;
+        row.reserve(X.size() + 1);
+        row.push_back(std::complex<double>(currentPhase, 0.0));
+        row.insert(row.end(), X.begin(), X.end());
+        results_all.push_back(row);
 
-        // for(int i=0 ; i<rightSide.size() ; i++) {
-        //     std::cout<<"rightSide["<<i<<"]: "<<rightSide[i]<<std::endl;
-        // }
-        // std::cout<<std::endl<<"left side: \n";
-        // for(int i=0 ; i<leftSide.size(); i++) {
-        //     for(int j=0 ; j<leftSide.size() ; j++) {
-        //         std::cout<<leftSide[i][j]<<" ";
-        //     }
-        //     std::cout<<std::endl;
-        // }
-        // for(int i=0 ; i<results.size() ; i++) {
-        //     std::cout<<"results["<<i<<"]: "<<results[i]<<std::endl;
-        // }
-        double omega,ampl,phase;
+        // 6- ارسال به آنالیزور (اختیاری)
+        double omega = 0.0, phase = currentPhase;
         for (auto& comp : circuit.getComponents()) {
             if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
-                if (vs->getNode1() && vs->getNode2()) {
-                    omega = vs->getOmega();
-                    phase=vs->getPhase();
-                }
+                omega = vs->getOmega();
+                phase = vs->getPhase();
             }
         }
-        circuitResults->AC_Analysis("Phase",results,omega,phase,variables,circuit," ");
-        //printvector(results);
-        //circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
-        //std::cout<<"inja\n";
-
+        circuitResults->AC_Analysis("Phase", X, omega, phase, variables, circuit);
     }
-    return resultss;
+
+    circuitResults->PlotACAnalysis(results_all, variables, "AC Phase Sweep", "Phase (degrees)");
+
+    return results_all;
 }
-
-
-std::vector<std::vector<std::complex<double>>> ACSweep::createMatG(CircuitModel& circuit) {
-    int n = circuit.getCountOfNodes();
-    // std::vector<std::vector<std::complex<double>>> G;
-    // for(int i = 0; i < n; i++) {
-    //     G.emplace_back(n, std::complex<double>(0.0,0));
-    // }
-    std::vector<std::vector<std::complex<double>>> G;
-    G.resize(n, std::vector<std::complex<double>>(n, std::complex<double>(0.0,0)));
-    double omega = 0.0; // مقدار اولیه برای فرکانس
-
-    // ابتدا فرکانس را از منابع ولتاژ AC پیدا می‌کنیم
-    for (const auto& comp : circuit.getComponents()) {
-        if (auto v = dynamic_pointer_cast<VoltageSource>(comp)) {
-            omega = v->getOmega();
-            break; // فرض می‌کنیم همه منابع فرکانس یکسان دارند
-        }
-    }
-    circuit.setNodesNumber();
-
-    for (const auto& comp : circuit.getComponents()) {
-        if (auto resistor = dynamic_pointer_cast<Resistor>(comp)) {
-            auto node1 = resistor->getNode1();
-            auto node2 = resistor->getNode2();
-            int node1Index = node1->getNumber();
-            int node2Index = node2->getNumber();
-            std::complex<double> conductance(resistor->getConductance(), 0.0);
-
-            if (node1Index != -1) {
-                G[node1Index][node1Index] += conductance;
-            }
-            if (node2Index != -1) {
-                G[node2Index][node2Index] += conductance;
-            }
-            if (node1Index != -1 && node2Index != -1) {
-                G[node1Index][node2Index] -= conductance;
-                G[node2Index][node1Index] -= conductance;
-            }
-        }
-        else if (auto capacitor = dynamic_pointer_cast<Capacitor>(comp)) {
-            auto node1 = capacitor->getNode1();
-            auto node2 = capacitor->getNode2();
-            int node1Index = node1->getNumber();
-            int node2Index = node2->getNumber();
-            std::complex<double> admittance = 1.0 / capacitor->getImpedance(omega);
-
-            if (node1Index != -1) {
-                G[node1Index][node1Index] += admittance;
-            }
-            if (node2Index != -1) {
-                G[node2Index][node2Index] += admittance;
-            }
-            if (node1Index != -1 && node2Index != -1) {
-                G[node1Index][node2Index] -= admittance;
-                G[node2Index][node1Index] -= admittance;
-            }
-        }
-        else if (auto inductor = dynamic_pointer_cast<Inductor>(comp)) {
-            auto node1 = inductor->getNode1();
-            auto node2 = inductor->getNode2();
-            int node1Index = node1->getNumber();
-            int node2Index = node2->getNumber();
-            std::complex<double> admittance = 1.0 / inductor->getImpedance(omega);
-
-            if (node1Index != -1) {
-                G[node1Index][node1Index] += admittance;
-            }
-            if (node2Index != -1) {
-                G[node2Index][node2Index] += admittance;
-            }
-            if (node1Index != -1 && node2Index != -1) {
-                G[node1Index][node2Index] -= admittance;
-                G[node2Index][node1Index] -= admittance;
-            }
-        }
-    }
-    return G;
-}
-
 
 std::vector<std::vector<std::complex<double>>> ACSweep::createMatB(CircuitModel& circuit) {
     int n = circuit.getCountOfNodes();
@@ -423,4 +331,77 @@ std::vector<std::complex<double>> ACSweep::solveComplexSystem(const std::vector<
     }
 
     return result;
+}
+
+std::vector<std::vector<std::complex<double>>> ACSweep::createMatG(CircuitModel& circuit) {
+    int n = circuit.getCountOfNodes();
+    std::vector<std::vector<std::complex<double>>> G;
+    G.resize(n, std::vector<std::complex<double>>(n, std::complex<double>(0.0, 0.0)));
+
+    double omega = 0.0;
+    for (const auto& comp : circuit.getComponents()) {
+        if (auto v = std::dynamic_pointer_cast<VoltageSource>(comp)) {
+            omega = v->getOmega();
+            break;
+        }
+    }
+    circuit.setNodesNumber();
+
+    for (const auto& comp : circuit.getComponents()) {
+        if (auto resistor = std::dynamic_pointer_cast<Resistor>(comp)) {
+            auto node1 = resistor->getNode1();
+            auto node2 = resistor->getNode2();
+            int node1Index = node1->getNumber();
+            int node2Index = node2->getNumber();
+            std::complex<double> conductance(resistor->getConductance(), 0.0);
+
+            if (node1Index != -1) {
+                G[node1Index][node1Index] += conductance;
+            }
+            if (node2Index != -1) {
+                G[node2Index][node2Index] += conductance;
+            }
+            if (node1Index != -1 && node2Index != -1) {
+                G[node1Index][node2Index] -= conductance;
+                G[node2Index][node1Index] -= conductance;
+            }
+        }
+        else if (auto capacitor = std::dynamic_pointer_cast<Capacitor>(comp)) {
+            auto node1 = capacitor->getNode1();
+            auto node2 = capacitor->getNode2();
+            int node1Index = node1->getNumber();
+            int node2Index = node2->getNumber();
+            std::complex<double> admittance = 1.0 / capacitor->getImpedance(omega);
+
+            if (node1Index != -1) {
+                G[node1Index][node1Index] += admittance;
+            }
+            if (node2Index != -1) {
+                G[node2Index][node2Index] += admittance;
+            }
+            if (node1Index != -1 && node2Index != -1) {
+                G[node1Index][node2Index] -= admittance;
+                G[node2Index][node1Index] -= admittance;
+            }
+        }
+        else if (auto inductor = std::dynamic_pointer_cast<Inductor>(comp)) {
+            auto node1 = inductor->getNode1();
+            auto node2 = inductor->getNode2();
+            int node1Index = node1->getNumber();
+            int node2Index = node2->getNumber();
+            std::complex<double> admittance = 1.0 / inductor->getImpedance(omega);
+
+            if (node1Index != -1) {
+                G[node1Index][node1Index] += admittance;
+            }
+            if (node2Index != -1) {
+                G[node2Index][node2Index] += admittance;
+            }
+            if (node1Index != -1 && node2Index != -1) {
+                G[node1Index][node2Index] -= admittance;
+                G[node2Index][node1Index] -= admittance;
+            }
+        }
+    }
+    return G;
 }

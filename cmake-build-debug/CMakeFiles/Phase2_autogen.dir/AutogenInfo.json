@@ -11,31 +11,22 @@
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/3.29.6/CMakeSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/3.29.6/CMakeCCompiler.cmake",
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/3.29.6/CMakeCXXCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/3.29.6/CMakeRCCompiler.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake",
+		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/cmake-build-debug/CMakeFiles/3.29.6/CMakeRCCompiler.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake",
 		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
@@ -70,9 +61,8 @@
 		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckLibraryExists.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckIncludeFile.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake",
-		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake",
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageMessage.cmake",
 		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake",
@@ -216,7 +206,50 @@
 		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake",
 		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
-		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake"
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsConfigVersion.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsConfig.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindVulkan.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageMessage.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageMessage.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersion.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsVersionlessTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersion.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersionImpl.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake",
+		"C:/Program Files/JetBrains/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessTargets.cmake",
+		"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/Ehsan/uni/term2/oop/project/phase2/oop-project",
 	"CROSS_CONFIG" : false,
@@ -267,6 +300,12 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/Component.h",
+			"MU",
+			"SKN4Y6RAER/moc_Component.cpp",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/Node.h",
 			"MU",
 			"SKN4Y6RAER/moc_Node.cpp",
@@ -282,6 +321,12 @@
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/components/CurrentSource.h",
 			"MU",
 			"SCZWC7PFU5/moc_CurrentSource.cpp",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/components/Diode.h",
+			"MU",
+			"SCZWC7PFU5/moc_Diode.cpp",
 			null
 		],
 		[
@@ -303,9 +348,21 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/Diagrom.h",
+			"MU",
+			"HGN3HZFMGU/moc_Diagrom.cpp",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/SimulationResults.h",
 			"MU",
 			"HGN3HZFMGU/moc_SimulationResults.cpp",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/qcustomplot.h",
+			"MU",
+			"HGN3HZFMGU/moc_qcustomplot.cpp",
 			null
 		],
 		[
@@ -465,8 +522,12 @@
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
+		"QT_CHARTS_LIB",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
+		"QT_OPENGLWIDGETS_LIB",
+		"QT_OPENGL_LIB",
+		"QT_PRINTSUPPORT_LIB",
 		"QT_WIDGETS_LIB",
 		"UNICODE",
 		"WIN32",
@@ -488,20 +549,22 @@
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/wire",
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/ui",
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/view/grid",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/components",
+		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model",
+		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/components",
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results",
 		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Solver",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Supporting",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/Controllers",
-		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Core",
+		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Supporting Controllers",
+		"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Core Controllers",
 		"C:/Program Files/eigen-3.4.0/eigen-3.4.0",
 		"C:/Qt/6.7.3/mingw_64/include/QtCore",
 		"C:/Qt/6.7.3/mingw_64/include",
 		"C:/Qt/6.7.3/mingw_64/mkspecs/win32-g++",
 		"C:/Qt/6.7.3/mingw_64/include/QtGui",
 		"C:/Qt/6.7.3/mingw_64/include/QtWidgets",
+		"C:/Qt/6.7.3/mingw_64/include/QtCharts",
+		"C:/Qt/6.7.3/mingw_64/include/QtOpenGL",
+		"C:/Qt/6.7.3/mingw_64/include/QtOpenGLWidgets",
+		"C:/Qt/6.7.3/mingw_64/include/QtPrintSupport",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
@@ -548,7 +611,27 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Core Controllers/ResultController.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Core Controllers/SimulationController.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Supporting Controllers/IOController.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Supporting Controllers/SettingsController.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/controller/Supporting Controllers/UserSessionController.cpp",
 			"MU",
 			null
 		],
@@ -559,6 +642,11 @@
 		],
 		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/CircuitModel.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/Component.cpp",
 			"MU",
 			null
 		],
@@ -578,6 +666,11 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/components/Diode.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Circuit Model/components/Inductor.cpp",
 			"MU",
 			null
@@ -593,7 +686,17 @@
 			null
 		],
 		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/Diagrom.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/SimulationResults.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Ehsan/uni/term2/oop/project/phase2/oop-project/model/Results/qcustomplot.cpp",
 			"MU",
 			null
 		],

@@ -1,89 +1,91 @@
 cmake_minimum_required(VERSION 3.29)
-project(Phase2)
+project(Phase2 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(WIN32)
+    set(QT_DIR "C:/Qt/6.7.3/mingw_64/bin")
+    set(ENV{PATH} "${QT_DIR};$ENV{PATH}")
+endif()
+# مسیر ساده برای خروجی (همه فایل‌ها در bin/)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "C:/QtProjects/Phase2/bin")
+
+# Qt automoc/auto uic/autorcc
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-# اضافه کردن پوشه‌ها
+# مسیر windeployqt.exe
+set(WINDEPLOYQT_EXE "C:/Qt/6.7.3/mingw_64/bin/windeployqt.exe" CACHE FILEPATH "Path to windeployqt.exe.")
+
+# مسیر سورس
+set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
+# include paths
 include_directories(
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/components
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/wire
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/ui
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/grid
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Circuit Model
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Circuit Model/components
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Results
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Solver
-        ${CMAKE_CURRENT_SOURCE_DIR}/controller/Supporting Controllers
-        ${CMAKE_CURRENT_SOURCE_DIR}/controller/Core Controllers
+        "${SRC_DIR}/view/components"
+        "${SRC_DIR}/view/wire"
+        "${SRC_DIR}/view/ui"
+        "${SRC_DIR}/view/grid"
+        "${SRC_DIR}/model/Circuit Model"
+        "${SRC_DIR}/model/Circuit Model/components"
+        "${SRC_DIR}/model/Results"
+        "${SRC_DIR}/model/Solver"
+        "${SRC_DIR}/controller/Supporting Controllers"
+        "${SRC_DIR}/controller/Core Controllers"
         "C:/Program Files/eigen-3.4.0/eigen-3.4.0"
-
-
 )
-#include_directories("C:/Program Files/eigen-3.4.0/eigen-3.4.0")
 
-# فایل‌ها
+# سورس‌ها
 file(GLOB_RECURSE SOURCES
-        ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/components/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/wire/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/ui/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/view/grid/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/controller/Core Controllers/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/controller/Supporting Controllers/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Circuit Mode/components/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Circuit Mode/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Results/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/model/Solver/*.cpp
-
-
-
-
+        "${SRC_DIR}/main.cpp"
+        "${SRC_DIR}/view/components/*.cpp"
+        "${SRC_DIR}/view/wire/*.cpp"
+        "${SRC_DIR}/view/ui/*.cpp"
+        "${SRC_DIR}/view/grid/*.cpp"
+        "${SRC_DIR}/controller/Core Controllers/*.cpp"
+        "${SRC_DIR}/controller/Supporting Controllers/*.cpp"
+        "${SRC_DIR}/model/Circuit Model/components/*.cpp"
+        "${SRC_DIR}/model/Circuit Model/*.cpp"
+        "${SRC_DIR}/model/Circuit Mode/components/*.cpp"
+        "${SRC_DIR}/model/Circuit Mode/*.cpp"
+        "${SRC_DIR}/model/Results/*.cpp"
+        "${SRC_DIR}/model/Solver/*.cpp"
 )
 
-find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
+# پیدا کردن Qt
+find_package(Qt6 COMPONENTS Core Gui Widgets Charts PrintSupport REQUIRED)
 
-add_executable(${PROJECT_NAME} ${SOURCES}
-        view/ui/MainWindow.cpp
-        view/ui/MainWindow.h
-        view/ui/ComponentPropertyDialog.cpp
-        view/components/GND.cpp
-        view/ui/NetListHandler.h
-        view/components/InductorComponent.cpp
-        view/components/CapacitorComponent.cpp
-        view/components/CapacitorComponent.h
-        view/ui/CommandHandler.cpp
-        "controller/Core Controllers/CircuitController.cpp"
-        "controller/Supporting Controllers/IOController.cpp"
-        "controller/Core Controllers/ResultController.h"
-        "controller/Core Controllers/SimulationController.h"
-        "controller/Supporting Controllers/SettingsController.h"
-        "controller/Supporting Controllers/UserSessionController.h"
-        "model/Circuit Model/CircuitModel.cpp"
-        view/ui/SimulationDialog.cpp
-        view/ui/SimulationDialog.cpp
-        "model/Circuit Model/components/VoltageSource.cpp"
-        "model/Circuit Model/components/CurrentSource.cpp"
-        "model/Circuit Model/components/Capacitor.cpp"
-        "model/Circuit Model/components/Inductor.cpp"
-        "model/Circuit Model/components/Resistor.cpp"
-        "model/Circuit Model/Node.cpp"
-        view/ui/VoltageSourceDialog.cpp
-        view/wire/WirePropertyDialog.cpp
-        model/Solver/ACSweep.h
-        view/components/CurrentComponent.cpp
-        view/components/BlackBoxComponent.h
-        view/components/ThevenianNortonComponent.h
-        #"controller/Supporting Controllers/IOController.cpp"
-        #"model/Circuit Model/CircuitModel.cpp"
-)
+# executable
+add_executable(${PROJECT_NAME} ${SOURCES})
 
+# لینک Qt
 target_link_libraries(${PROJECT_NAME}
-        Qt::Core
-        Qt::Gui
-        Qt::Widgets
+        PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Charts
+        Qt6::PrintSupport
 )
 
-# Windows DLL handling (مطابق قبل)
+# رفع مشکل too many sections برای qcustomplot.cpp
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(QCUSTOM_PLOT_SRC "${SRC_DIR}/model/Results/qcustomplot.cpp")
+    if (EXISTS "${QCUSTOM_PLOT_SRC}")
+        set_source_files_properties(
+                "${QCUSTOM_PLOT_SRC}"
+                PROPERTIES COMPILE_FLAGS "-Wa,-mbig-obj"
+        )
+    endif()
+endif()
+
+# اجرای windeployqt بعد از بیلد
+if (WIN32 AND WINDEPLOYQT_EXE)
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND "${WINDEPLOYQT_EXE}" --no-translations "$<TARGET_FILE:${PROJECT_NAME}>"
+            WORKING_DIRECTORY "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
+            COMMENT "Running windeployqt to copy Qt DLLs..."
+            VERBATIM
+    )
+endif()

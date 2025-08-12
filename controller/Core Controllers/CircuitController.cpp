@@ -215,7 +215,7 @@ void CircuitController::ac_solve(double startFreq , double endFreq ,
         return;
     }
 
-    acAnalyse->solve(*circuit,startFreq,endFreq,numOfPoints,typeOfSweep,namesAndVI,outputType);
+    acAnalyse->solve(*circuit,startFreq,endFreq,numOfPoints,typeOfSweep,namesAndVI);
 }
 void CircuitController::phase_solve(double baseFreq ,double startPhase, double endPhase ,int numOfPoints
     ,std::vector<std::string> namesAndVI) {

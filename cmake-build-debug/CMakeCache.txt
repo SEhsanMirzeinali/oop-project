@@ -167,7 +167,7 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 CMAKE_LINKER:FILEPATH=C:/Qt/Tools/mingw1120_64/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.1/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -309,6 +309,9 @@ QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
 //Additional directories where find(Qt6 ...) components are searched
 QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
 
+//The directory containing a CMake configuration file for Qt6Charts.
+Qt6Charts_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Charts
+
 //The directory containing a CMake configuration file for Qt6CoreTools.
 Qt6CoreTools_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6CoreTools
 
@@ -323,6 +326,15 @@ Qt6GuiTools_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6GuiTools
 
 //The directory containing a CMake configuration file for Qt6Gui.
 Qt6Gui_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Gui
+
+//The directory containing a CMake configuration file for Qt6OpenGLWidgets.
+Qt6OpenGLWidgets_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGLWidgets
+
+//The directory containing a CMake configuration file for Qt6OpenGL.
+Qt6OpenGL_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL
+
+//The directory containing a CMake configuration file for Qt6PrintSupport.
+Qt6PrintSupport_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport
 
 //The directory containing a CMake configuration file for Qt6WidgetsTools.
 Qt6WidgetsTools_DIR:PATH=C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6WidgetsTools
@@ -347,6 +359,9 @@ Vulkan_INCLUDE_DIR:PATH=Vulkan_INCLUDE_DIR-NOTFOUND
 
 //Path to a library.
 Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
+
+//Path to windeployqt.exe (optional).
+WINDEPLOYQT_EXE:FILEPATH=
 
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.7.3/mingw_64/bin/windeployqt.exe
@@ -612,6 +627,24 @@ QT_FEATURE_calendarwidget:INTERNAL=ON
 QT_FEATURE_cborstreamreader:INTERNAL=ON
 //Qt feature: cborstreamwriter (from target Qt6::Core)
 QT_FEATURE_cborstreamwriter:INTERNAL=ON
+//Qt feature: charts_area_chart (from target Qt6::Charts)
+QT_FEATURE_charts_area_chart:INTERNAL=ON
+//Qt feature: charts_bar_chart (from target Qt6::Charts)
+QT_FEATURE_charts_bar_chart:INTERNAL=ON
+//Qt feature: charts_boxplot_chart (from target Qt6::Charts)
+QT_FEATURE_charts_boxplot_chart:INTERNAL=ON
+//Qt feature: charts_candlestick_chart (from target Qt6::Charts)
+QT_FEATURE_charts_candlestick_chart:INTERNAL=ON
+//Qt feature: charts_datetime_axis (from target Qt6::Charts)
+QT_FEATURE_charts_datetime_axis:INTERNAL=ON
+//Qt feature: charts_line_chart (from target Qt6::Charts)
+QT_FEATURE_charts_line_chart:INTERNAL=ON
+//Qt feature: charts_pie_chart (from target Qt6::Charts)
+QT_FEATURE_charts_pie_chart:INTERNAL=ON
+//Qt feature: charts_scatter_chart (from target Qt6::Charts)
+QT_FEATURE_charts_scatter_chart:INTERNAL=ON
+//Qt feature: charts_spline_chart (from target Qt6::Charts)
+QT_FEATURE_charts_spline_chart:INTERNAL=ON
 //Qt feature: checkbox (from target Qt6::Widgets)
 QT_FEATURE_checkbox:INTERNAL=ON
 //Qt feature: clipboard (from target Qt6::Gui)
@@ -650,6 +683,12 @@ QT_FEATURE_cross_compile:INTERNAL=OFF
 QT_FEATURE_cssparser:INTERNAL=ON
 //Qt feature: ctf (from target Qt6::Core)
 QT_FEATURE_ctf:INTERNAL=OFF
+//Qt feature: cups (from target Qt6::PrintSupport)
+QT_FEATURE_cups:INTERNAL=OFF
+//Qt feature: cupsjobwidget (from target Qt6::PrintSupport)
+QT_FEATURE_cupsjobwidget:INTERNAL=OFF
+//Qt feature: cupspassworddialog (from target Qt6::PrintSupport)
+QT_FEATURE_cupspassworddialog:INTERNAL=ON
 //Qt feature: cursor (from target Qt6::Gui)
 QT_FEATURE_cursor:INTERNAL=ON
 //Qt feature: cxx11_future (from target Qt6::Core)
@@ -982,6 +1021,14 @@ QT_FEATURE_posix_sem:INTERNAL=ON
 QT_FEATURE_posix_shm:INTERNAL=OFF
 //Qt feature: precompile_header (from target Qt6::Core)
 QT_FEATURE_precompile_header:INTERNAL=ON
+//Qt feature: printdialog (from target Qt6::PrintSupport)
+QT_FEATURE_printdialog:INTERNAL=ON
+//Qt feature: printer (from target Qt6::PrintSupport)
+QT_FEATURE_printer:INTERNAL=ON
+//Qt feature: printpreviewdialog (from target Qt6::PrintSupport)
+QT_FEATURE_printpreviewdialog:INTERNAL=ON
+//Qt feature: printpreviewwidget (from target Qt6::PrintSupport)
+QT_FEATURE_printpreviewwidget:INTERNAL=ON
 //Qt feature: printsupport (from target Qt6::Core)
 QT_FEATURE_printsupport:INTERNAL=ON
 //Qt feature: private_tests (from target Qt6::Core)

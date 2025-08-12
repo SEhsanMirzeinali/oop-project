@@ -7,44 +7,97 @@
 
 using namespace Eigen;
 
-std::vector<std::vector<double>> Transient::solve(CircuitModel& circuit, double TStep, double TStop,
-                                                double TStart, double TMax, std::vector<std::string> variables) {
-    std::vector<std::vector<double>> resultss;
-    int loopCounter = (TStop-TStart)/TStep;
-    double currentTime;
-    for (int i = 0; i < loopCounter; i++) {
-        currentTime = TStart + i*TStep;
+std::vector<std::vector<double>> Transient::solve(
+    CircuitModel& circuit, double TStep, double TStop,
+    double TStart, double TMax, std::vector<std::string> variables)
+{
+    std::vector<std::vector<double>> results;
 
+    // اندازه بردار حالت اولیه
+    int systemSize = circuit.getCountOfNodes() + circuit.getCountOfVoltageSources();
+    for (const auto& comp : circuit.getComponents()) {
+        if (std::dynamic_pointer_cast<Inductor>(comp))
+            systemSize++;
+    }
+
+    std::vector<double> X0(systemSize, 0.0); // مقدار اولیه
+
+    // شبیه‌سازی زمان‌گسسته از TStart تا TStop
+    double currentTime = TStart;
+    std::vector<double> X_prev = X0;
+    results.push_back(addTimeToState(currentTime, X_prev)); // اولین سطر با زمان صفر
+
+    int totalSteps = static_cast<int>((TStop - TStart) / TStep);
+
+    for (int step = 1; step <= totalSteps; ++step) {
+        currentTime = TStart + step * TStep;
+
+        // 1- آپدیت ولتاژ منابع وابسته به زمان
         for (auto& comp : circuit.getComponents()) {
             if (auto vs = dynamic_cast<VoltageSource*>(comp.get())) {
-                if (vs->getNode1() && vs->getNode2()) {
-                    vs->setTime(currentTime);
-                    vs->setVoltage();
-                }
+                vs->setTime(currentTime);
+                vs->setVoltage();
             }
         }
-    std::vector<std::vector<double>> results;
-    std::vector<std::vector<double>> leftSide;
-    std::vector<double> rightSide;
-    std::vector<std::vector<double>> G = createMatG(circuit);
-    std::vector<std::vector<double>> B = createMatB(circuit);
-    std::vector<std::vector<double>> C = createMatC(circuit);
-    std::vector<std::vector<double>> D = createMatD(circuit);
-    std::vector<double> E = createMatE(circuit);
-    std::vector<double> J = createMatJ(circuit);
-    std::vector<std::vector<double>> midSide;
 
-    leftSide = combineLeftSide(G, B, C, D);
-    rightSide = combineRightSide(J, E);
-    midSide = createMatDynamic(circuit);
-    std::vector<double> X0(leftSide.size(), 0);
-    results = solveMatrixODE(leftSide, midSide, rightSide, X0, TStep, TStart+((1+i)*TStep)/*TStop*/);
+        // 2- ساخت ماتریس‌ها برای این گام زمانی
+        std::vector<std::vector<double>> G = createMatG(circuit);
+        std::vector<std::vector<double>> B = createMatB(circuit);
+        std::vector<std::vector<double>> C = createMatC(circuit);
+        std::vector<std::vector<double>> D = createMatD(circuit);
+        std::vector<double> E = createMatE(circuit);
+        std::vector<double> J = createMatJ(circuit);
+        std::vector<std::vector<double>> K = createMatDynamic(circuit);
 
-        //printvector(results);
-    circuitResults->Transient_Analyse(results, variables, /*TStart*/+i*TStep,TStep, circuit);
+        std::vector<std::vector<double>> leftSide = combineLeftSide(G, B, C, D);
+        std::vector<double> rightSide = combineRightSide(J, E);
 
+        // 3- حل معادله در این گام زمانی (Backward Euler)
+        Eigen::MatrixXd G_mat(leftSide.size(), leftSide[0].size());
+        Eigen::MatrixXd C_mat(K.size(), K[0].size());
+
+        for (size_t i = 0; i < leftSide.size(); ++i)
+            for (size_t j = 0; j < leftSide[i].size(); ++j)
+                G_mat(i, j) = leftSide[i][j];
+
+        for (size_t i = 0; i < K.size(); ++i)
+            for (size_t j = 0; j < K[i].size(); ++j)
+                C_mat(i, j) = K[i][j];
+
+        Eigen::VectorXd F_vec(rightSide.size());
+        for (size_t i = 0; i < rightSide.size(); ++i)
+            F_vec(i) = rightSide[i];
+
+        Eigen::VectorXd X_prev_eigen(X_prev.size());
+        for (size_t i = 0; i < X_prev.size(); ++i)
+            X_prev_eigen(i) = X_prev[i];
+
+        Eigen::MatrixXd A = G_mat + C_mat / TStep;
+        Eigen::VectorXd b = F_vec + (C_mat / TStep) * X_prev_eigen;
+
+        Eigen::VectorXd X_curr = A.colPivHouseholderQr().solve(b);
+
+        // 4- ذخیره نتایج
+        std::vector<double> X_curr_std(X_curr.data(), X_curr.data() + X_curr.size());
+        results.push_back(addTimeToState(currentTime, X_curr_std));
+
+        // 5- آپدیت حالت قبلی
+        X_prev = X_curr_std;
+    }
+
+    // ارسال نتایج به آنالیزور
+    circuitResults->Transient_Analyse(results, variables, TStart, TStep, circuit);
+
+    return results;
 }
-    return resultss;
+
+// تابع کمکی برای اضافه کردن زمان به ابتدای بردار حالت
+std::vector<double> Transient::addTimeToState(double time, const std::vector<double>& state) {
+    std::vector<double> row;
+    row.reserve(state.size() + 1);
+    row.push_back(time);
+    row.insert(row.end(), state.begin(), state.end());
+    return row;
 }
 
 void Transient::printvector(const std::vector<std::vector<double>>& vec) {
