@@ -191,6 +191,9 @@ void ComponentView::wheelEvent(QWheelEvent* event) {
 }
 
 void ComponentView::keyPressEvent(QKeyEvent* event) {
+    if(event->key() == Qt::Key_W) {
+        startWiring();
+    }
     if (event->key() == Qt::Key_R) {
         if (event->modifiers() & Qt::ControlModifier) {
             if (placing && currentComponent) {
