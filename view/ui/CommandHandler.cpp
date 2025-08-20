@@ -189,11 +189,7 @@ void CommandHandler::handle_Add_VoltageSource(std::string name  , std::string no
 }
 void CommandHandler::handle_Add_CurrentSource(std::string name  , std::string node1 , std::string node2 , std::string value_string) {
     name = 'I' + name ;
-    for(auto n : names) {
-        if(name == n) {
-            throw Get_Exception::Duplicate_Name_Exception(name);
-        }
-    }
+
     double value_double = Change_unitsValue(value_string);
     if (value_double <= 0) {
         throw Get_Exception::Invalid_Value_Exception();
@@ -373,11 +369,11 @@ void CommandHandler::handle_Add_TRAN(std::string Tstep , std::string Tstop , std
 }
 
 ////////////////////////////mir
-void CommandHandler::handle_DC_Analysis() {
+std::unordered_map<std::string, double>  CommandHandler::handle_DC_Analysis() {
     std::cout << "DC Analysis..." << std::endl;
-    Circuitcontroller.DC_solve();
+    std::unordered_map<std::string, double> res=Circuitcontroller.DC_solve();
     std::cout<<"done1\n";
-
+    return res;
 }
 void CommandHandler::handle_Tran_Analysis(std::string TStep,std::string TStop,std::string TStart,std::string TMax_step,std::string variables) {
     std::cout << "\nTran Analysis..." << std::endl;
@@ -409,7 +405,7 @@ void CommandHandler::handle_Tran_Analysis(std::string TStep,std::string TStop,st
     // Files.back().write(File_output.str());
 
 }
-void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables) {
+void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std::string numOfPoints,std::string typeOfSweep,std::string variables,std::string outputType) {
     std::cout << "\nAC Analysis..." << std::endl;
     std::vector<std::string> names;
     std::string n;
@@ -433,7 +429,7 @@ void CommandHandler::handle_AC_Analysis(std::string FStart,std::string FStop,std
     //std::cout<<"start: "<<Fstart_double<<" stop: "<<Fstop_double<<" N: "<<num_int<<" type: "<<typeOfSweep<<" variables: "<<names[0]<<std::endl;
 
 
-    Circuitcontroller.ac_solve(Fstart_double,Fstop_double ,num_int,typeOfSweep,names);
+    Circuitcontroller.ac_solve(Fstart_double,Fstop_double ,num_int,typeOfSweep,names,outputType);
 
     ///////////////////// File Handling
     // std::ostringstream File_output;

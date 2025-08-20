@@ -188,6 +188,11 @@ void SimulationDialog::createACAnalysisPage()
     acVariablesEdit = new QLineEdit();
     paramsLayout->addWidget(acVariablesEdit, 4, 1);
 
+    acOutputTypeCombo = new QComboBox();
+    acOutputTypeCombo->addItems({"Decibel", "Linear"});
+    paramsLayout->addWidget(new QLabel("type of output:"), 5, 0);
+    paramsLayout->addWidget(acOutputTypeCombo, 5, 1);
+
     paramsGroup->setLayout(paramsLayout);
     layout->addWidget(paramsGroup);
 
@@ -338,20 +343,31 @@ std::string SimulationDialog::getACNumPoints() const { return acNumPointsEdit->t
 std::string SimulationDialog::getACStartFreq() const { return acStartFreqEdit->text().toStdString(); }
 std::string SimulationDialog::getACEndFreq() const { return acEndFreqEdit->text().toStdString(); }
 std::string SimulationDialog::getACVariables() const { return acVariablesEdit->text().toStdString(); }
-void SimulationDialog::setACVariables(const QString& v){if (variablesEdit && stackedWidget->currentIndex() == TRANSIENT) {
-    variablesEdit->setText(v);
-    variablesEdit->setVisible(true);
-}}
+std::string SimulationDialog::getACOutputType() const { return acOutputTypeCombo->currentText().toStdString(); }
+void SimulationDialog::setACVariables(const QString& v) {
+    if (acVariablesEdit) {
+        acVariablesEdit->setText(v);
+        // فقط وقتی صفحه AC Analysis فعال است نمایش داده شود
+        if (stackedWidget->currentIndex() == AC_ANALYSIS) {
+            acVariablesEdit->setVisible(true);
+        }
+    }
+}
 
 std::string SimulationDialog::getPhaseBaseFreq() const { return phaseBaseFreqEdit->text().toStdString(); }
 std::string SimulationDialog::getPhaseNumPoints() const { return phaseNumPointsEdit->text().toStdString(); }
 std::string SimulationDialog::getStartPhase() const { return acStartPhaseEdit->text().toStdString(); }
 std::string SimulationDialog::getEndPhase() const { return acEndPhaseEdit->text().toStdString(); }
 std::string SimulationDialog::getPhaseVariables() const { return phaseVariablesEdit->text().toStdString(); }
-void SimulationDialog::setPhaseVariables(const QString& v){if (variablesEdit && stackedWidget->currentIndex() == TRANSIENT) {
-    variablesEdit->setText(v);
-    variablesEdit->setVisible(true);
-}}
+void SimulationDialog::setPhaseVariables(const QString& v) {
+    if (phaseVariablesEdit) {
+        phaseVariablesEdit->setText(v);
+        // فقط وقتی صفحه Phase Sweep فعال است نمایش داده شود
+        if (stackedWidget->currentIndex() == PHASE_SWEEP) {
+            phaseVariablesEdit->setVisible(true);
+        }
+    }
+}
 
 QString SimulationDialog::getDCSourceName() const { return dcSourceNameEdit->text(); }
 QString SimulationDialog::getDCSweepType() const { return dcSweepTypeCombo->currentText(); }

@@ -1,5 +1,8 @@
 C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/Phase2_autogen/U5ILFKN7IX/moc_ToolBar.cpp: C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/ui/ToolBar.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/Phase2_autogen/moc_predefs.h \
+  C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Client.h \
+  C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Server.h \
+  D:/Qt/6.7.3/mingw_64/include/QtCore/QObject \
   D:/Qt/6.7.3/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/q20type_traits.h \
@@ -44,6 +47,7 @@ C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/P
   D:/Qt/6.7.3/mingw_64/include/QtCore/qglobalstatic.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/qhash.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/qhashfunctions.h \
+  D:/Qt/6.7.3/mingw_64/include/QtCore/qiodevice.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.7.3/mingw_64/include/QtCore/qiterator.h \
@@ -142,11 +146,30 @@ C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/P
   D:/Qt/6.7.3/mingw_64/include/QtGui/qtransform.h \
   D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/QTcpServer \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/QTcpSocket \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qhostaddress.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtcpserver.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtcpsocket.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetwork-config.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetworkexports.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/QMenuBar \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolBar \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qgridlayout.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayout.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayoutitem.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qmenu.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qmenubar.h \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/qtoolbar.h \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

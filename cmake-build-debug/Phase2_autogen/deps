@@ -29,8 +29,12 @@ Phase2_autogen/timestamp: \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Circuit\ Model/components/Resistor.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Circuit\ Model/components/VoltageSource.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Circuit\ Model/components/VoltageSource.h \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Client.cpp \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Client.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Diagrom.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Diagrom.h \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Server.cpp \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Server.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/SimulationResults.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/SimulationResults.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/qcustomplot.cpp \
@@ -45,8 +49,12 @@ Phase2_autogen/timestamp: \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Solver/NonlinearSolver.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Solver/Transient.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Solver/Transient.h \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/BlackBoxComponent.cpp \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/BlackBoxComponent.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/CapacitorComponent.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/CapacitorComponent.h \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/CurrentComponent.cpp \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/CurrentComponent.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/GND.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/GND.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/GraphicComponent.cpp \
@@ -55,6 +63,8 @@ Phase2_autogen/timestamp: \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/InductorComponent.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/ResistorComponent.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/ResistorComponent.h \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/ThevenianNortonComponent.cpp \
+	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/ThevenianNortonComponent.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/VoltageComponent.cpp \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/components/VoltageComponent.h \
 	C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/view/grid/Grid.cpp \
@@ -540,6 +550,15 @@ Phase2_autogen/timestamp: \
 	D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs.h \
 	D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs_win.h \
 	D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowsmimeconverter.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/QTcpServer \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/QTcpSocket \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qhostaddress.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtcpserver.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtcpsocket.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetwork-config.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetworkexports.h \
+	D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetworkglobal.h \
 	D:/Qt/6.7.3/mingw_64/include/QtPrintSupport/QtPrintSupport \
 	D:/Qt/6.7.3/mingw_64/include/QtPrintSupport/QtPrintSupportDepends \
 	D:/Qt/6.7.3/mingw_64/include/QtPrintSupport/qabstractprintdialog.h \
@@ -570,10 +589,12 @@ Phase2_autogen/timestamp: \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QLayout \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QLineEdit \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QMainWindow \
+	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QMenuBar \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QPushButton \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QRadioButton \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QScrollerProperties \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QStackedWidget \
+	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolBar \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QVBoxLayout \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QWidget \
 	D:/Qt/6.7.3/mingw_64/include/QtWidgets/QtWidgets \
@@ -817,6 +838,31 @@ Phase2_autogen/timestamp: \
 	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
 	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake \
 	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake \
 	D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake \

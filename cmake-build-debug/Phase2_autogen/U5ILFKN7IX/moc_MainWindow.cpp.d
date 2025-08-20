@@ -10,7 +10,9 @@ C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/P
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Circuit\ Model/components/Inductor.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Circuit\ Model/components/Resistor.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Circuit\ Model/components/VoltageSource.h \
+  C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Client.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Diagrom.h \
+  C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Server.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/SimulationResults.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/qcustomplot.h \
   C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Solver/ACSweep.h \
@@ -445,6 +447,15 @@ C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/P
   D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.7.3/mingw_64/include/QtGui/qwindowsmimeconverter.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/QTcpServer \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/QTcpSocket \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qhostaddress.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtcpserver.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtcpsocket.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetwork-config.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetworkexports.h \
+  D:/Qt/6.7.3/mingw_64/include/QtNetwork/qtnetworkglobal.h \
   D:/Qt/6.7.3/mingw_64/include/QtPrintSupport/QtPrintSupport \
   D:/Qt/6.7.3/mingw_64/include/QtPrintSupport/QtPrintSupportDepends \
   D:/Qt/6.7.3/mingw_64/include/QtPrintSupport/qabstractprintdialog.h \
@@ -465,8 +476,11 @@ C:/study/term\ 2/project/oop-project-Ehsan/oop-project-Ehsan/cmake-build-debug/P
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QGraphicsView \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QLayout \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QMainWindow \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/QMenuBar \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QScrollerProperties \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolBar \
+  D:/Qt/6.7.3/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QtWidgets \
   D:/Qt/6.7.3/mingw_64/include/QtWidgets/QtWidgetsDepends \

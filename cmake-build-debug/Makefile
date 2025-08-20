@@ -418,6 +418,30 @@ model/Circuit_Model/components/VoltageSource.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Circuit_Model/components/VoltageSource.cpp.s
 .PHONY : model/Circuit_Model/components/VoltageSource.cpp.s
 
+model/Results/Client.obj: model/Results/Client.cpp.obj
+.PHONY : model/Results/Client.obj
+
+# target to build an object file
+model/Results/Client.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Client.cpp.obj
+.PHONY : model/Results/Client.cpp.obj
+
+model/Results/Client.i: model/Results/Client.cpp.i
+.PHONY : model/Results/Client.i
+
+# target to preprocess a source file
+model/Results/Client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Client.cpp.i
+.PHONY : model/Results/Client.cpp.i
+
+model/Results/Client.s: model/Results/Client.cpp.s
+.PHONY : model/Results/Client.s
+
+# target to generate assembly for a file
+model/Results/Client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Client.cpp.s
+.PHONY : model/Results/Client.cpp.s
+
 model/Results/Diagrom.obj: model/Results/Diagrom.cpp.obj
 .PHONY : model/Results/Diagrom.obj
 
@@ -441,6 +465,30 @@ model/Results/Diagrom.s: model/Results/Diagrom.cpp.s
 model/Results/Diagrom.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Diagrom.cpp.s
 .PHONY : model/Results/Diagrom.cpp.s
+
+model/Results/Server.obj: model/Results/Server.cpp.obj
+.PHONY : model/Results/Server.obj
+
+# target to build an object file
+model/Results/Server.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Server.cpp.obj
+.PHONY : model/Results/Server.cpp.obj
+
+model/Results/Server.i: model/Results/Server.cpp.i
+.PHONY : model/Results/Server.i
+
+# target to preprocess a source file
+model/Results/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Server.cpp.i
+.PHONY : model/Results/Server.cpp.i
+
+model/Results/Server.s: model/Results/Server.cpp.s
+.PHONY : model/Results/Server.s
+
+# target to generate assembly for a file
+model/Results/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Results/Server.cpp.s
+.PHONY : model/Results/Server.cpp.s
 
 model/Results/SimulationResults.obj: model/Results/SimulationResults.cpp.obj
 .PHONY : model/Results/SimulationResults.obj
@@ -634,6 +682,30 @@ model/Solver/Transient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/model/Solver/Transient.cpp.s
 .PHONY : model/Solver/Transient.cpp.s
 
+view/components/BlackBoxComponent.obj: view/components/BlackBoxComponent.cpp.obj
+.PHONY : view/components/BlackBoxComponent.obj
+
+# target to build an object file
+view/components/BlackBoxComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/BlackBoxComponent.cpp.obj
+.PHONY : view/components/BlackBoxComponent.cpp.obj
+
+view/components/BlackBoxComponent.i: view/components/BlackBoxComponent.cpp.i
+.PHONY : view/components/BlackBoxComponent.i
+
+# target to preprocess a source file
+view/components/BlackBoxComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/BlackBoxComponent.cpp.i
+.PHONY : view/components/BlackBoxComponent.cpp.i
+
+view/components/BlackBoxComponent.s: view/components/BlackBoxComponent.cpp.s
+.PHONY : view/components/BlackBoxComponent.s
+
+# target to generate assembly for a file
+view/components/BlackBoxComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/BlackBoxComponent.cpp.s
+.PHONY : view/components/BlackBoxComponent.cpp.s
+
 view/components/CapacitorComponent.obj: view/components/CapacitorComponent.cpp.obj
 .PHONY : view/components/CapacitorComponent.obj
 
@@ -657,6 +729,30 @@ view/components/CapacitorComponent.s: view/components/CapacitorComponent.cpp.s
 view/components/CapacitorComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/CapacitorComponent.cpp.s
 .PHONY : view/components/CapacitorComponent.cpp.s
+
+view/components/CurrentComponent.obj: view/components/CurrentComponent.cpp.obj
+.PHONY : view/components/CurrentComponent.obj
+
+# target to build an object file
+view/components/CurrentComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/CurrentComponent.cpp.obj
+.PHONY : view/components/CurrentComponent.cpp.obj
+
+view/components/CurrentComponent.i: view/components/CurrentComponent.cpp.i
+.PHONY : view/components/CurrentComponent.i
+
+# target to preprocess a source file
+view/components/CurrentComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/CurrentComponent.cpp.i
+.PHONY : view/components/CurrentComponent.cpp.i
+
+view/components/CurrentComponent.s: view/components/CurrentComponent.cpp.s
+.PHONY : view/components/CurrentComponent.s
+
+# target to generate assembly for a file
+view/components/CurrentComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/CurrentComponent.cpp.s
+.PHONY : view/components/CurrentComponent.cpp.s
 
 view/components/GND.obj: view/components/GND.cpp.obj
 .PHONY : view/components/GND.obj
@@ -753,6 +849,30 @@ view/components/ResistorComponent.s: view/components/ResistorComponent.cpp.s
 view/components/ResistorComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/ResistorComponent.cpp.s
 .PHONY : view/components/ResistorComponent.cpp.s
+
+view/components/ThevenianNortonComponent.obj: view/components/ThevenianNortonComponent.cpp.obj
+.PHONY : view/components/ThevenianNortonComponent.obj
+
+# target to build an object file
+view/components/ThevenianNortonComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/ThevenianNortonComponent.cpp.obj
+.PHONY : view/components/ThevenianNortonComponent.cpp.obj
+
+view/components/ThevenianNortonComponent.i: view/components/ThevenianNortonComponent.cpp.i
+.PHONY : view/components/ThevenianNortonComponent.i
+
+# target to preprocess a source file
+view/components/ThevenianNortonComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/ThevenianNortonComponent.cpp.i
+.PHONY : view/components/ThevenianNortonComponent.cpp.i
+
+view/components/ThevenianNortonComponent.s: view/components/ThevenianNortonComponent.cpp.s
+.PHONY : view/components/ThevenianNortonComponent.s
+
+# target to generate assembly for a file
+view/components/ThevenianNortonComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Phase2.dir\build.make CMakeFiles/Phase2.dir/view/components/ThevenianNortonComponent.cpp.s
+.PHONY : view/components/ThevenianNortonComponent.cpp.s
 
 view/components/VoltageComponent.obj: view/components/VoltageComponent.cpp.obj
 .PHONY : view/components/VoltageComponent.obj
@@ -1086,9 +1206,15 @@ help:
 	@echo ... model/Circuit_Model/components/VoltageSource.obj
 	@echo ... model/Circuit_Model/components/VoltageSource.i
 	@echo ... model/Circuit_Model/components/VoltageSource.s
+	@echo ... model/Results/Client.obj
+	@echo ... model/Results/Client.i
+	@echo ... model/Results/Client.s
 	@echo ... model/Results/Diagrom.obj
 	@echo ... model/Results/Diagrom.i
 	@echo ... model/Results/Diagrom.s
+	@echo ... model/Results/Server.obj
+	@echo ... model/Results/Server.i
+	@echo ... model/Results/Server.s
 	@echo ... model/Results/SimulationResults.obj
 	@echo ... model/Results/SimulationResults.i
 	@echo ... model/Results/SimulationResults.s
@@ -1113,9 +1239,15 @@ help:
 	@echo ... model/Solver/Transient.obj
 	@echo ... model/Solver/Transient.i
 	@echo ... model/Solver/Transient.s
+	@echo ... view/components/BlackBoxComponent.obj
+	@echo ... view/components/BlackBoxComponent.i
+	@echo ... view/components/BlackBoxComponent.s
 	@echo ... view/components/CapacitorComponent.obj
 	@echo ... view/components/CapacitorComponent.i
 	@echo ... view/components/CapacitorComponent.s
+	@echo ... view/components/CurrentComponent.obj
+	@echo ... view/components/CurrentComponent.i
+	@echo ... view/components/CurrentComponent.s
 	@echo ... view/components/GND.obj
 	@echo ... view/components/GND.i
 	@echo ... view/components/GND.s
@@ -1128,6 +1260,9 @@ help:
 	@echo ... view/components/ResistorComponent.obj
 	@echo ... view/components/ResistorComponent.i
 	@echo ... view/components/ResistorComponent.s
+	@echo ... view/components/ThevenianNortonComponent.obj
+	@echo ... view/components/ThevenianNortonComponent.i
+	@echo ... view/components/ThevenianNortonComponent.s
 	@echo ... view/components/VoltageComponent.obj
 	@echo ... view/components/VoltageComponent.i
 	@echo ... view/components/VoltageComponent.s

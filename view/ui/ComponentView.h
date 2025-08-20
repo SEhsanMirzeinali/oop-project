@@ -26,6 +26,10 @@ private:
     NetListHandler* netList;
     QString variables;
     bool isVProbe=false;
+    bool isCreatingUnipolar=false;
+    bool isCreatingTNSubCircuit=false;
+    std::vector<std::string> unipolarInfo;
+    std::vector<std::string> TNInfo;
     QGraphicsTextItem* variablesLabel = new QGraphicsTextItem();
 
 
@@ -52,7 +56,19 @@ public:
     void startWiring();
     void startPlacing(const QString& type);
     std::vector<std::string> createNetList(QVector<GraphicComponent*>);
+    void saveNetList(std::vector<std::string> netList);
+    std::vector<std::string> loadUnipolarNetList();
+    void chooseThevenin();
+    void chooseNorton();
+    std::vector<std::string> loadTNSubCircuitNetList(bool isThevenin);
+    void createUnipolar();
+    void createTNSubCircuit();
+    void handleSubCircuitAnalysis();
     void setupProbe();
+    void handleAnalysis();
+    void handleProbeAction();
+    void resetComponentView();
+
 
 protected:
     void wheelEvent(QWheelEvent* event) override;

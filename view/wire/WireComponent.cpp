@@ -17,7 +17,7 @@ WireComponent::WireComponent(QObject* parent)
     QFont font("Arial", 12, QFont::Bold); // فونت Arial با سایز 10 و حالت Bold
     nodeLabel->setFont(font);
     nodeLabel->setZValue(20); // لیبل بالای وایر نمایش داده شود
-    //nodeLabel->setPos(100, 100);
+    nodeLabel->setPos(-100, -100);
 }
 
 WireComponent::~WireComponent() {}

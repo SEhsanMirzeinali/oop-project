@@ -58,10 +58,11 @@ public:
         , std::string Tstart_string , double Tstart_double , std::string Tmaxstep_string ,double Tmaxstep_double);
 
 ////////////////////////////mir
-    void DC_solve();
+    std::unordered_map<std::string, double>DC_solve();
+
     void tran_solve(double dt,double TStop,double TStart,double TMax_step,std::vector<std::string> namesAndVI);
     void ac_solve(double startFreq , double endFreq ,
-            int numOfPoints ,std::string typeOfSweep,std::vector<std::string> namesAndVI);
+            int numOfPoints ,std::string typeOfSweep,std::vector<std::string> namesAndVI,std::string outputType);
     void phase_solve(double baseFreq ,double startPhase, double endPhase ,
         int numOfPoints ,std::vector<std::string> namesAndVI);
 

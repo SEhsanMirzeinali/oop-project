@@ -4,31 +4,46 @@
 
 #include "SimulationResults.h"
 #include <iomanip>
-#include <fstream>
-#include <chrono>
-#include <cstdio>
 
-void SimulationResults::DC_Analyse_Results(std::vector<double> results, CircuitModel& circuit) {
+#include <unordered_map>
+#include <string>
+#include <vector>
+#include <memory>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QFile>
+#include <QDateTime>
+
+std::unordered_map<std::string, double> SimulationResults::DC_Analyse_Results(std::vector<double> results,  CircuitModel& circuit)
+{
+    std::unordered_map<std::string, double> result_map;
+
     for (int i = 0; i < results.size(); i++) {
-        bool printed = false;
-        for (int j = 0; j < circuit.getNode().size(); j++) {
-            if (circuit.getNode()[j]->getNumber() == i) {
-                std::cout << "node number: " << i << " name: " << circuit.getNode()[j]->getName() << " voltage: ";
-                printed = true;
+        bool is_node = false;
+
+        // Check if this index corresponds to a node
+        for (const auto& node : circuit.getNode()) {
+            if (node->getNumber() == i) {
+                result_map[node->getName()] = results[i];
+                is_node = true;
+                break;
             }
         }
-        if (!printed) {
-            for (int j = 0; j < circuit.getComponents().size(); j++) {
-                std::shared_ptr<Component> comp = circuit.getComponents()[j];
+
+        // If not a node, check if it's a voltage source current
+        if (!is_node) {
+            for (const auto& comp : circuit.getComponents()) {
                 if (auto vs = std::dynamic_pointer_cast<VoltageSource>(comp)) {
-                    std::cout << "voltage source: " << vs->getName() << " current: ";
+                    // For voltage sources, we'll use a special key format
+                    result_map["I("+ vs->getName() +")"] = results[i];
                 }
             }
         }
-        std::cout << results[i] << std::endl;
     }
-}
 
+    return result_map;
+}
 std::vector<double> SimulationResults::AC_Analysis(
     std::string type,
     std::vector<std::complex<double>> results,
@@ -165,7 +180,6 @@ std::vector<double> SimulationResults::AC_Analysis(
 
     return finalRes;
 }
-
 std::string SimulationResults::Transient_Analyse(std::vector<std::vector<double>> results,std::vector<std::string> variables,double TStart,double dt,CircuitModel& circuit) {
     std::vector<std::vector<double>> finalRes;
     std::vector<int> indexes;
@@ -274,30 +288,49 @@ std::string SimulationResults::Transient_Analyse(std::vector<std::vector<double>
         std::cout << std::endl;
     }
 
-    ///////////////////// ذخیره در فایل ////////////
-    // auto now = std::chrono::system_clock::now();
-    // auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
-    // std::string filename = "C:/study/term 2/project/oop-project-Ehsan/oop-project-Ehsan/model/Results/Analysis_" + std::to_string(ms) + ".csv";
-    //
-    // std::ofstream outFile(filename);
-    // if (!outFile) {
-    //     std::cerr << "Error: Could not open file for writing!" << std::endl;
-    // } else {
-    //     // هدر CSV
-    //     outFile << "Time";
-    //     for (const auto& var : variables) outFile << "," << var;
-    //     outFile << "\n";
-    //
-    //     // داده‌ها
-    //     for (int i = TStart / dt + 1; i < finalRes.size(); i++) {
-    //         for (int j = 0; j < finalRes[i].size(); j++) {
-    //             outFile << std::fixed << std::setprecision(6) << finalRes[i][j];
-    //             if (j != finalRes[i].size() - 1) outFile << ",";
-    //         }
-    //         outFile << "\n";
-    //     }
-    //     outFile.close();
-    // }
+    // ===== ذخیره‌سازی نتایج به صورت JSON =====
+    QJsonObject root;
+    root["title"] = "Transient Analysis";
+    root["time_start"] = TStart;
+    root["time_step"] = dt;
+
+    // ذخیره هدرها
+    QJsonArray headersArray;
+    headersArray.append("Time");
+    for (const auto& var : variables) {
+        headersArray.append(QString::fromStdString(var));
+    }
+    root["headers"] = headersArray;
+
+    // ذخیره داده‌ها
+    QJsonArray dataArray;
+    for (int i = TStart / dt + 1; i < finalRes.size(); ++i) {
+        QJsonArray rowArray;
+        for (double val : finalRes[i]) {
+            rowArray.append(val);
+        }
+        dataArray.append(rowArray);
+    }
+    root["data"] = dataArray;
+
+    // ساختن داکیومنت JSON
+    QJsonDocument doc(root);
+
+    // مسیر ذخیره
+    QString fileName = QString("Analysis_%1.json")
+                           .arg(QDateTime::currentDateTime().toString("yyyyMMdd_hhmmss"));
+    QString filePath = QCoreApplication::applicationDirPath() + "/" + fileName;
+
+    // ذخیره در فایل
+    QFile jsonFile(filePath);
+    if (jsonFile.open(QIODevice::WriteOnly)) {
+        jsonFile.write(doc.toJson(QJsonDocument::Indented));
+        jsonFile.close();
+        qDebug() << "JSON saved at:" << filePath;
+    } else {
+        qDebug() << "Error saving JSON file:" << jsonFile.errorString();
+    }
+
 
     ////////
     if (!variables.empty()) {
@@ -330,6 +363,25 @@ std::vector<std::vector<double>> SimulationResults::extractTwoColumns(
     return result;
 }
 
+// std::vector<std::vector<double>> SimulationResults::extractTwoColumns(
+//     const std::vector<std::vector<double>>& matrix,
+//     std::vector<int> columnIndices
+// ) {
+//     std::vector<std::vector<double>> result;
+//
+//     for (const auto& row : matrix) {
+//         std::vector<double> selectedColumns;
+//         for (int col : columnIndices) {
+//             if (col >= 0 && col < row.size()) {
+//                 selectedColumns.push_back(row[col]);
+//             }
+//         }
+//         result.push_back(selectedColumns);
+//     }
+//
+//     return result;
+// }
+
 std::vector<double> SimulationResults::extractSingleColumn(
     const std::vector<std::vector<double>>& matrix,
     int columnIndex
@@ -344,7 +396,6 @@ std::vector<double> SimulationResults::extractSingleColumn(
 
     return result;
 }
-
 void SimulationResults::plotResults(
     const std::vector<std::vector<double>>& data,
     const QString& title,

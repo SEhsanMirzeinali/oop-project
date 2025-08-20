@@ -8,13 +8,13 @@
 #pragma once
 #include "..\Circuit Model\CircuitModel.h"
 #include<iostream>
+#include<iostream>
 #include "Diagrom.h"
-
 class SimulationResults {
     private:
     CustomPlotVisualizer plotter;
 public:
-    void DC_Analyse_Results(std::vector <double> results,CircuitModel& circuit);
+    std::unordered_map<std::string, double> DC_Analyse_Results( std::vector<double> results, CircuitModel& circuit);
     std::string Transient_Analyse(std::vector<std::vector<double>> results,std::vector<std::string> variables,double TStart,double dt,CircuitModel& circuit) ;
     std::vector<double> AC_Analysis(std::string type,std::vector<std::complex<double>> results , double omega ,double phase, std::vector<std::string> variables,CircuitModel& circuit) ;
     std::vector<std::vector<double>> extractTwoColumns(const std::vector<std::vector<double>>& matrix,std::vector<int>);

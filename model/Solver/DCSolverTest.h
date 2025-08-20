@@ -14,7 +14,7 @@ class DCSolverTest {
     DCSolverTest() : circuitResults(std::make_shared<SimulationResults>()){}
     //CircuitModel testCircuit;
     void initializeTestCircuit();
-    std::vector<double> solve(CircuitModel& circuit);
+    std::unordered_map<std::string, double> solve(CircuitModel& circuit);
     std::vector<std::vector<double>> createMatG( CircuitModel& circuit);
     std::vector<std::vector<double>> createMatB( CircuitModel& circuit);
     std::vector<std::vector<double>> createMatC(CircuitModel& circuit);

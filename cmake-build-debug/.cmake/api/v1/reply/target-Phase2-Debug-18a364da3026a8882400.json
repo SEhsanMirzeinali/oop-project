@@ -39,12 +39,14 @@
 			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
 			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake",
 			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake",
+			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake",
 			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake",
 			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
 			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
-			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
-			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake",
-			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake"
+			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+			"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -60,7 +62,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 83,
+				"line" : 87,
 				"parent" : 0
 			},
 			{
@@ -232,62 +234,20 @@
 				"parent" : 33
 			},
 			{
-				"command" : 4,
-				"file" : 7,
-				"line" : 169,
-				"parent" : 4
-			},
-			{
-				"file" : 16,
-				"parent" : 35
-			},
-			{
-				"command" : 3,
-				"file" : 16,
-				"line" : 62,
-				"parent" : 36
-			},
-			{
-				"file" : 15,
-				"parent" : 37
-			},
-			{
-				"command" : 2,
-				"file" : 15,
-				"line" : 61,
-				"parent" : 38
-			},
-			{
-				"command" : 3,
-				"file" : 16,
-				"line" : 57,
-				"parent" : 36
-			},
-			{
-				"file" : 17,
-				"parent" : 40
-			},
-			{
-				"command" : 2,
-				"file" : 17,
-				"line" : 61,
-				"parent" : 41
-			},
-			{
 				"command" : 3,
 				"file" : 14,
 				"line" : 55,
 				"parent" : 31
 			},
 			{
-				"file" : 18,
-				"parent" : 43
+				"file" : 15,
+				"parent" : 35
 			},
 			{
 				"command" : 2,
-				"file" : 18,
+				"file" : 15,
 				"line" : 61,
-				"parent" : 44
+				"parent" : 36
 			},
 			{
 				"command" : 4,
@@ -296,24 +256,92 @@
 				"parent" : 4
 			},
 			{
-				"file" : 20,
+				"file" : 17,
+				"parent" : 38
+			},
+			{
+				"command" : 3,
+				"file" : 17,
+				"line" : 55,
+				"parent" : 39
+			},
+			{
+				"file" : 16,
+				"parent" : 40
+			},
+			{
+				"command" : 2,
+				"file" : 16,
+				"line" : 61,
+				"parent" : 41
+			},
+			{
+				"command" : 4,
+				"file" : 7,
+				"line" : 169,
+				"parent" : 4
+			},
+			{
+				"file" : 19,
+				"parent" : 43
+			},
+			{
+				"command" : 3,
+				"file" : 19,
+				"line" : 62,
+				"parent" : 44
+			},
+			{
+				"file" : 18,
+				"parent" : 45
+			},
+			{
+				"command" : 2,
+				"file" : 18,
+				"line" : 61,
 				"parent" : 46
 			},
 			{
 				"command" : 3,
-				"file" : 20,
-				"line" : 55,
-				"parent" : 47
+				"file" : 19,
+				"line" : 57,
+				"parent" : 44
 			},
 			{
-				"file" : 19,
+				"file" : 20,
 				"parent" : 48
 			},
 			{
 				"command" : 2,
-				"file" : 19,
+				"file" : 20,
 				"line" : 61,
 				"parent" : 49
+			},
+			{
+				"command" : 4,
+				"file" : 7,
+				"line" : 169,
+				"parent" : 4
+			},
+			{
+				"file" : 22,
+				"parent" : 51
+			},
+			{
+				"command" : 3,
+				"file" : 22,
+				"line" : 55,
+				"parent" : 52
+			},
+			{
+				"file" : 21,
+				"parent" : 53
+			},
+			{
+				"command" : 2,
+				"file" : 21,
+				"line" : 61,
+				"parent" : 54
 			},
 			{
 				"command" : 7,
@@ -349,6 +377,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_NETWORK_LIB"
 				},
 				{
 					"backtrace" : 2,
@@ -394,55 +426,55 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/view/components"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/view/wire"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/view/ui"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/view/grid"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/model/Circuit"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/Model"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/Model/components"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/model/Results"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/model/Solver"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/controller/Supporting"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/Controllers"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/study/term 2/project/oop-project-main/oop-project-main/controller/Core"
 				},
 				{
-					"backtrace" : 51,
+					"backtrace" : 56,
 					"path" : "C:/Program Files/eigen-3.4.0/eigen-3.4.0"
 				},
 				{
@@ -494,6 +526,11 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "D:/Qt/6.7.3/mingw_64/include/QtPrintSupport"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/Qt/6.7.3/mingw_64/include/QtNetwork"
 				}
 			],
 			"language" : "CXX",
@@ -536,26 +573,31 @@
 				25,
 				26,
 				27,
+				28,
+				29,
+				30,
 				31,
 				32,
+				36,
 				37,
-				38,
-				39,
-				40,
-				41,
 				42,
-				43
+				43,
+				44,
+				45,
+				46,
+				47,
+				48
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "Phase2_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "Phase2_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Phase2_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "Phase2::@6890427a1f51a3e7e1df",
@@ -579,6 +621,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "D:\\Qt\\6.7.3\\mingw_64\\lib\\libQt6PrintSupport.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\Qt\\6.7.3\\mingw_64\\lib\\libQt6Network.a",
 				"role" : "libraries"
 			},
 			{
@@ -607,48 +654,53 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 39,
-				"fragment" : "D:\\Qt\\6.7.3\\mingw_64\\lib\\libQt6Core.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 42,
-				"fragment" : "-lmpr",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 42,
-				"fragment" : "-luserenv",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 45,
+				"backtrace" : 37,
 				"fragment" : "-ld3d11",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 45,
+				"backtrace" : 37,
 				"fragment" : "-ldxgi",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 45,
+				"backtrace" : 37,
 				"fragment" : "-ldxguid",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 45,
+				"backtrace" : 37,
 				"fragment" : "-ld3d12",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 50,
+				"backtrace" : 42,
 				"fragment" : "-lcomdlg32",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 50,
+				"backtrace" : 42,
 				"fragment" : "-lwinspool",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 47,
+				"fragment" : "D:\\Qt\\6.7.3\\mingw_64\\lib\\libQt6Core.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 50,
+				"fragment" : "-lmpr",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 50,
+				"fragment" : "-luserenv",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 55,
+				"fragment" : "-lws2_32",
 				"role" : "libraries"
 			},
 			{
@@ -699,44 +751,51 @@
 				25,
 				26,
 				27,
+				28,
+				29,
+				30,
 				31,
 				32,
+				36,
 				37,
-				38,
-				39,
-				40,
-				41,
 				42,
-				43
+				43,
+				44,
+				45,
+				46,
+				47,
+				48
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				28,
-				29,
-				30,
 				33,
 				34,
 				35,
-				36,
-				44,
-				45
+				38,
+				39,
+				40,
+				41,
+				49,
+				50,
+				51,
+				52
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				46
+				53
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				47
+				54
 			]
 		}
 	],
@@ -758,7 +817,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "model/Results/Client.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "model/Results/Diagrom.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "model/Results/Server.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -812,7 +883,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "view/components/BlackBoxComponent.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "view/components/CapacitorComponent.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "view/components/CurrentComponent.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -837,6 +920,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "view/components/ResistorComponent.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "view/components/ThevenianNortonComponent.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1008,6 +1097,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "model/Results/Diagrom.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "model/Results/Client.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "model/Results/Server.h",
 			"sourceGroupIndex" : 1
 		},
 		{

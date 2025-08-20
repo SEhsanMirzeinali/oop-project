@@ -7,6 +7,10 @@
     <file>images/Wire.png</file>
     <file>images/GND.png</file>
     <file>images/Probe.png</file>
+    <file>images/CurrentSource.png</file>
+    <file>images/BlackBox.png</file>
+    <file>images/Thevenin.png</file>
+    <file>images/Norton.png</file>
 
   </qresource>
 </RCC>

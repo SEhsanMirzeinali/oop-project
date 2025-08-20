@@ -393,7 +393,37 @@
 		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake",
 		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake",
 		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessTargets.cmake",
-		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake"
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+		"D:/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake",
+		"D:/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake",
+		"D:/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake",
+		"D:/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake",
+		"D:/CLion 2024.2.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
+		"D:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/study/term 2/project/oop-project-main/oop-project-main",
 	"CROSS_CONFIG" : false,
@@ -480,9 +510,21 @@
 			null
 		],
 		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Client.h",
+			"MU",
+			"HGN3HZFMGU/moc_Client.cpp",
+			null
+		],
+		[
 			"C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Diagrom.h",
 			"MU",
 			"HGN3HZFMGU/moc_Diagrom.cpp",
+			null
+		],
+		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Server.h",
+			"MU",
+			"HGN3HZFMGU/moc_Server.cpp",
 			null
 		],
 		[
@@ -534,9 +576,21 @@
 			null
 		],
 		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/BlackBoxComponent.h",
+			"MU",
+			"NCV6FACNDT/moc_BlackBoxComponent.cpp",
+			null
+		],
+		[
 			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/CapacitorComponent.h",
 			"MU",
 			"NCV6FACNDT/moc_CapacitorComponent.cpp",
+			null
+		],
+		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/CurrentComponent.h",
+			"MU",
+			"NCV6FACNDT/moc_CurrentComponent.cpp",
 			null
 		],
 		[
@@ -561,6 +615,12 @@
 			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/ResistorComponent.h",
 			"MU",
 			"NCV6FACNDT/moc_ResistorComponent.cpp",
+			null
+		],
+		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/ThevenianNortonComponent.h",
+			"MU",
+			"NCV6FACNDT/moc_ThevenianNortonComponent.cpp",
 			null
 		],
 		[
@@ -645,6 +705,7 @@
 		"QT_CHARTS_LIB",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
 		"QT_OPENGLWIDGETS_LIB",
 		"QT_OPENGL_LIB",
 		"QT_PRINTSUPPORT_LIB",
@@ -687,6 +748,7 @@
 		"D:/Qt/6.7.3/mingw_64/include/QtOpenGL",
 		"D:/Qt/6.7.3/mingw_64/include/QtOpenGLWidgets",
 		"D:/Qt/6.7.3/mingw_64/include/QtPrintSupport",
+		"D:/Qt/6.7.3/mingw_64/include/QtNetwork",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -778,7 +840,17 @@
 			null
 		],
 		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Client.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Diagrom.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/model/Results/Server.cpp",
 			"MU",
 			null
 		],
@@ -823,7 +895,17 @@
 			null
 		],
 		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/BlackBoxComponent.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/CapacitorComponent.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/CurrentComponent.cpp",
 			"MU",
 			null
 		],
@@ -844,6 +926,11 @@
 		],
 		[
 			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/ResistorComponent.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/study/term 2/project/oop-project-main/oop-project-main/view/components/ThevenianNortonComponent.cpp",
 			"MU",
 			null
 		],

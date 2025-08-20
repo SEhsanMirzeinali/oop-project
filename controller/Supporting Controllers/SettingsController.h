@@ -8,21 +8,21 @@
 
 
 class SettingsController {
-private:
-    SolverConfig& config;
-
-public:
-    SettingsController(SolverConfig& config) : config(config) {}
-
-    // Set time step for transient analysis
-    void setTimeStep(double step) {
-        config.timeStep = step;
-    }
-
-    // Choose solver type (e.g., LU decomposition, Gauss-Seidel)
-    void setSolverType(SolverType type) {
-        config.solverType = type;
-    }
+// private:
+//     SolverConfig& config;
+//
+// public:
+//     SettingsController(SolverConfig& config) : config(config) {}
+//
+//     // Set time step for transient analysis
+//     void setTimeStep(double step) {
+//         config.timeStep = step;
+//     }
+//
+//     // Choose solver type (e.g., LU decomposition, Gauss-Seidel)
+//     void setSolverType(SolverType type) {
+//         config.solverType = type;
+//     }
 };
 
 
